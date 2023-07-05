@@ -7,6 +7,8 @@
     ../../modules/programs/waybar
     ../../modules/shell/zsh
     ../../modules/programs/git
+    ../../modules/programs/dunst
+    ../../modules/programs/tmux
   ];
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
@@ -20,7 +22,6 @@
     kitty
     waybar
     swww
-    dunst
     lsd
     bat
     flameshot

@@ -79,6 +79,7 @@
       wget
       mesa
       xdg-utils
+      libnotify
       pinentry-curses
       croc
     ];
