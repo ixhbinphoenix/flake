@@ -1,0 +1,30 @@
+
+@define-color bg #313244;
+@define-color light #cdd6f4;
+
+* {
+	border: none;
+	border-radius: 0px;
+	min-height: 0;
+	margin: 0.2em 0.3em 0.2em 0.3em;
+}
+
+#waybar {
+	background: @bg;
+	color: @light;
+	font-family: "Cantarell", "FontAwesome 5 Pro";
+	font-size: 0.85rem;
+	font-weight: bold;
+}
+
+#workspaces button {
+	font-weight: bold;
+	padding: 0.2em 0.4em;
+	background: none;
+	font-size: 1.2em;
+}
+
+#workspaces button.focused {
+	background: #585b70;
+	color: @light;
+}
