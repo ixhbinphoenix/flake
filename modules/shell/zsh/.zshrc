@@ -37,7 +37,7 @@ zinit light-mode for \
 
 ### Important globals
 export BAT_THEME="Catppuccin-mocha"
-export GPG_TTY=${tty}
+export GPG_TTY=$(tty)
 
 ### Zinit plugins
 zinit ice depth"1"
