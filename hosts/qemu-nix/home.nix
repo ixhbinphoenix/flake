@@ -9,6 +9,7 @@
     ../../modules/programs/git
     ../../modules/programs/dunst
     ../../modules/programs/tmux
+    ../../modules/programs/nvim
   ];
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
@@ -19,8 +20,8 @@
 
   home.packages = with pkgs; [
     librewolf
-    kitty
     waybar
+    kitty
     swww
     lsd
     bat
@@ -29,11 +30,6 @@
     source-code-pro
     weston
   ];
-
-  programs.neovim = {
-    enable = true;
-  };
-
 
   programs.librewolf = {
     enable = true;    
