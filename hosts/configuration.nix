@@ -49,6 +49,22 @@
   # Polkit
   security.polkit.enable = true;
 
+  # Doas instead of sudo
+  security.doas = {
+    enable = true;
+    extraRules = [
+      {
+        users = [ "${user}" ];
+        persist = true;
+      }
+      {
+        groups = [ "wheel" ];
+        persist = true;
+      }
+    ];
+  };
+  security.sudo.enable = false;
+
   # Enable sound.
   services.pipewire = {
     enable = true;
@@ -83,12 +99,13 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
       XDG_CURRENT_DESKTOP = "sway";
-      MOZ_WAYLAND = "1";
+      MOZ_ENABLE_WAYLAND = "1";
       SDL_VIDEODRIVER = "wayland";
       QT_QPA_PLATFORM = "wayland";
       _JAVA_AWT_WM_NONREPARENTING = "1";
     };
     systemPackages = with pkgs; [
+      (writeScriptBin "sudo" ''exec doas "$@"'')
       git
       killall
       usbutils
