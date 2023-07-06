@@ -28,6 +28,8 @@
   networking.hostName = "qemu-nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  networking.firewall.allowedTCPPorts = [ 22000 8384 ];
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 

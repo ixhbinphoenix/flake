@@ -4,6 +4,7 @@
   imports = [
     ../../modules/desktop/sway
     ../../modules/programs/waybar
+    ../../modules/programs/dunst.nix
   ];
 
   home.packages = with pkgs; [

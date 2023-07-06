@@ -2,9 +2,10 @@
 {
   imports = [
     ../modules/shell/zsh
-    ../modules/programs/bat
-    ../modules/programs/git
-    ../modules/programs/tmux
+    ../modules/programs/bat.nix
+    ../modules/programs/git.nix
+    ../modules/programs/tmux.nix
+    ../modules/programs/syncthing.nix
     ../modules/programs/nvim
     ../modules/programs/kitty
   ];
