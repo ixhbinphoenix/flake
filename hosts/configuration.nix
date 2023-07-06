@@ -108,6 +108,8 @@
       (writeScriptBin "sudo" ''exec doas "$@"'')
       git
       gcc
+      rustup
+      nodejs
       killall
       usbutils
       pciutils
