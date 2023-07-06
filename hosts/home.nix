@@ -20,5 +20,7 @@
   home.packages = with pkgs; [
     kitty
     lsd
+    nixd
+    lua-language-server
   ];
 }

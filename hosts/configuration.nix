@@ -107,6 +107,7 @@
     systemPackages = with pkgs; [
       (writeScriptBin "sudo" ''exec doas "$@"'')
       git
+      gcc
       killall
       usbutils
       pciutils

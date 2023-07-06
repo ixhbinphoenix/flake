@@ -12,6 +12,8 @@ lsp.configure('lua_ls', {
   }
 })
 
+require'lspconfig'.nixd.setup{}
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
