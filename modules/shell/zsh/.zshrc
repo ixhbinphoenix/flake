@@ -36,7 +36,6 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 ### Important globals
-export BAT_THEME="Catppuccin-mocha"
 export GPG_TTY=$(tty)
 
 ### Zinit plugins

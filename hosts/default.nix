@@ -16,10 +16,13 @@ in
       ./configuration.nix
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
-	home-manager.useUserPackages = true;
-	home-manager.extraSpecialArgs = { inherit user; };
-	home-manager.users.${user} = {
-	  imports = [ ./qemu-nix/home.nix ];
+	      home-manager.useUserPackages = true;
+      	home-manager.extraSpecialArgs = { inherit user; };
+      	home-manager.users.${user} = {
+      	  imports = [
+            ./home.nix 
+            ./qemu-nix/home.nix 
+          ];
         };
       }
     ];

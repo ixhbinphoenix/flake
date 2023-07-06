@@ -44,6 +44,23 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.enable = true;
 
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  # Polkit
+  security.polkit.enable = true;
+
+  # Enable sound.
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+
+    alsa.enable = true;
+    jack.enable = true;
+    pulse.enable = true;
+
+    wireplumber.enable = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix = {
@@ -82,6 +99,7 @@
       libnotify
       pinentry-curses
       croc
+      dunst
     ];
   };
 

@@ -19,7 +19,6 @@
     grim
     slurp
     wl-clipboard
-    dunst
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -28,10 +27,6 @@
 
   networking.hostName = "qemu-nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Polkit
-  security.polkit.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -39,17 +34,6 @@
   # Enable OpenGL
   hardware.opengl.enable = true;
 
-  # Enable sound.
-  services.pipewire = {
-    enable = true;
-    audio.enable = true;
-
-    alsa.enable = true;
-    jack.enable = true;
-    pulse.enable = true;
-
-    wireplumber.enable = true;
-  };
 
   services.dbus.enable = true;
   xdg.portal = {

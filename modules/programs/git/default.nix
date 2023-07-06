@@ -2,15 +2,18 @@
 {
   programs.git = {
     enable = true;
+    delta = {
+      enable = true;
+    };
     extraConfig = {
       user = {
         signingkey = "2524A3371AF14680";
-	name = "ixhbinphoenix";
+        name = "ixhbinphoenix";
         email = "47122082+ixhbinphoenix@users.noreply.github.com";
       };
       commit = {
         sign = true;
-	gpgsign = true;
+        gpgsign = true;
       };
       init = {
         defaultBranch = "master";
