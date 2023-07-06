@@ -59,6 +59,7 @@ zinit snippet 'https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlight
 ### Aliases
 alias ls="lsd --color=auto -la"
 alias cat="bat"
+alias icat="kitten icat"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
