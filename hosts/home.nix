@@ -1,6 +1,7 @@
 { config, pkgs, lib, user, ...}:
 {
   imports = [
+    ../scripts.nix
     ../modules/shell/zsh
     ../modules/programs/bat.nix
     ../modules/programs/git.nix

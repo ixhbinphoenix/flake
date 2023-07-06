@@ -36,6 +36,7 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 ### Important globals
+export PATH="/home/phoenix/.local/bin/scripts/":$PATH
 export GPG_TTY=$(tty)
 
 ### Zinit plugins
