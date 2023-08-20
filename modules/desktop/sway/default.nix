@@ -4,13 +4,24 @@
     enable = true;
     config = null;
     extraConfig = ''
-    output Virtual-1 pos 0 0 res 1920x1080@60.00Hz
+    output DP-1 pos 1920 0 res 2560x1440@143.912Hz
+    output DP-2 pos 0 0 res 1920x1080@60.00Hz
+    output DP-3 pos 4480 0 res 1600x900@60.00Hz
 
-    exec --no-startup-id swww init
+    set $screen-left DP-2
+    set $screen-center DP-1
+    set $screen-right DP-3
+
+    set $scripts /home/phoenix/.local/bin/scripts/
+
+    exec --no-startup-id ${pkgs.swww} init
+    exec_always --no-startup-id $scripts/random_wallpaper
 
     set $mod Mod1
 
-    font pango:Source Code Pro 8
+    bindsym $mod+Shift+w exec $scripts/random_wallpaper
+
+    font pango:Iosevka Nerd Font 8
 
     # Window design
     default_border pixel
@@ -32,6 +43,7 @@
     bar swaybar_command waybar
 
     bindsym $mod+Return exec ${pkgs.kitty}/bin/kitty
+    bindsym $mod+Escape exec ${pkgs.nur.repos.aleksana.yofi}/bin/yofi
 
     bindsym $mod+Shift+q kill
 
@@ -107,6 +119,15 @@
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
+
+    # Workspace to monitor bindings
+    workspace $ws2 output $screen-left
+
+    workspace $ws1 output $screen-center
+    workspace $ws4 output $screen-center
+    
+    workspace $ws3 output $screen-right
+    workspace $ws5 output $screen-right
     '';
   };
 }

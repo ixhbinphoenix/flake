@@ -7,7 +7,7 @@
     };
     extraConfig = {
       user = {
-        signingkey = "2524A3371AF14680";
+        signingkey = "BA62877F1E9D4833";
         name = "ixhbinphoenix";
         email = "47122082+ixhbinphoenix@users.noreply.github.com";
       };

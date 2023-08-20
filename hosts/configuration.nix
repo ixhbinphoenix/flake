@@ -1,10 +1,21 @@
 { config, lib, pkgs, inputs, user, ... }:
 {
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "Iosevka" "JetBrainsMono" ]; })
-    source-code-pro
-    iosevka
-  ];
+  fonts = {
+    fonts = with pkgs; [
+      iosevka
+      iosevka-term
+      (nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" "JetBrainsMono" ]; })
+      source-code-pro
+      font-awesome
+      noto-fonts-emoji
+      ipafont
+    ];
+    fontconfig.defaultFonts = {
+      emoji = [ "Iosevka Nerd Font" "Noto Emoji" "Font Awesome" ];
+      monospace = [ "Iosevka Term Nerd Font" "Source Code Pro" ];
+      sansSerif = [ "Iosevka Nerd Font" "IPAFont" ];
+    };
+  };
 
   time.timeZone = "Europe/Berlin";
   i18n = {
@@ -77,7 +88,25 @@
     wireplumber.enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      packageOverrides = super: let self = super.pkgs; in {
+        iosevka-term = self.iosevka.override {
+          set = "term";
+          privateBuildPlan = ''
+          [buildPlans.iosevka-term]
+          family = "Iosevka Term"
+          spacing = "term"
+          serifs = "sans"
+          no-cv-ss = true
+          export-glyph-names = true
+          '';
+        };
+      };
+    };
+    overlays = [ inputs.nur.overlay ];
+  };
 
   nix = {
     settings = {

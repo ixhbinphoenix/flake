@@ -36,10 +36,26 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1692481600,
+        "narHash": "sha256-au83mQ2Jz7LS/jqd//A2K4zsxOpbD4LOKdUZScyvuUc=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "c8878a3b3d43fd071757dae195e79bba569768b5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nur": "nur"
       }
     }
   },

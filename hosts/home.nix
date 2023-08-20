@@ -22,5 +22,7 @@
     lsd
     nixd
     lua-language-server
+    pavucontrol
+    keepassxc
   ];
 }
