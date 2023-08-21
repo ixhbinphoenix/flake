@@ -56,6 +56,9 @@ zinit cdreplay -q
 zinit light zsh-users/zsh-syntax-highlighting
 zinit snippet 'https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh'
 
+### Direnv
+eval "$(direnv hook zsh)"
+
 ### Aliases
 alias ls="lsd --color=auto -la"
 alias cat="bat"

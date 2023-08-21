@@ -14,7 +14,7 @@
 
     set $scripts /home/phoenix/.local/bin/scripts/
 
-    exec --no-startup-id ${pkgs.swww} init
+    exec --no-startup-id ${pkgs.swww}/bin/swww init
     exec_always --no-startup-id $scripts/random_wallpaper
 
     set $mod Mod1

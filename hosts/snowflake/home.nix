@@ -13,6 +13,7 @@
     flameshot
     nur.repos.aleksana.yofi
     armcord
+    thunderbird
   ];
 
   programs.librewolf.enable = true;

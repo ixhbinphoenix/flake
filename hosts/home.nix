@@ -24,5 +24,14 @@
     lua-language-server
     pavucontrol
     keepassxc
+    xdg-utils
+    neofetch
+    btop
+    onefetch
   ];
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 }

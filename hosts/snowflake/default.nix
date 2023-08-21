@@ -21,6 +21,7 @@
     obs-studio-plugins.obs-vkcapture
     obs-studio-plugins.obs-pipewire-audio-capture
     unityhub
+    distrobox
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -42,6 +43,13 @@
   '';
 
   programs.steam.enable = true;
+
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
+  environment.variables.DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
 
   system.stateVersion = "23.05";
 }
