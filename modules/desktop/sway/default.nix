@@ -44,6 +44,7 @@
 
     bindsym $mod+Return exec ${pkgs.kitty}/bin/kitty
     bindsym $mod+Escape exec ${pkgs.nur.repos.aleksana.yofi}/bin/yofi
+    bindsym $mod+F4 exec ${pkgs.wlogout}/bin/wlogout
 
     bindsym $mod+Shift+q kill
 

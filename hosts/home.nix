@@ -3,6 +3,7 @@
   imports = [
     ../scripts.nix
     ../modules/shell/zsh
+    ../modules/desktop/wlogout.nix
     ../modules/programs/bat.nix
     ../modules/programs/git.nix
     ../modules/programs/tmux.nix
