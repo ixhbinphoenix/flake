@@ -122,13 +122,13 @@
     bindsym $mod+Shift+0 move container to workspace number 10
 
     # Workspace to monitor bindings
-    workspace $ws2 output $screen-left
+    workspace 2 output $screen-left
 
-    workspace $ws1 output $screen-center
-    workspace $ws4 output $screen-center
+    workspace 1 output $screen-center
+    workspace 4 output $screen-center
     
-    workspace $ws3 output $screen-right
-    workspace $ws5 output $screen-right
+    workspace 3 output $screen-right
+    workspace 5 output $screen-right
     '';
   };
 }
