@@ -14,6 +14,7 @@
     nur.repos.aleksana.yofi
     armcord
     thunderbird
+    osu-lazer-bin
   ];
 
   programs.librewolf.enable = true;

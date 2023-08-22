@@ -31,6 +31,10 @@
   networking.hostName = "snowflake";
 
   hardware.opengl.enable = true;
+  hardware.opentabletdriver = {
+    enable = true;
+    daemon.enable = true;
+  };
 
   services.dbus.enable = true;
   xdg.portal = {
