@@ -14,6 +14,8 @@
 
     set $scripts /home/phoenix/.local/bin/scripts/
 
+    exec --no-startup-id wl-paste -t text --watch clipman store
+
     exec --no-startup-id ${pkgs.swww}/bin/swww init
     exec_always --no-startup-id $scripts/random_wallpaper
 

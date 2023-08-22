@@ -17,4 +17,6 @@
   ];
 
   programs.librewolf.enable = true;
+
+  services.clipman.enable = true;
 }
