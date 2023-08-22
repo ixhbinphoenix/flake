@@ -14,8 +14,8 @@
 		"all-outputs": true,
 		"rewrite": {
 			"LibreWolf": "󰈹 ",
-			"(.*) — LibreWolf": "󰈹 - $1",
-      "(.*) - YouTube — LibreWolf" : "󰗃 - $1",
+			"(.*) — LibreWolf": "󰈹  - $1",
+      "(.*) - YouTube — LibreWolf" : "󰗃  - $1",
 			"nvim": "",
 			"Neovide": "",
       "zsh": " "
