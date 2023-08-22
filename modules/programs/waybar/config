@@ -2,7 +2,7 @@
 	"layer": "bottom",
 	"position": "top",
 	// "height": 30,
-	"spacing": 4,
+	"spacing": 5,
 	"modules-left": ["sway/workspaces"],
 	"modules-center": ["sway/window"],
 	"modules-right": ["tray", "network", "clock"],
@@ -13,11 +13,12 @@
 		"tooltip": false,
 		"all-outputs": true,
 		"rewrite": {
-			"LibreWolf": "",
-			"(.*) — LibreWolf": " — $1",
+			"LibreWolf": "󰈹 ",
+			"(.*) — LibreWolf": "󰈹 - $1",
+      "(.*) - YouTube — LibreWolf" : "󰗃 - $1",
 			"nvim": "",
 			"Neovide": "",
-			"Spotify": ""
+      "zsh": " "
 		}
 	},
 	"sway/workspaces": {
@@ -25,24 +26,24 @@
 		"all-outputs": true,
 		"format": "{icon}",
 		"format-icons": {
-			"1": "<span color=\"#89dceb\"></span>",
-			"2": "<span color=\"#89dceb\"></span>",
-			"3": "<span color=\"#89dceb\"></span>",
-			"4": "<span color=\"#89dceb\"></span>",
-			"5": "<span color=\"#89dceb\"></span>",
-			"default": "<span color=\"#89dceb\"></span>"
+			"1": "<span color=\"#89dceb\"> </span>",
+			"2": "<span color=\"#89dceb\"> </span>",
+			"3": "<span color=\"#89dceb\">󰍩 </span>",
+			"4": "<span color=\"#89dceb\"> </span>",
+			"5": "<span color=\"#89dceb\"> </span>",
+			"default": "<span color=\"#89dceb\"> </span>"
 		}
 	},
 	"network": {
 		"format-wifi": " {essid}",
-		"format-ethernet": " {ipaddr}/{cidr}",
-		"format-linked": " (No IP)",
-		"format-disconnected": "",
+		"format-ethernet": "󰈁 {ipaddr}/{cidr}",
+		"format-linked": "󰈂 (No IP)",
+		"format-disconnected": "󰈂",
 		"family": "ipv4",
 		"tooltip": false
 	},
 	"clock": {
-		"format": " {:%H:%M}",
+		"format": "󰥔 {:%H:%M}",
 		"tooltip-format": "{:%H:%M %d %B %Y}"
 	},
 	"tray": {

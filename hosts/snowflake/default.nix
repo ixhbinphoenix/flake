@@ -15,6 +15,7 @@
     grim
     slurp
     wl-clipboard
+    wlprop
     obs-studio
     obs-studio-plugins.wlrobs
     obs-studio-plugins.obs-vaapi
