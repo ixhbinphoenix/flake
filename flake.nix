@@ -13,16 +13,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur.url = github:nix-community/NUR;
+    nixvim = {
+      url = github:nix-community/nixvim;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim }:
     let
       user = "phoenix";
     in {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs user home-manager nur;
+          inherit inputs nixpkgs user home-manager nur nixvim;
         }
       );
     };

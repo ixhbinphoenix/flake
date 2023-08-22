@@ -8,7 +8,7 @@
     ../modules/programs/git.nix
     ../modules/programs/tmux.nix
     ../modules/programs/syncthing.nix
-    ../modules/programs/nvim
+    ../modules/programs/nixvim.nix
     ../modules/programs/kitty
   ];
   home.username = "${user}";

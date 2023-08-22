@@ -54,7 +54,7 @@
     setSocketVariable = true;
   };
 
-  environment.variables.DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
+  environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
 
   system.stateVersion = "23.05";
 }

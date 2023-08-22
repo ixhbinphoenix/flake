@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, ...}:
 let
   system = "x86_64-linux";
 
@@ -41,6 +41,7 @@ in
         home-manager.extraSpecialArgs = { inherit user; };
         home-manager.users.${user} = {
           imports = [
+            nixvim.homeManagerModules.nixvim
             ./home.nix
             ./snowflake/home.nix
           ];
