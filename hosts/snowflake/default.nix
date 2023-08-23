@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, user, ... }:
 {
   imports =
   [
@@ -23,6 +23,10 @@
     obs-studio-plugins.obs-pipewire-audio-capture
     unityhub
     distrobox
+    lutris
+    protonup-qt
+    gamescope
+    virt-manager
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -30,11 +34,21 @@
 
   networking.hostName = "snowflake";
 
-  hardware.opengl.enable = true;
-  hardware.opentabletdriver = {
-    enable = true;
-    daemon.enable = true;
+  hardware = {
+    opengl = {
+      enable = true;
+      driSupport32Bit = true;
+    };
+    opentabletdriver = {
+      enable = true;
+      daemon.enable = true;
+    };
   };
+
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
+
+  users.users.${user}.extraGroups = [ "libvirtd" ];
 
   services.dbus.enable = true;
   xdg = {
