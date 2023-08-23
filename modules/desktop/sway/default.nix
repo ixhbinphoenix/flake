@@ -16,6 +16,7 @@
 
     exec --no-startup-id wl-paste -t text --watch clipman store
 
+    exec --no-startup-id dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENTDESKTOP=sway MOZ_DBUS_REMOTE
     exec --no-startup-id ${pkgs.swww}/bin/swww init
     exec_always --no-startup-id $scripts/random_wallpaper
 
