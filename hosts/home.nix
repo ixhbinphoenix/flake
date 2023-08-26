@@ -30,6 +30,7 @@
     btop
     onefetch
     ani-cli
+    yt-dlp
     trackma-gtk
   ];
 
