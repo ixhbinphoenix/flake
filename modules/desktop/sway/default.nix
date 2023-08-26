@@ -1,9 +1,14 @@
 { config, pkgs, lib, ...}:
 {
+  home.file.".config/sway/catppuccin-mocha" = {
+    source = ./catppuccin-mocha;
+  };
   wayland.windowManager.sway = {
     enable = true;
     config = null;
     extraConfig = ''
+    include catppuccin-mocha
+
     output DP-1 pos 1920 0 res 2560x1440@143.912Hz
     output DP-2 pos 0 0 res 1920x1080@60.00Hz
     output DP-3 pos 4480 0 res 1600x900@60.00Hz
@@ -34,6 +39,14 @@
     # Gaps
     gaps inner 14
     gaps outer 0
+
+    # Target                title     bg    text  incdicator border
+    client.focused          $blue     $base $text $teal      $blue
+    client.focused_inactive $overlay0 $base $text $teal      $overlay0
+    client.unfocused        $overlay0 $base $text $teal      $overlay0
+    client.urgent           $red      $base $text $overlay0  $red
+    client.placeholder      $overlay0 $base $text $overlay0  $overlay0
+    client.background       $base
 
     # Floating/Fullscreen fixes
     for_window [title="Picture-in-Picture"] floating enable

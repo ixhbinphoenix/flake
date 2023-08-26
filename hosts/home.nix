@@ -29,10 +29,32 @@
     neofetch
     btop
     onefetch
+    ani-cli
+    trackma-gtk
   ];
 
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "Catppuccin-Mocha-Sky";
+    size = 48;
+    package = pkgs.catppuccin-cursors.mochaSky;
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Catppuccin-Mocha-Compact-Sky-dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "sky" ];
+        size = "compact";
+        tweaks = [ "rimless" "black" ];
+        variant = "mocha";
+      };
+    };
   };
 }

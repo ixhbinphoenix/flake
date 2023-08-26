@@ -37,7 +37,6 @@
 
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-  programs.dconf.enable = true;
 
   users.users.${user}.extraGroups = [ "libvirtd" ];
 
