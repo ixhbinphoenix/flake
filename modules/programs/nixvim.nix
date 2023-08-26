@@ -183,13 +183,19 @@
 
         git.ignore = false;
       };
+
+      packer = {
+        enable = true;
+        plugins = [
+          "s1n7ax/nvim-terminal"
+        ];
+      };
     };
 
     extraPlugins = with pkgs.vimPlugins; [
       feline-nvim
       nvim-web-devicons
       tabby-nvim
-      nvim-terminal-lua
       plenary-nvim
     ];
 
