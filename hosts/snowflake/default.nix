@@ -3,19 +3,11 @@
   imports =
   [
     ./hardware-configuration.nix
-    ../../modules/desktop/greetd
   ];
 
   environment.systemPackages = with pkgs; [
-    wayland
-    egl-wayland
-    glib
     swaylock
     swayidle
-    grim
-    slurp
-    wl-clipboard
-    wlprop
     obs-studio
     obs-studio-plugins.wlrobs
     obs-studio-plugins.obs-vaapi
@@ -37,10 +29,6 @@
   networking.hostName = "snowflake";
 
   hardware = {
-    opengl = {
-      enable = true;
-      driSupport32Bit = true;
-    };
     opentabletdriver = {
       enable = true;
       daemon.enable = true;
@@ -53,7 +41,6 @@
 
   users.users.${user}.extraGroups = [ "libvirtd" ];
 
-  services.dbus.enable = true;
   xdg = {
     portal = {
       enable = true;

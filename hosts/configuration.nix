@@ -1,5 +1,8 @@
 { config, lib, pkgs, inputs, user, ... }:
 {
+  imports = [
+    ../modules/desktop/greetd
+  ];
   fonts = {
     fonts = with pkgs; [
       iosevka
@@ -15,6 +18,11 @@
       monospace = [ "Iosevka Term Nerd Font" "Source Code Pro" ];
       sansSerif = [ "Iosevka Nerd Font" "IPAFont" ];
     };
+  };
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
   };
 
   time.timeZone = "Europe/Berlin";
@@ -49,6 +57,7 @@
   };
 
   programs.ssh.startAgent = true;
+  services.dbus.enable = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22000 ];
@@ -152,6 +161,13 @@
       pinentry-curses
       croc
       dunst
+      wayland
+      egl-wayland
+      glib
+      grim
+      slurp
+      wl-clipboard
+      wlprop
     ];
   };
 

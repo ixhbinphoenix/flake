@@ -49,4 +49,25 @@ in
       }
     ];
   };
+  unique = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit user inputs; };
+    modules = [
+      nur.nixosModules.nur
+      ./unique
+      ./configuration.nix
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.users.${user} = {
+          imports = [
+            nixvim.homeManagerModules.nixvim
+            ./home.nix
+            ./unique/home.nix
+          ];
+        };
+      }
+    ];
+  };
 }

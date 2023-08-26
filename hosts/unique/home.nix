@@ -18,16 +18,9 @@
     youtube-music
   ];
 
+  programs.git.extraConfig.user.signingkey = "A80D9E94F66ED077";
+
   programs.librewolf.enable = true;
-
-  programs.git.extraConfig.user.signingkey = "BA62877F1E9D4833";
-
-  dconf.settings = {
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
-    };
-  };
 
   services.clipman.enable = true;
 }
