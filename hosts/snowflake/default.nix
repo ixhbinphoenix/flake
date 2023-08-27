@@ -8,17 +8,13 @@
   environment.systemPackages = with pkgs; [
     swaylock
     swayidle
-    obs-studio
-    obs-studio-plugins.wlrobs
-    obs-studio-plugins.obs-vaapi
-    obs-studio-plugins.obs-vkcapture
-    obs-studio-plugins.obs-pipewire-audio-capture
     unityhub
     distrobox
     lutris
     protonup-qt
     gamescope
     virt-manager
+    amf-headers
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -33,6 +29,12 @@
       enable = true;
       daemon.enable = true;
     };
+    opengl.extraPackages = with pkgs; [
+      amdvlk
+      rocm-opencl-icd
+      rocm-opencl-runtime
+      nur.repos.materus.amdgpu-pro-libs.amf
+    ];
   };
 
   virtualisation.libvirtd.enable = true;

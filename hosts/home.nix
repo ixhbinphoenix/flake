@@ -35,6 +35,8 @@
     mpv
     youtube-tui
     trackma-gtk
+    p7zip
+    prismlauncher
   ];
 
   programs.direnv = {
