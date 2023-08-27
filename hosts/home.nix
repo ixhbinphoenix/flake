@@ -31,6 +31,9 @@
     onefetch
     ani-cli
     yt-dlp
+    ffmpeg
+    mpv
+    youtube-tui
     trackma-gtk
   ];
 
