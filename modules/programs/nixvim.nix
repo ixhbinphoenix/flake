@@ -145,11 +145,25 @@
       nvim-cmp = {
         enable = true;
         mapping = {
-          "<C-p>" = "cmp.mapping.select_prev_item()";
-          "<C-n>" = "cmp.mapping.select_next_item()";
-          "<C-y>" = "cmp.mapping.confirm({ select = true })";
+          "<C-p>" = "cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select})";
+          "<C-n>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
+          "<Up>" = "cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select})";
+          "<Down>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
+          "<Tab>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
+          "<CR>" = ''cmp.mapping({
+            i = function(fallback)
+              if cmp.visible and cmp.get_active_entry() then
+                cmp.confirm({behavior = cmp.SelectBehavior.Replace, select = false})
+              else
+                fallback()
+              end
+            end,
+            s = cmp.mapping.confirm({select = true}),
+            c = cmp.mapping.confirm({behavior = cmp.SelectBehavior.Replace, select = true}),
+          })'';
           "<C-Space>" = "cmp.mapping.complete()";
         };
+        preselect = "None";
         sources = [
         { name = "nvim_lsp"; }
         { name = "luasnip"; }
