@@ -36,7 +36,10 @@
     youtube-tui
     trackma-gtk
     p7zip
+    mediainfo
     prismlauncher
+    chatterino2
+    tenacity
   ];
 
   programs.direnv = {

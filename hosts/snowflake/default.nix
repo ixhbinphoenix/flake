@@ -14,7 +14,6 @@
     protonup-qt
     gamescope
     virt-manager
-    amf-headers
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;

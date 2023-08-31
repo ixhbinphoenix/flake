@@ -16,6 +16,7 @@
     thunderbird
     osu-lazer-bin
     youtube-music
+    libsForQt5.kdenlive
   ];
 
   programs.librewolf.enable = true;
