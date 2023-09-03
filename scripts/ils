@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+for f in *; do if [ -f "$f" ]; then
+  echo "$f"
+  kitty +kitten icat "$f"
+fi done 
