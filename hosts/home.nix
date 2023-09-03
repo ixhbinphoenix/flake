@@ -40,6 +40,7 @@
     prismlauncher
     chatterino2
     tenacity
+    websocat
   ];
 
   programs.direnv = {

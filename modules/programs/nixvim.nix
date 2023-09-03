@@ -72,8 +72,6 @@
         nixvimInjections = true;
       };
 
-      treesitter-playground.enable = true;
-
       harpoon = {
         enable = true;
         keymaps = {

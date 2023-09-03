@@ -17,6 +17,7 @@
     osu-lazer-bin
     youtube-music
     libsForQt5.kdenlive
+    cava
   ];
 
   programs.librewolf.enable = true;

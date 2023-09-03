@@ -34,6 +34,7 @@
       rocm-opencl-runtime
       nur.repos.materus.amdgpu-pro-libs.amf
     ];
+    bluetooth.enable = true;
   };
 
   virtualisation.libvirtd.enable = true;
