@@ -4,7 +4,7 @@
     ../modules/desktop/greetd
   ];
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       iosevka
       iosevka-term
       (nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" "JetBrainsMono" ]; })
@@ -53,12 +53,27 @@
      packages = with pkgs; [];
   };
 
+  services.udev.packages = with pkgs; [ yubikey-personalization ];
+
+  services.pcscd.enable = true;
+
+  security.pam.services = {
+    login.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
+
+  security.pam.u2f = {
+    enable = true;
+    cue = true;
+    control = "required";
+  };
+
   programs.gnupg.agent = {
     enable = true;
+    enableSSHSupport = true;
     pinentryFlavor = "curses";
   };
 
-  programs.ssh.startAgent = true;
   services.dbus.enable = true;
 
   # Open ports in the firewall.

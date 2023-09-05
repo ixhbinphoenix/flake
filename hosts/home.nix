@@ -41,6 +41,12 @@
     chatterino2
     tenacity
     websocat
+    yubikey-manager
+    yubikey-manager-qt
+    yubikey-personalization
+    yubikey-personalization-gui
+    yubico-piv-tool
+    yubioath-flutter
   ];
 
   programs.direnv = {

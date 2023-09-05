@@ -62,7 +62,8 @@ alias cat="bat"
 alias icat="kitten icat"
 
 ### Important globals
-export GPG_TTY=$(tty)
+export GPG_TTY=$TTY
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export PATH="/home/phoenix/.local/bin/scripts/":$PATH
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
