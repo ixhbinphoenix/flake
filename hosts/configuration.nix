@@ -137,6 +137,7 @@
   nix = {
     settings = {
       auto-optimise-store = true; # Optimize Symlinks
+      trusted-users = [ "root" user ];
     };
     gc = {
       automatic = true;
