@@ -47,6 +47,9 @@
     yubikey-personalization-gui
     yubico-piv-tool
     yubioath-flutter
+    wine-staging
+    winetricks
+    protontricks
   ];
 
   programs.direnv = {
