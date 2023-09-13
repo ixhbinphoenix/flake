@@ -18,8 +18,6 @@
     youtube-music
   ];
 
-  programs.git.extraConfig.user.signingkey = "A80D9E94F66ED077";
-
   programs.librewolf.enable = true;
 
   services.clipman.enable = true;

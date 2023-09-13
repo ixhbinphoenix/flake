@@ -19,6 +19,7 @@
     youtube-music
     libsForQt5.kdenlive
     cava
+    cemu-ti
   ];
 
   programs.librewolf.enable = true;
@@ -36,8 +37,6 @@
       obs-pipewire-audio-capture
     ];
   };
-
-  programs.git.extraConfig.user.signingkey = "BA62877F1E9D4833";
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
