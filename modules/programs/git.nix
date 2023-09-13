@@ -8,7 +8,7 @@
     extraConfig = {
       user = {
         name = "ixhbinphoenix";
-        email = "47122082+ixhbinphoenix@users.noreply.github.com";
+        email = "phoenix@ixhby.dev";
         signingkey = "3E62370C1D773013";
       };
       commit = {
