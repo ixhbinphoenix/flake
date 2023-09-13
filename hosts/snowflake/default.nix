@@ -8,7 +8,6 @@
   environment.systemPackages = with pkgs; [
     swaylock
     swayidle
-    unityhub
     distrobox
     lutris
     protonup-qt
