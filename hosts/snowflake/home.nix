@@ -20,6 +20,7 @@
     libsForQt5.kdenlive
     cava
     cemu-ti
+    BeatSaberModManager
   ];
 
   programs.librewolf.enable = true;

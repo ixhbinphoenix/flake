@@ -49,7 +49,7 @@
      uid = 1000;
      home = "/home/${user}";
      shell = pkgs.zsh;
-     extraGroups = [ "wheel" "networkmanager" "input" "video" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "networkmanager" "input" "video" "docker" ];
      packages = with pkgs; [];
   };
 
@@ -186,6 +186,7 @@
       slurp
       wl-clipboard
       wlprop
+      file
     ];
   };
 

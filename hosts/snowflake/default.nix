@@ -13,6 +13,7 @@
     protonup-qt
     gamescope
     virt-manager
+    glibc
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -67,9 +68,10 @@
 
   programs.steam.enable = true;
 
-  virtualisation.docker.rootless = {
+  hardware.steam-hardware.enable = true;
+
+  virtualisation.docker = {
     enable = true;
-    setSocketVariable = true;
   };
 
   environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
