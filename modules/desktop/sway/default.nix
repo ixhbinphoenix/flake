@@ -11,11 +11,11 @@
 
     output DP-1 pos 1920 0 res 2560x1440@143.912Hz
     output DP-2 pos 0 0 res 1920x1080@60.00Hz
-    output DP-3 pos 4480 0 res 1600x900@60.00Hz
+    output HDMI-A-1 pos 4480 0 res 1600x900@60.00Hz
 
     set $screen-left DP-2
     set $screen-center DP-1
-    set $screen-right DP-3
+    set $screen-right HDMI-A-1
 
     set $scripts /home/phoenix/.local/bin/scripts/
 

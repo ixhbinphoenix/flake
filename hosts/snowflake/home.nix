@@ -21,6 +21,7 @@
     cava
     cemu-ti
     BeatSaberModManager
+    avalonia-ilspy
   ];
 
   programs.librewolf.enable = true;
