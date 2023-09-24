@@ -27,6 +27,8 @@
 
     set $mod Mod1
 
+    bindsym $mod+Shift+s exec /home/phoenix/zipline.sh
+
     bindsym $mod+Shift+w exec $scripts/random_wallpaper
 
     font pango:Iosevka Nerd Font 8

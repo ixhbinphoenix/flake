@@ -187,6 +187,8 @@
       wl-clipboard
       wlprop
       file
+      jq
+      hyfetch
     ];
   };
 

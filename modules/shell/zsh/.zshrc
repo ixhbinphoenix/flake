@@ -2,7 +2,7 @@ if [ $(git rev-parse --is-inside-work-tree 2> /dev/null) ]
 then
   onefetch 2>/dev/null
 else
-  neofetch 2>/dev/null
+  neowofetch 2>/dev/null
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
