@@ -50,6 +50,8 @@
     wine-staging
     winetricks
     protontricks
+    gpodder
+    nyxt
   ];
 
   programs.direnv = {
