@@ -200,6 +200,7 @@
         enable = true;
         plugins = [
           "s1n7ax/nvim-terminal"
+          "rhaiscript/vim-rhai"
         ];
       };
     };
