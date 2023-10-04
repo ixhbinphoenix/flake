@@ -12,7 +12,6 @@
     swww
     flameshot
     nur.repos.aleksana.yofi
-    armcord
     discord
     thunderbird
     osu-lazer-bin

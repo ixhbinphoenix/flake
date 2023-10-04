@@ -52,6 +52,7 @@
     protontricks
     gpodder
     nyxt
+    nur.repos.ixhbinphoenix.todoit
   ];
 
   programs.direnv = {
