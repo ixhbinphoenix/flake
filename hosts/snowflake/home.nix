@@ -22,6 +22,7 @@
     cemu-ti
     BeatSaberModManager
     avalonia-ilspy
+    scanmem
   ];
 
   programs.librewolf.enable = true;
