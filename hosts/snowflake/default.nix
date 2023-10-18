@@ -14,6 +14,8 @@
     gamescope
     virt-manager
     glibc
+    dotnet-sdk
+    dotnet-runtime
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -31,7 +33,6 @@
       daemon.enable = true;
     };
     opengl.extraPackages = with pkgs; [
-      amdvlk
       rocm-opencl-icd
       rocm-opencl-runtime
       nur.repos.materus.amdgpu-pro-libs.amf
@@ -75,6 +76,7 @@
   };
 
   environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
+  environment.sessionVariables.DOTNET_ROOT = "${pkgs.dotnet-runtime}";
 
   system.stateVersion = "23.05";
 }
