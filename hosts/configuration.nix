@@ -77,8 +77,8 @@
   services.dbus.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22000 ];
-  networking.firewall.allowedUDPPorts = [ 22000 ];
+  networking.firewall.allowedTCPPorts = [ 22000 3000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 3000 ];
   networking.firewall.enable = true;
 
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
