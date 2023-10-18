@@ -53,6 +53,8 @@
     gpodder
     nyxt
     nur.repos.ixhbinphoenix.todoit
+    php
+    miniserve
   ];
 
   programs.direnv = {
