@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, ...}:
 let
   system = "x86_64-linux";
 
@@ -46,6 +46,12 @@ in
             ./snowflake/home.nix
           ];
         };
+      }
+      {
+        imports = [ aagl.nixosModules.default ];
+        nix.settings = aagl.nixConfig;
+        programs.anime-game-launcher.enable = true;
+        programs.honkers-railway-launcher.enable = true;
       }
     ];
   };

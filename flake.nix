@@ -17,17 +17,21 @@
       url = github:nix-community/nixvim;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    aagl = {
+      url = github:ezKEa/aagl-gtk-on-nix;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland.url = github:hyprwm/Hyprland;
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, hyprland }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, hyprland, aagl }:
     let
       user = "phoenix";
     in {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs user home-manager nur nixvim hyprland;
+          inherit inputs nixpkgs user home-manager nur nixvim hyprland aagl;
         }
       );
     };
