@@ -22,6 +22,8 @@
     BeatSaberModManager
     avalonia-ilspy
     scanmem
+    godot_4
+    blender
   ];
 
   programs.librewolf.enable = true;
