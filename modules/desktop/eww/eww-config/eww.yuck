@@ -1,0 +1,27 @@
+
+(defvar text "Say Hello")
+(defvar name "ixhbinphoenix")
+
+(defwidget greeter [?text name]
+  (box text
+   (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
+      "Greet")))
+
+(defwidget bar
+  (box :orientation "horizontal"
+       :halign "center"
+    (greeter :text text
+             :name name)
+    ))
+
+
+(defwindow example
+  :monitor 0
+  :stacking "fg"
+  :namespace "eww"
+  :geometry (geometry
+    :width "100%"
+    :anchor "top center"
+  )
+  (bar)
+)
