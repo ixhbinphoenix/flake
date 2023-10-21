@@ -7,7 +7,6 @@
     ../modules/programs/bat.nix
     ../modules/programs/git.nix
     ../modules/programs/tmux.nix
-    ../modules/programs/syncthing.nix
     ../modules/programs/nixvim.nix
     ../modules/programs/kitty
   ];
@@ -56,6 +55,8 @@
     php
     miniserve
   ];
+
+  services.syncthing.enable = true;
 
   programs.direnv = {
     enable = true;
