@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, ...}:
 let
   system = "x86_64-linux";
 
@@ -42,6 +42,7 @@ in
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim
+            hyprland.homeManagerModules.default
             ./home.nix
             ./snowflake/home.nix
           ];
@@ -69,6 +70,7 @@ in
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim
+            hyprland.homeManagerModules.default
             ./home.nix
             ./unique/home.nix
           ];

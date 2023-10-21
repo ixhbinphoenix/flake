@@ -152,11 +152,12 @@
   environment = {
     variables = {
       # Setting all these env variables in the default config might be a problem later, but the word 'later' in that scentence makes me not care about it
+      # Well here we are
       TERMINAL = "kitty";
       EDITOR = "nvim";
       VISUAL = "nvim";
       BROWSER = "librewolf";
-      XDG_CURRENT_DESKTOP = "sway";
+      XDG_CURRENT_DESKTOP = "hyprland";
       MOZ_ENABLE_WAYLAND = "1";
       MOZ_DBUS_REMOTE = "1";
       SDL_VIDEODRIVER = "wayland";
