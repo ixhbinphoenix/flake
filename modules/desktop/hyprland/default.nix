@@ -1,7 +1,11 @@
 { config, pkgs, lib, ...}: {
+  imports = [
+    ../eww
+  ];
   home.file.".config/hypr/mocha.conf" = {
     source = ./mocha.conf;
   };
+  home.packages = with pkgs; [ nur.repos.mikilio.xwaylandvideobridge-hypr ];
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = ''
@@ -15,11 +19,18 @@
 
     windowrulev2= float,title:^(Picture-In-Picture)$
 
+    # xwaylandvideobridge workaround
+    windowrulev2 = opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$
+    windowrulev2 = noanim,class:^(xwaylandvideobridge)$
+    windowrulev2 = nofocus,class:^(xwaylandvideobridge)$
+    windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
+
     exec=random_wallpaper
     exec=dunst
 
     exec-once=wl-paste -t text --watch clipman store
     exec-once=swww init
+    exec-once=waybar
 
     source=~/.config/hypr/mocha.conf
 
