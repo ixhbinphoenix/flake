@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/desktop/hprland
+    ../../modules/desktop/hyprland
     ../../modules/programs/waybar
     ../../modules/programs/dunst.nix
   ];

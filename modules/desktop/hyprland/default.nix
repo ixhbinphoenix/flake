@@ -25,7 +25,7 @@
     windowrulev2 = nofocus,class:^(xwaylandvideobridge)$
     windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
 
-    exec=random_wallpaper
+    exec=~/.local/bin/scripts/random_wallpaper
     exec=dunst
 
     exec-once=wl-paste -t text --watch clipman store
@@ -92,11 +92,12 @@
 
     bind = $mod,Return,exec,kitty
     bind = $mod,Escape,exec,yofi
+    bind = $mod,Grave,exec,yofi
     bind = $mod,F4,exec,wlogout
-    bind = $actionMod,W,exec,random_wallpaper
+    bind = $actionMod,W,exec,~/.local/bin/scripts/random_wallpaper
     bind = $actionMod,Q,killactive
 
-    bind = ALT_SHIFT,S,exec,/home/phoenix/zipline.sh
+    bind = ALT_SHIFT,S,exec,~/zipline.sh
 
     bind = $mod,F,fullscreen,0
     bind = $mod,G,togglefloating
