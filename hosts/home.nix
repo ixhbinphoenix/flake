@@ -54,6 +54,7 @@
     nur.repos.ixhbinphoenix.todoit
     php
     miniserve
+    transmission-qt
   ];
 
   services.syncthing.enable = true;
