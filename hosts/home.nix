@@ -4,6 +4,7 @@
     ../scripts.nix
     ../modules/shell/zsh
     ../modules/desktop/wlogout.nix
+    ../modules/desktop/anyrun.nix
     ../modules/programs/bat.nix
     ../modules/programs/git.nix
     ../modules/programs/tmux.nix
@@ -33,7 +34,6 @@
     ffmpeg
     mpv
     youtube-tui
-    trackma-gtk
     p7zip
     mediainfo
     prismlauncher

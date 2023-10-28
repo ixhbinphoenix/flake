@@ -91,8 +91,8 @@
     $actionMod = SUPER_SHIFT
 
     bind = $mod,Return,exec,kitty
-    bind = $mod,Escape,exec,yofi
-    bind = $mod,Grave,exec,yofi
+    bind = $mod,Escape,exec,anyrun
+    bind = $mod,Grave,exec,anyrun
     bind = $mod,F4,exec,wlogout
     bind = $actionMod,W,exec,~/.local/bin/scripts/random_wallpaper
     bind = $actionMod,Q,killactive
