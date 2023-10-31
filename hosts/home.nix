@@ -66,17 +66,17 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    name = "Catppuccin-Mocha-Sky";
+    name = "Catppuccin-Mocha-Mauve";
     size = 48;
-    package = pkgs.catppuccin-cursors.mochaSky;
+    package = pkgs.catppuccin-cursors.mochaMauve;
   };
 
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Compact-Sky-dark";
+      name = "Catppuccin-Mocha-Compact-Mauve-dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "sky" ];
+        accents = [ "mauve" ];
         size = "compact";
         tweaks = [ "rimless" "black" ];
         variant = "mocha";

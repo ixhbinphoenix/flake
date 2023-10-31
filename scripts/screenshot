@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+dir="/home/phoenix/Pictures/screenshots"
+time=`date +%Y-%m-%d_%H-%M-%S`
+file="${time}.png"
+
+shootarea() {
+  grim -g "$(slurp -c cba6f7)" - | tee "/tmp/screenshot.png" | wl-copy
+  cp /tmp/screenshot.png "$dir/$file"
+}
+
+if [[ ! -d "$dir" ]]; then
+  mkdir -p "$dir"
+fi
+
+if [[ "$1" == "--area" ]]; then
+  shootarea
+  notify-send -h string:x-canonical-private-synchronous:shot-notify -u low "Screenshot saved"
+fi
+
+if [[ "$2" == "--upload" ]]; then
+  /home/phoenix/zipline-upload.sh
+fi
+
+exit 0
