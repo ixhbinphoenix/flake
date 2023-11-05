@@ -3,5 +3,5 @@
 git restore --staged .
 git diff
 git add .
-doas nixos-rebuild switch --flake .#
+doas nixos-rebuild switch --flake .# --show-trace
 git restore --staged .

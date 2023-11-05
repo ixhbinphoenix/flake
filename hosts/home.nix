@@ -55,6 +55,7 @@
     php
     miniserve
     transmission-qt
+    trackma-qt
   ];
 
   services.syncthing.enable = true;
