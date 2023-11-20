@@ -16,6 +16,9 @@
     glibc
     dotnet-sdk
     dotnet-runtime
+    android-tools
+    android-udev-rules
+    signify
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
