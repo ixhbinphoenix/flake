@@ -74,6 +74,8 @@
     pinentryFlavor = "curses";
   };
 
+  programs.kdeconnect.enable = true;
+
   services.dbus.enable = true;
 
   # Open ports in the firewall.
