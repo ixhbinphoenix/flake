@@ -115,6 +115,25 @@
 
     wireplumber.enable = true;
   };
+  
+  xdg = {
+    portal = {
+      enable = true;
+      wlr.enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
+      config.common.default = "*";
+    };
+    mime = {
+      enable = true;
+
+      defaultApplications = {
+        "text/html" = "librewolf.desktop";
+        "x-scheme-handler/http" = "librewolf.desktop";
+        "x-scheme-handler/about" = "librewolf.desktop";
+        "x-scheme-handler/unknown" = "librewolf.desktop";
+      };
+    };
+  };
 
   nixpkgs = {
     config = {
