@@ -32,18 +32,18 @@
       astro_typescript = "enable";
     };
 
-    maps = {
-      normal."<C-s>" = ":w<cr>";
-      visual."J" = ":m >+1<CR>gv=gv";
-      visual."K" = ":m <-2<CR>gb=gb";
-      normal."J" = "mzJ`z";
-      normal."<C-d>" = "<C-d>zz";
-      normal."<C-u>" = "<C-u>zz";
-      normal."n" = "nzzzv";
-      normal."N" = "Nzzzv";
-      normalVisualOp."<leader>y" = "\"+y";
-      normal."Y" = "\"+y";
-    };
+    keymaps = [
+      {action = ":w<cr>";key = "<C-s>";mode = "n";}
+      {action = ":m >+1<CR>gv=gv";key = "J";mode = "v";}
+      {action = ":m <-2<CR>gb=gb";key = "K";mode = "v";}
+      {action = "mzJ`z";key = "J";mode = "n";}
+      {action = "<C-d>zz";key = "<C-d>";mode = ["n" "v"];}
+      {action = "<C-u>zz";key = "<C-u>";mode = ["n" "v"];}
+      {action = "nzzzv";key = "n";mode = "n";}
+      {action = "Nzzzv";key = "N";mode = "n";}
+      {action = "\"+y";key = "<leader>y";}
+      {action = "\"+y";key = "Y";mode = "n";}
+    ];
 
     clipboard.providers.wl-copy.enable = true;
 
@@ -126,6 +126,8 @@
           rust-analyzer = {
             enable = true;
             installLanguageServer = false;
+            installCargo = false;
+            installRustc = false;
           };
           tsserver.enable = true;
           typst-lsp.enable = true;
