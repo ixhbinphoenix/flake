@@ -46,7 +46,9 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
-  users.users.${user}.extraGroups = [ "libvirtd" ];
+  programs.adb.enable = true;
+
+  users.users.${user}.extraGroups = [ "libvirtd" "plugdev" ];
 
   xdg = {
     portal = {
