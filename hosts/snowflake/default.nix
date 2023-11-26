@@ -3,6 +3,7 @@
   imports =
   [
     ./hardware-configuration.nix
+    ./vfio
   ];
 
   environment.systemPackages = with pkgs; [
