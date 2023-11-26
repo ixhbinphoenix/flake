@@ -20,6 +20,6 @@ echo 1 > /sys/class/vtconsole/vtcon1/bind
 systemctl start greetd
 
 # Return host to all cores
-systemctl set-property --runtime -- user.slice AllowedCPUs=0
-systemctl set-property --runtime -- user.slice AllowedCPUs=0
-systemctl set-property --runtime -- init.scope AllowedCPUs=0
+systemctl set-property --runtime -- user.slice AllowedCPUs=0-15
+systemctl set-property --runtime -- user.slice AllowedCPUs=0-15
+systemctl set-property --runtime -- init.scope AllowedCPUs=0-15
