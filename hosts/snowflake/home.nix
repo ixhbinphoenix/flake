@@ -12,8 +12,6 @@
     swww
     flameshot
     nur.repos.aleksana.yofi
-    discord
-    armcord
     thunderbird
     osu-lazer-bin
     youtube-music

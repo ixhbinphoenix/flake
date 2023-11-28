@@ -56,6 +56,7 @@
     miniserve
     transmission-qt
     trackma-qt
+    vesktop
   ];
 
   services.syncthing.enable = true;
