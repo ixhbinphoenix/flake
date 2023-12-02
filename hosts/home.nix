@@ -57,6 +57,7 @@
     transmission-qt
     trackma-qt
     vesktop
+    strawberry
   ];
 
   services.syncthing.enable = true;
