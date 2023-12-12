@@ -74,7 +74,7 @@
       };
 
       harpoon = {
-        enable = true;
+        enable = false;
         keymaps = {
           addFile = "<leader>a";
           toggleQuickMenu = "<C-e>";
