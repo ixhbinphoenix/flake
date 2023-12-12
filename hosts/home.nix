@@ -58,6 +58,7 @@
     trackma-qt
     vesktop
     strawberry
+    nheko
   ];
 
   services.syncthing.enable = true;
