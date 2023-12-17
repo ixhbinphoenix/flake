@@ -59,6 +59,7 @@
     vesktop
     strawberry
     nheko
+    jetbrains.idea-community
   ];
 
   services.syncthing.enable = true;
