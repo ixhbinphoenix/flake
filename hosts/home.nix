@@ -60,6 +60,7 @@
     strawberry
     nheko
     jetbrains.idea-community
+    gimp
   ];
 
   services.syncthing.enable = true;
