@@ -20,6 +20,7 @@
     android-tools
     android-udev-rules
     signify
+    wootility
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
