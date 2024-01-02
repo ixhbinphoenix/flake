@@ -61,6 +61,7 @@
     nheko
     jetbrains.idea-community
     gimp
+    r2modman
   ];
 
   services.syncthing.enable = true;
