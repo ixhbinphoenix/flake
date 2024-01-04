@@ -4,6 +4,7 @@
     config = {
       plugins = [
         anyrun.packages.${pkgs.system}.applications
+        anyrun.packages.${pkgs.system}.rink
       ];
       width = { fraction = 0.3; };
       height = { absolute = 0; };
