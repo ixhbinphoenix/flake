@@ -42,6 +42,26 @@
         "type": "github"
       }
     },
+    "arrpc": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1702716624,
+        "narHash": "sha256-IiPLKu8URsOeeWePz30PzU8Qj38XzeEWnLLP6bvzw/w=",
+        "owner": "NotAShelf",
+        "repo": "arrpc-flake",
+        "rev": "136eca7e4d13dc8c8cce24480614cbf9b120cc14",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotAShelf",
+        "repo": "arrpc-flake",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -334,6 +354,7 @@
       "inputs": {
         "aagl": "aagl",
         "anyrun": "anyrun",
+        "arrpc": "arrpc",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs_2",

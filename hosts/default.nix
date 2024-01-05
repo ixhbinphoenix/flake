@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, arrpc, ...}:
 let
   system = "x86_64-linux";
 
@@ -44,6 +44,7 @@ in
             nixvim.homeManagerModules.nixvim
             hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
+            arrpc.homeManagerModules.default
             ./home.nix
             ./snowflake/home.nix
           ];
@@ -73,6 +74,7 @@ in
             nixvim.homeManagerModules.nixvim
             hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
+            arrpc.homeManagerModules.default
             ./home.nix
             ./unique/home.nix
           ];

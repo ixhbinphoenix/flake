@@ -26,16 +26,20 @@
       url = github:Kirottu/anyrun;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    arrpc = {
+      url = github:NotAShelf/arrpc-flake;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, hyprland, aagl, anyrun }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, hyprland, aagl, anyrun, arrpc }:
     let
       user = "phoenix";
     in {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs user home-manager nur nixvim hyprland aagl anyrun;
+          inherit inputs nixpkgs user home-manager nur nixvim hyprland aagl anyrun arrpc;
         }
       );
     };

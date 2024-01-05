@@ -65,6 +65,7 @@
   ];
 
   services.syncthing.enable = true;
+  services.arrpc.enable = true;
 
   programs.direnv = {
     enable = true;
