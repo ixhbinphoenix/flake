@@ -65,6 +65,8 @@
     enable = true;
   };
 
+  virtualisation.waydroid.enable = true;
+
   environment.sessionVariables.DEFAULT_BROWSER = "${pkgs.librewolf}/bin/librewolf";
   environment.sessionVariables.DOTNET_ROOT = "${pkgs.dotnet-runtime}";
 
