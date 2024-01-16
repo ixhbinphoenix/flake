@@ -31,7 +31,7 @@
     onefetch
     ani-cli
     yt-dlp
-    ffmpeg
+    ffmpeg-full
     mpv
     youtube-tui
     p7zip
@@ -41,7 +41,7 @@
     tenacity
     websocat
     yubikey-manager
-    yubikey-manager-qt
+    # yubikey-manager-qt
     yubikey-personalization
     yubikey-personalization-gui
     yubico-piv-tool
@@ -50,7 +50,7 @@
     winetricks
     protontricks
     gpodder
-    nyxt
+    # nyxt
     nur.repos.ixhbinphoenix.todoit
     php
     miniserve
@@ -62,6 +62,7 @@
     jetbrains.idea-community
     gimp
     r2modman
+    mpvpaper
   ];
 
   services.syncthing.enable = true;

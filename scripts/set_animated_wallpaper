@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+function set_animated_wallpaper_on_output() {
+  mpvpaper -pf -o "no-audio loop" $2 $1
+}
+
+function set_animated_wallpaper() {
+  swww kill 2>/dev/null
+  pkill mpvpaper
+  set_animated_wallpaper_on_output $1 DP-1
+  set_animated_wallpaper_on_output $1 DP-2
+  set_animated_wallpaper_on_output $1 HDMI-A-1
+}
+
+if [[ -f "$1" ]]; then
+  set_animated_wallpaper $1
+elif [[ -f "$HOME/Pictures/wallpapers/animated/$1" ]]; then
+  set_animated_wallpaper "$HOME/Pictures/wallpapers/animated/$1"
+else
+  if [[ -f "$(which lsd)" ]]; then
+    lsd -la $HOME/Pictures/wallpapers/animated/
+  else
+    ls -la --color=auto $HOME/Pictures/wallpapers/animated/
+  fi
+fi

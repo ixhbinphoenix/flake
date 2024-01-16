@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+WALLPAPER=$(find /home/phoenix/Pictures/wallpapers/animated/ -type f | shuf -n 1)
+
+/home/phoenix/.local/bin/scripts/set_animated_wallpaper "$WALLPAPER"
