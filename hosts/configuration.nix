@@ -211,6 +211,7 @@
       file
       jq
       hyfetch
+      pcscliteWithPolkit.out # Workaround for #280826
     ];
   };
 
