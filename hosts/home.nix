@@ -46,7 +46,7 @@
     yubikey-personalization-gui
     yubico-piv-tool
     yubioath-flutter
-    wine-staging
+    wineWowPackages.staging
     winetricks
     protontricks
     gpodder
@@ -63,6 +63,7 @@
     gimp
     r2modman
     mpvpaper
+    pcmanfm
   ];
 
   services.syncthing.enable = true;

@@ -176,7 +176,7 @@
       };
 
       presence-nvim = {
-        enable = true;
+        enable = false;
         autoUpdate = true;
         neovimImageText = "NixVim";
         mainImage = "file";
