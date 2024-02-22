@@ -125,7 +125,7 @@
           omnisharp.enable = true;
           rust-analyzer = {
             enable = true;
-            installLanguageServer = false;
+            package = null;
             installCargo = false;
             installRustc = false;
           };

@@ -23,6 +23,7 @@
     scanmem
     godot_4
     blender
+    citra-nightly
   ];
 
   programs.librewolf.enable = true;
@@ -31,7 +32,7 @@
     enable = true;
     package = pkgs.nur.repos.materus.obs-amf;
     plugins = with pkgs.obs-studio-plugins; [
-      advanced-scene-switcher
+      # advanced-scene-switcher
       wlrobs
       input-overlay
       obs-vaapi

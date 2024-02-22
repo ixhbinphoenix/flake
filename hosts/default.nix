@@ -44,7 +44,6 @@ in
             nixvim.homeManagerModules.nixvim
             hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
-            arrpc.homeManagerModules.default
             ./home.nix
             ./snowflake/home.nix
           ];
@@ -53,8 +52,8 @@ in
       {
         imports = [ aagl.nixosModules.default ];
         nix.settings = aagl.nixConfig;
+        programs.anime-games-launcher.enable = true;
         programs.anime-game-launcher.enable = true;
-        programs.honkers-railway-launcher.enable = true;
       }
     ];
   };
