@@ -60,6 +60,7 @@ eval "$(direnv hook zsh)"
 alias ls="lsd --color=auto -la"
 alias cat="bat"
 alias icat="kitten icat"
+alias :q="exit"
 
 ### Important globals
 export GPG_TTY=$TTY
