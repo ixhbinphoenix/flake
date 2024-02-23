@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
 {
   imports =
@@ -26,6 +26,10 @@
   networking.hostName = "unique";
 
   hardware.bluetooth.enable = true;
+
+  virtualisation.docker.enable = true;
+
+  users.users.${user}.extraGroups = [ "docker" ];
 
   programs.steam.enable = true;
 
