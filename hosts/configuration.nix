@@ -12,6 +12,7 @@
       font-awesome
       noto-fonts-emoji
       ipafont
+      monocraft
     ];
     fontconfig.defaultFonts = {
       emoji = [ "Iosevka Nerd Font" "Noto Emoji" "Font Awesome" ];
