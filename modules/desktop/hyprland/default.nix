@@ -18,8 +18,6 @@
     workspace=3,monitor:HDMI-A-1,default:true
 
     windowrulev2 = float,class:(firefox),title:(Picture-In-Picture)
-    windowrulev2 = nofullscreenrequest, class:(firefox),title:(Picture-In-Picture)
-    windowrulev2 = nomaximizerequest, class:(firefox),title:(Picture-In-Picture)
     windowrulev2 = pin, class:(firefox),title:(Picture-In-Picture)
 
     # xwaylandvideobridge workaround
