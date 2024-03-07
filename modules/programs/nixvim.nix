@@ -74,7 +74,7 @@
       };
 
       harpoon = {
-        enable = false;
+        enable = true;
         keymaps = {
           addFile = "<leader>a";
           toggleQuickMenu = "<C-e>";
@@ -144,35 +144,41 @@
 
       cmp_luasnip.enable = true;
 
-      nvim-cmp = {
+      cmp = {
         enable = true;
-        mapping = {
-          "<C-p>" = "cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select})";
-          "<C-n>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
-          "<Up>" = "cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select})";
-          "<Down>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
-          "<Tab>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
-          "<CR>" = ''cmp.mapping({
-            i = function(fallback)
-              if cmp.visible and cmp.get_active_entry() then
-                cmp.confirm({behavior = cmp.SelectBehavior.Replace, select = false})
-              else
-                fallback()
-              end
-            end,
-            s = cmp.mapping.confirm({select = true}),
-            c = cmp.mapping.confirm({behavior = cmp.SelectBehavior.Replace, select = true}),
-          })'';
-          "<C-Space>" = "cmp.mapping.complete()";
+        settings = {
+          preselect = "cmp.PreselectMode.None";
+          snippet.expand = ''
+          function(args)
+            require('luasnip').lsp_expand(args.body)
+          end
+          '';
+          mapping = {
+            "<C-p>" = "cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select})";
+            "<C-n>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
+            "<Up>" = "cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select})";
+            "<Down>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
+            "<Tab>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
+            "<CR>" = ''cmp.mapping({
+                i = function(fallback)
+                  if cmp.visible and cmp.get_active_entry() then
+                    cmp.confirm({behavior = cmp.SelectBehavior.Replace, select = false})
+                  else
+                    fallback()
+                  end
+                end,
+                s = cmp.mapping.confirm({select = true}),
+                c = cmp.mapping.confirm({behavior = cmp.SelectBehavior.Replace, select = true}),
+            })'';
+            "<C-Space>" = "cmp.mapping.complete()";
+          };
+          sources = [
+          { name = "nvim_lsp"; }
+          { name = "luasnip"; }
+          { name = "path"; }
+          { name = "buffer"; }
+          ];
         };
-        preselect = "None";
-        sources = [
-        { name = "nvim_lsp"; }
-        { name = "luasnip"; }
-        { name = "path"; }
-        { name = "buffer"; }
-        ];
-        snippet.expand = "luasnip";
       };
 
       presence-nvim = {

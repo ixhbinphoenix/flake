@@ -23,7 +23,6 @@
     scanmem
     godot_4
     blender
-    citra-nightly
   ];
 
   programs.librewolf.enable = true;
