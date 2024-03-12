@@ -21,7 +21,7 @@
   home.packages = with pkgs; [
     kitty
     lsd
-    nixd
+    # nixd
     lua-language-server
     pavucontrol
     keepassxc
@@ -50,7 +50,7 @@
     winetricks
     protontricks
     gpodder
-    # nyxt
+    nyxt
     nur.repos.ixhbinphoenix.todoit
     php
     miniserve

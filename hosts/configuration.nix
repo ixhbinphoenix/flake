@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, user, ... }:
+{ config, lib, pkgs, inputs, user, nur, ... }:
 {
   imports = [
     ../modules/desktop/greetd.nix
@@ -6,7 +6,6 @@
   fonts = {
     packages = with pkgs; [
       iosevka
-      iosevka-term
       (nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" "JetBrainsMono" ]; })
       source-code-pro
       font-awesome
@@ -140,17 +139,6 @@
     config = {
       allowUnfree = true;
       packageOverrides = super: let self = super.pkgs; in {
-        iosevka-term = self.iosevka.override {
-          set = "term";
-          privateBuildPlan = ''
-          [buildPlans.iosevka-term]
-          family = "Iosevka Term"
-          spacing = "term"
-          serifs = "sans"
-          no-cv-ss = true
-          export-glyph-names = true
-          '';
-        };
       };
     };
     overlays = [ inputs.nur.overlay ];

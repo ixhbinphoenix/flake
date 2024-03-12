@@ -6,6 +6,10 @@
     ./vfio
   ];
 
+  fonts.packages = with pkgs; [
+    nur.repos.suhr.iosevka-term
+  ];
+
   environment.systemPackages = with pkgs; [
     swaylock
     swayidle

@@ -30,7 +30,7 @@ in
   };
   snowflake = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user inputs; };
+    specialArgs = { inherit user inputs nur; };
     modules = [
       nur.nixosModules.nur
       ./snowflake
@@ -59,7 +59,7 @@ in
   };
   unique = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user inputs; };
+    specialArgs = { inherit user inputs nur; };
     modules = [
       nur.nixosModules.nur
       ./unique

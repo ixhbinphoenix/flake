@@ -120,7 +120,7 @@
             enable = true;
             settings.diagnostics.globals = [ "vim" ];
           };
-          nixd.enable = true;
+          # nixd.enable = true;
           phpactor.enable = true;
           omnisharp.enable = true;
           rust-analyzer = {
