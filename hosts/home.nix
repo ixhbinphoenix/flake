@@ -64,6 +64,7 @@
     r2modman
     mpvpaper
     pcmanfm
+    gleam
   ];
 
   services.syncthing.enable = true;

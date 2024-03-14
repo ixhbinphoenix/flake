@@ -112,6 +112,7 @@
           astro.enable = true;
           bashls.enable = true;
           cssls.enable = true;
+          gleam.enable = true;
           gopls.enable = true;
           html.enable = true;
           java-language-server.enable = true;
