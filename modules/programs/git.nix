@@ -18,6 +18,7 @@
       init = {
         defaultBranch = "master";
       };
+      push.autoSetupRemote = true;
     };
   };
 }
