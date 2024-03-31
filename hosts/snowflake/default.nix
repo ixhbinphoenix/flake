@@ -36,6 +36,10 @@
 
   networking.hostName = "snowflake";
 
+  networking.hosts = {
+    "192.168.172.189" = ["twinkpad"];
+  };
+
   hardware = {
     opentabletdriver = {
       enable = true;

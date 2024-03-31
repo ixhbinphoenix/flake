@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, user, nur, ... }:
+{ config, lib, pkgs, inputs, user, nur, deploy-rs, ... }:
 {
   imports = [
     ../modules/desktop/greetd.nix
@@ -72,7 +72,6 @@
     enable = true;
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-curses;
-    # pinentryFlavor = "curses";
   };
 
   programs.kdeconnect.enable = true;
@@ -202,6 +201,7 @@
       jq
       hyfetch
       pcscliteWithPolkit.out # Workaround for #280826
+      deploy-rs.packages.x86_64-linux.default
     ];
   };
 

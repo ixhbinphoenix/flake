@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, arrpc, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, arrpc, deploy-rs, ...}:
 let
   system = "x86_64-linux";
 
@@ -8,29 +8,9 @@ let
   };
 in
 {
-  qemu-nix = lib.nixosSystem {
-    inherit system;
-    specialArgs = { inherit user inputs; };
-    modules = [
-      nur.nixosModules.nur
-      ./qemu-nix
-      ./configuration.nix
-      home-manager.nixosModules.home-manager {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-      	home-manager.extraSpecialArgs = { inherit user; };
-      	home-manager.users.${user} = {
-      	  imports = [
-            ./home.nix 
-            ./qemu-nix/home.nix 
-          ];
-        };
-      }
-    ];
-  };
   snowflake = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user inputs nur; };
+    specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
       nur.nixosModules.nur
       ./snowflake
@@ -59,7 +39,7 @@ in
   };
   unique = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user inputs nur; };
+    specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
       nur.nixosModules.nur
       ./unique
@@ -73,7 +53,6 @@ in
             nixvim.homeManagerModules.nixvim
             hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
-            arrpc.homeManagerModules.default
             ./home.nix
             ./unique/home.nix
           ];
@@ -83,6 +62,26 @@ in
         imports = [ aagl.nixosModules.default ];
         nix.settings = aagl.nixConfig;
         programs.anime-game-launcher.enable = true;
+      }
+    ];
+  };
+  twinkpad = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit user inputs nur; };
+    modules = [
+      nur.nixosModules.nur
+      ./twinkpad
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit user anyrun; };
+        home-manager.users.${user} = {
+          imports = [
+            nixvim.homeManagerModules.nixvim
+            anyrun.homeManagerModules.default
+            ./twinkpad/home.nix
+          ];
+        };
       }
     ];
   };
