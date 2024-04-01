@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+git restore --staged .
+git diff
+git add .
+deploy .
+git restore --staged .
