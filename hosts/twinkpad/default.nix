@@ -123,6 +123,7 @@
       jq
       hyfetch
       pcscliteWithPolkit.out
+      kitty.terminfo
     ];
   };
 
