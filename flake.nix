@@ -48,7 +48,7 @@
         hostname =  "twinkpad";
         profiles.system = {
           path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.twinkpad;
-          sshUser = "phoenix";
+          sshUser = "root";
           user = "root";
           sudo = "doas -u ";
           autoRollback = true;
