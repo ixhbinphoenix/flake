@@ -2,14 +2,14 @@
 {
   imports = [
     ../scripts.nix
-    ../modules/shell/zsh
-    ../modules/desktop/wlogout.nix
-    ../modules/desktop/anyrun.nix
-    ../modules/programs/bat.nix
-    ../modules/programs/git.nix
-    ../modules/programs/tmux.nix
-    ../modules/programs/nixvim.nix
-    ../modules/programs/kitty
+    ../modules/zsh
+    ../modules/wlogout.nix
+    ../modules/anyrun.nix
+    ../modules/bat.nix
+    ../modules/git.nix
+    ../modules/tmux.nix
+    ../modules/nixvim.nix
+    ../modules/kitty
   ];
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";

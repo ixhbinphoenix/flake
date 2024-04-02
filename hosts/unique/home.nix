@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ../../modules/desktop/hyprland
-    ../../modules/programs/waybar
-    ../../modules/programs/dunst.nix
+    ../../modules/hyprland
+    ../../modules/waybar
+    ../../modules/dunst.nix
   ];
 
   home.packages = with pkgs; [

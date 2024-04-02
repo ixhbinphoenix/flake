@@ -2,11 +2,11 @@
 {
   imports = [
     ../../scripts.nix
-    ../../modules/shell/zsh
-    ../../modules/programs/bat.nix
-    ../../modules/programs/git.nix
-    ../../modules/programs/tmux.nix
-    ../../modules/programs/nixvim.nix
+    ../../modules/zsh
+    ../../modules/bat.nix
+    ../../modules/git.nix
+    ../../modules/tmux.nix
+    ../../modules/nixvim.nix
   ];
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";

@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, user, nur, deploy-rs, ... }:
 {
   imports = [
-    ../modules/desktop/greetd.nix
+    ../modules/greetd.nix
   ];
   fonts = {
     packages = with pkgs; [
