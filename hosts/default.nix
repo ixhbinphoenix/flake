@@ -18,7 +18,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options; };
+        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options home-manager; };
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim
@@ -47,7 +47,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options; };
+        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options home-manager; };
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim

@@ -1,4 +1,4 @@
-{pkgs, osConfig, anyrun, anyrun-nixos-options, ...}: {
+{pkgs, osConfig, home-manager, anyrun, anyrun-nixos-options, ...}: {
   programs.anyrun = {
     enable = true;
     config = {
@@ -25,8 +25,10 @@
 
     extraConfigFiles."nixos-options.ron".text = let
       nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
+      hm-options = home-manager.packages.${pkgs.system}.docs-json + "/share/doc/home-manager/options.json";
       options = builtins.toJSON {
         ":nix" = [nixos-options];
+        ":hm" = [hm-options];
       };
     in ''
       Config(
