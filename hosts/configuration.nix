@@ -131,6 +131,14 @@
         "x-scheme-handler/http" = "librewolf.desktop";
         "x-scheme-handler/about" = "librewolf.desktop";
         "x-scheme-handler/unknown" = "librewolf.desktop";
+        "video/mp4" = "mpv.desktop";
+        "audio/aac" = "mpv.desktop";
+        "image/gif" = "mpv.desktop";
+        "image/png" = "qiv.desktop";
+        "image/jpeg" = "qiv.desktop";
+        "image/tiff" = "qiv.desktop";
+        "image/webp" = "qiv.desktop";
+        "text/plain" = "nvim.desktop";
       };
     };
   };
@@ -200,6 +208,8 @@
       file
       jq
       hyfetch
+      mpv
+      qiv
       pcscliteWithPolkit.out # Workaround for #280826
       deploy-rs.packages.x86_64-linux.default
     ];
