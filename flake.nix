@@ -30,17 +30,24 @@
       url = github:NotAShelf/arrpc-flake;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    deploy-rs.url = github:serokell/deploy-rs;
+    deploy-rs = {
+      url = github:serokell/deploy-rs;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    anyrun-nixos-options = {
+      url = github:n3oney/anyrun-nixos-options;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, hyprland, aagl, anyrun, arrpc, deploy-rs }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs }:
     let
       user = "phoenix";
     in rec {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs user home-manager nur nixvim hyprland aagl anyrun arrpc deploy-rs;
+          inherit inputs nixpkgs user home-manager nur nixvim hyprland aagl anyrun anyrun-nixos-options arrpc deploy-rs;
         }
       );
       

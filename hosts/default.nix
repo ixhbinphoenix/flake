@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, arrpc, deploy-rs, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, ...}:
 let
   system = "x86_64-linux";
 
@@ -18,7 +18,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun; };
+        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options; };
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim
@@ -47,7 +47,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun; };
+        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options; };
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim
@@ -74,7 +74,7 @@ in
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun; };
+        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options; };
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim
