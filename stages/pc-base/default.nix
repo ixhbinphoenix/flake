@@ -26,7 +26,7 @@ with lib;
     bootloader = {
       grub = {
         enable = mkEnableOption "GRUB 2 Bootloader";
-        device = mkOptions {
+        device = mkOption {
           type = types.nonEmptyStr;
           description = ''
             Device to install GRUB to 
