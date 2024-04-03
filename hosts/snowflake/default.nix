@@ -1,4 +1,4 @@
-{ config, pkgs, lib, user, ... }:
+{ config, pkgs, lib, user, deploy-rs, ... }:
 {
   imports =
   [
@@ -19,6 +19,7 @@
     android-udev-rules
     signify
     wootility
+    deploy-rs.packages.x86_64-linux.default
   ];
 
   stages.pc-base = {
