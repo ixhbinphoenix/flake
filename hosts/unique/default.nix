@@ -9,14 +9,33 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  
+  stages.pc-base = {
+    enable = true;
+    user = user;
+    hostname = "snowflake";
 
-  fonts.packages = with pkgs; [
-    nur.repos.suhr.iosevka-term
-  ];
+    bootloader.systemd-boot.enable = true;
+    bootloader.multi-boot = true;
+
+    localization = {
+      timeZone = "Europe/Berlin";
+      locale = "en_US.UTF-8";
+      LC_TIME = "de_DE.UTF-8";
+      LC_MONETARY = "de_DE.UTF-8";
+      keyMap = "us";
+    };
+    
+    sleep = true;
+  };
+
+  stages.wayland = {
+    enable = true;
+    desktop.hyprland.enable = true;
+    desktop.greetd.cmd = "Hyprland";
+  };
 
   environment.systemPackages = with pkgs; [
-    swaylock
-    swayidle
     lutris
     protonup-qt
     gamescope
@@ -24,16 +43,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "unique";
-
   hardware.bluetooth.enable = true;
-
-  virtualisation.docker.enable = true;
-
-  users.users.${user}.extraGroups = [ "docker" ];
 
   programs.steam.enable = true;
 

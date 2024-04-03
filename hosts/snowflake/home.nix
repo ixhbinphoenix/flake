@@ -1,22 +1,21 @@
 { config, pkgs, lib, user, ... }:
 
 {
-  imports = [
-    ../../modules/hyprland
-    ../../modules/waybar
-    ../../modules/dunst.nix
-  ];
+  imports = [];
+
+  stages.pc-base = {
+    enable = true;
+    user = user;
+  };
+
+  stages.wayland.enable = true;
+
+  home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    waybar
-    swww
-    flameshot
-    nur.repos.aleksana.yofi
-    thunderbird
     osu-lazer-bin
     youtube-music
     libsForQt5.kdenlive
-    cava
     cemu-ti
     BeatSaberModManager
     avalonia-ilspy
@@ -24,8 +23,6 @@
     godot_4
     blender
   ];
-
-  programs.librewolf.enable = true;
 
   programs.obs-studio = {
     enable = true;
@@ -47,6 +44,4 @@
       uris = ["qemu:///system"];
     };
   };
-
-  services.clipman.enable = true;
 }

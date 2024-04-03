@@ -14,8 +14,10 @@ in
     modules = [
       nur.nixosModules.nur
       ./snowflake
-      ./configuration.nix
-      home-manager.nixosModules.home-manager {
+      ../stages/pc-base
+      ../stages/wayland
+      home-manager.nixosModules.home-manager
+      {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options home-manager; };
@@ -24,8 +26,9 @@ in
             nixvim.homeManagerModules.nixvim
             hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
-            ./home.nix
             ./snowflake/home.nix
+            ../stages/pc-base/home.nix
+            ../stages/wayland/home.nix
           ];
         };
       }
@@ -43,7 +46,8 @@ in
     modules = [
       nur.nixosModules.nur
       ./unique
-      ./configuration.nix
+      ../stages/pc-base
+      ../stages/wayland
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -53,8 +57,9 @@ in
             nixvim.homeManagerModules.nixvim
             hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
-            ./home.nix
             ./unique/home.nix
+            ../stages/pc-base/home.nix
+            ../stages/wayland/home.nix
           ];
         };
       }
@@ -71,6 +76,7 @@ in
     modules = [
       nur.nixosModules.nur
       ./twinkpad
+      ../stages/pc-base
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -80,6 +86,7 @@ in
             nixvim.homeManagerModules.nixvim
             anyrun.homeManagerModules.default
             ./twinkpad/home.nix
+            ../stages/pc-base/home.nix
           ];
         };
       }

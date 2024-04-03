@@ -1,23 +1,19 @@
 { config, pkgs, lib, user, ... }:
 
 {
-  imports = [
-    ../../modules/hyprland
-    ../../modules/waybar
-    ../../modules/dunst.nix
-  ];
+  imports = [];
+
+  stages.pc-base = {
+    enable = true;
+    user = user;
+  };
+
+  stages.wayland.enable = true;
+
+  home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    waybar
-    swww
-    flameshot
-    nur.repos.aleksana.yofi
-    thunderbird
     osu-lazer-bin
-    youtube-music
   ];
 
-  programs.librewolf.enable = true;
-
-  services.clipman.enable = true;
 }

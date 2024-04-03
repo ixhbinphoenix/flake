@@ -6,13 +6,7 @@
     ./vfio
   ];
 
-  fonts.packages = with pkgs; [
-    nur.repos.suhr.iosevka-term
-  ];
-
   environment.systemPackages = with pkgs; [
-    swaylock
-    swayidle
     distrobox
     lutris
     protonup-qt
@@ -27,14 +21,32 @@
     wootility
   ];
 
+  stages.pc-base = {
+    enable = true;
+    user = user;
+    hostname = "snowflake";
+
+    bootloader.systemd-boot.enable = true;
+    bootloader.multi-boot = true;
+
+    localization = {
+      timeZone = "Europe/Berlin";
+      locale = "en_US.UTF-8";
+      LC_TIME = "de_DE.UTF-8";
+      LC_MONETARY = "de_DE.UTF-8";
+      keyMap = "us";
+    };
+    
+    sleep = true;
+  };
+
+  stages.wayland = {
+    enable = true;
+    desktop.hyprland.enable = true;
+    desktop.greetd.cmd = "Hyprland";
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_zen;
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.supportedFilesystems = [ "ntfs" ];
-
-  networking.hostName = "snowflake";
 
   networking.hosts = {
     "192.168.172.189" = ["twinkpad"];
@@ -60,18 +72,9 @@
 
   users.users.${user}.extraGroups = [ "libvirtd" "plugdev" ];
 
-
-  security.pam.services.swaylock.text = ''
-    auth include login
-  '';
-
   programs.steam.enable = true;
 
   hardware.steam-hardware.enable = true;
-
-  virtualisation.docker = {
-    enable = true;
-  };
 
   virtualisation.waydroid.enable = true;
 
