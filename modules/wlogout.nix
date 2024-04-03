@@ -1,8 +1,13 @@
 { pkgs, ... }:
 {
-  programs.wlogout = {
-    enable = true;
-    layout = [
+  imports = [];
+
+  options = {};
+
+  config = {
+    programs.wlogout = {
+      enable = true;
+      layout = [
       {
         label = "shutdown";
         action = "systemctl poweroff";
@@ -15,6 +20,7 @@
         text = "Reboot";
         keybind = "r";
       }
-    ];
+      ];
+    };
   };
 }
