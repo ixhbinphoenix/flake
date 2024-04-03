@@ -135,6 +135,8 @@ with lib;
       networking.hostName = config.stages.pc-base.hostname;
     
       networking.networkmanager.enable = true;
+
+      services.udev.packages = with pkgs; [ wooting-udev-rules ];
     
       time.timeZone = config.stages.pc-base.localization.timeZone;
     
