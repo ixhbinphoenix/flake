@@ -20,6 +20,9 @@
     signify
     wootility
     deploy-rs.packages.x86_64-linux.default
+    wineWowPackages.stagingFull
+    winetricks
+    protontricks
   ];
 
   stages.pc-base = {

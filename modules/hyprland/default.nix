@@ -40,7 +40,7 @@
       exec=dunst
 
       exec-once=wl-paste -t text --watch clipman store
-      exec-once=swww init
+      exec-once=swww-daemon &
       exec-once=waybar
 
       source=~/.config/hypr/mocha.conf

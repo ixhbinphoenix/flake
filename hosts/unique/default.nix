@@ -35,10 +35,14 @@
     desktop.greetd.cmd = "Hyprland";
   };
 
+  # TODOO: New gaming stage
   environment.systemPackages = with pkgs; [
     lutris
     protonup-qt
     gamescope
+    wineWowPackages.stagingFull
+    winetricks
+    protontricks
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
