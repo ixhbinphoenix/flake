@@ -136,6 +136,8 @@ with lib;
     
       networking.networkmanager.enable = true;
 
+      programs.dconf.enable = true;
+
       services.udev.packages = with pkgs; [ wooting-udev-rules ];
     
       time.timeZone = config.stages.pc-base.localization.timeZone;
