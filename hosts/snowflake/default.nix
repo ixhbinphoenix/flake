@@ -23,6 +23,7 @@
     wineWowPackages.stagingFull
     winetricks
     protontricks
+    xivlauncher
   ];
 
   stages.pc-base = {
