@@ -41,6 +41,7 @@ with lib;
   config = {
     programs.git = {
       enable = true;
+      lfs.enable = true;
       delta = mkIf config.git.delta {
         enable = true;
       };
