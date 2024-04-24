@@ -46,7 +46,7 @@
       source=~/.config/hypr/mocha.conf
 
       input {
-        kb_layout = us
+        kb_layout = us,de
 
         follow_mouse = 1
       }
