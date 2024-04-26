@@ -51,6 +51,7 @@ with lib;
 
     services.syncthing.enable = true;
     services.arrpc.enable = true;
+    services.network-manager-applet.enable = true;
 
     programs.librewolf.enable = true;
   };

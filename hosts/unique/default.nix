@@ -13,7 +13,7 @@
   stages.pc-base = {
     enable = true;
     user = user;
-    hostname = "snowflake";
+    hostname = "unique";
 
     bootloader.systemd-boot.enable = true;
     bootloader.multi-boot = true;

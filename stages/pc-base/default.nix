@@ -3,6 +3,7 @@ with lib;
 {
   imports = [
     ../../modules/yubikey.nix
+    ../../modules/wireguard.nix
   ];
 
   options.stages.pc-base = {
@@ -135,6 +136,7 @@ with lib;
       networking.hostName = config.stages.pc-base.hostname;
     
       networking.networkmanager.enable = true;
+      wireguard.enable = true;
 
       programs.dconf.enable = true;
 
@@ -232,6 +234,7 @@ with lib;
           hyfetch
           pcscliteWithPolkit.out
           kitty.terminfo
+          pinentry-curses
           pkgs.nur.repos.ixhbinphoenix.todoit
         ];
       };
