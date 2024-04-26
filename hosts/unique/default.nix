@@ -43,6 +43,7 @@
     wineWowPackages.stagingFull
     winetricks
     protontricks
+    xivlauncher
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
