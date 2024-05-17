@@ -37,6 +37,11 @@
       windowrulev2 = nofocus,class:^(xwaylandvideobridge)$
       windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
 
+      # osu! is allowed to tear
+      windowrulev2 = immediate, title:^(osu!)$
+
+      env = WLR_DRM_NO_ATOMIC,1
+
       exec=dunst
 
       exec-once=wl-paste -t text --watch clipman store
@@ -52,6 +57,7 @@
       }
 
       general {
+        allow_tearing=true
         no_border_on_floating=true
 
         border_size=3
