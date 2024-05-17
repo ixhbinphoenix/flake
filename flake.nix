@@ -21,7 +21,7 @@
       url = github:ezKEa/aagl-gtk-on-nix;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = github:hyprwm/Hyprland;
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     anyrun = {
       url = github:Kirottu/anyrun;
       inputs.nixpkgs.follows = "nixpkgs";
