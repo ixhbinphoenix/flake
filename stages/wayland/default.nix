@@ -101,6 +101,7 @@ with lib;
         wlprop
         mpv
         qiv
+        libsForQt5.kdeconnect-kde
       ];
     };
 
