@@ -236,6 +236,7 @@ with lib;
           kitty.terminfo
           pinentry-curses
           pkgs.nur.repos.ixhbinphoenix.todoit
+          ansible
         ];
       };
     
