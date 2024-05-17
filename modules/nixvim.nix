@@ -55,8 +55,10 @@
 
       colorschemes.catppuccin = {
         enable = true;
-        transparentBackground = true;
-        flavour = "mocha";
+        settings = {
+          transparentBackground = true;
+          flavour = "mocha";
+        };
       };
 
       plugins = {
