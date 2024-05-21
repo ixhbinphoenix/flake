@@ -1,2 +1,2 @@
 * eol=lf
-modules/shell/zsh/.p10k.zsh linguist-detectable=false
+modules/zsh/.p10k.zsh linguist-detectable=false
