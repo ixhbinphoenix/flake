@@ -50,6 +50,9 @@ with lib;
         key = config.git.signing.key;
       };
       extraConfig = {
+        alias = {
+          staash = "stash --all";
+        };
         user = {
           name = config.git.name;
           email = config.git.email;
@@ -58,6 +61,9 @@ with lib;
           defaultBranch = config.git.defaultBranch;
         };
         push.autoSetupRemote = true;
+        pull = {
+          rebase = true;
+        };
       };
     };
   };
