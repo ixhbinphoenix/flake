@@ -56,8 +56,14 @@
       colorschemes.catppuccin = {
         enable = true;
         settings = {
-          transparentBackground = true;
+          transparent_background = true;
           flavour = "mocha";
+          integrations = {
+            cmp = true;
+            gitsigns = true;
+            nvimtree = true;
+            treesitter = true;
+          };
         };
       };
 
