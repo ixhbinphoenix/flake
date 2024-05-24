@@ -178,7 +178,7 @@ with lib;
       programs.gnupg.agent = {
         enable = true;
         enableSSHSupport = true;
-        pinentryPackage = pkgs.pinentry-curses;
+        pinentryPackage = pkgs.pinentry-gtk2;
       };
     
       services.dbus.enable = true;
@@ -237,6 +237,7 @@ with lib;
           pinentry-curses
           pkgs.nur.repos.ixhbinphoenix.todoit
           ansible
+          pinentry-all
         ];
       };
     
