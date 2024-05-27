@@ -88,6 +88,7 @@ with lib;
         SDL_VIDEODRIVER = "wayland";
         QT_QPA_PLATFORM = "wayland";
         _JAVA_AWT_WM_NONREPARENTING = "1";
+        ELECTRON_OZONE_PLATFORM_HINT = "auto";
       };
       systemPackages = with pkgs; [
         mesa
