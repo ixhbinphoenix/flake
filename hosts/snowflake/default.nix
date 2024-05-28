@@ -24,6 +24,7 @@
     winetricks
     protontricks
     xivlauncher
+    localsend
   ];
 
   stages.pc-base = {
