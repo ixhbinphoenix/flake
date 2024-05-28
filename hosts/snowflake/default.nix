@@ -25,6 +25,7 @@
     protontricks
     xivlauncher
     localsend
+    nur.repos.ixhbinphoenix.localbooru-bin
   ];
 
   stages.pc-base = {
