@@ -17,6 +17,7 @@ in
       ../stages/pc-base
       ../stages/wayland
       home-manager.nixosModules.home-manager
+      hyprland.nixosModules.default
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;

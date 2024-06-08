@@ -52,9 +52,9 @@ with lib;
         wlr.enable = config.stages.wayland.desktop.hyprland.enable || config.stages.wayland.desktop.sway.enable;
         extraPortals = with pkgs; [
           pkgs.xdg-desktop-portal-gtk
-          (mkIf config.stages.wayland.desktop.hyprland.enable (
-            pkgs.xdg-desktop-portal-hyprland
-          ))
+          #(mkIf config.stages.wayland.desktop.hyprland.enable (
+            #pkgs.xdg-desktop-portal-hyprland
+          #))
         ];
         config.common.default = "*";
       };
@@ -130,6 +130,8 @@ with lib;
   # Should take priority?
   (mkIf config.stages.wayland.desktop.hyprland.enable {
     environment.variables.XDG_CURRENT_DESKTOP = "hyprland";
+    programs.hyprland.enable = true;
+    programs.hyprland.xwayland.enable = true;
   })
   ]);
 }
