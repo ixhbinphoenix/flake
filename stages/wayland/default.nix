@@ -49,7 +49,6 @@ with lib;
     xdg = {
       portal = {
         enable = true;
-        wlr.enable = config.stages.wayland.desktop.hyprland.enable || config.stages.wayland.desktop.sway.enable;
         extraPortals = with pkgs; [
           pkgs.xdg-desktop-portal-gtk
           #(mkIf config.stages.wayland.desktop.hyprland.enable (
