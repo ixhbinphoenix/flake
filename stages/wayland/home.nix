@@ -34,7 +34,7 @@ with lib;
       tenacity
 
       gpodder
-      nyxt
+      #nyxt
       transmission-qt
       trackma-qt
       vesktop
