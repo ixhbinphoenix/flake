@@ -3,6 +3,7 @@ with lib;
 {
   imports = [
     ../../modules/greetd.nix
+    ../../modules/kdeconnect.nix
   ];
 
   options.stages.wayland = {
@@ -101,7 +102,6 @@ with lib;
         wlprop
         mpv
         qiv
-        libsForQt5.kdeconnect-kde
       ];
     };
 

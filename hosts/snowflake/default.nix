@@ -4,6 +4,7 @@
   [
     ./hardware-configuration.nix
     ./vfio
+    ../../modules/kdeconnect.nix
   ];
 
   environment.systemPackages = with pkgs; [
