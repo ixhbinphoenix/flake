@@ -27,7 +27,7 @@
   };
 
   networking.hosts = {
-    "192.168.172.69" = ["snowflake"];
+    "192.168.172.39" = ["snowflake"];
   };
 
   users.users.${user}.openssh.authorizedKeys.keys = [
