@@ -15,7 +15,8 @@
     nur.url = github:nix-community/NUR;
     nixvim = {
       url = github:nix-community/nixvim;
-      inputs.nixpkgs.follows = "nixpkgs";
+      # nixpkgs broke stuff
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
     aagl = {
       url = github:ezKEa/aagl-gtk-on-nix;
