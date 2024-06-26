@@ -27,6 +27,7 @@
     xivlauncher
     localsend
     nur.repos.ixhbinphoenix.localbooru-bin
+    android-studio
   ];
 
   stages.pc-base = {
