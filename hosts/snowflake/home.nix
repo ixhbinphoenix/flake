@@ -26,9 +26,9 @@
 
   programs.obs-studio = {
     enable = true;
-    package = pkgs.nur.repos.materus.obs-amf;
+    package = pkgs.obs-studio;
     plugins = with pkgs.obs-studio-plugins; [
-      # advanced-scene-switcher
+      advanced-scene-switcher
       wlrobs
       input-overlay
       obs-vaapi
