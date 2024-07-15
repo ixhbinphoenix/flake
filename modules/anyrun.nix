@@ -11,6 +11,7 @@
         plugins = [
           anyrun.packages.${pkgs.system}.applications
             anyrun.packages.${pkgs.system}.rink
+            anyrun.packages.${pkgs.system}.dictionary
             anyrun-nixos-options.packages.${pkgs.system}.default
         ];
         width = { fraction = 0.3; };
