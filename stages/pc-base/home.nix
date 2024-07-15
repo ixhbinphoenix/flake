@@ -8,6 +8,7 @@ with lib;
     ../../modules/git.nix
     ../../modules/tmux.nix
     ../../modules/nixvim.nix
+    ../../modules/helix.nix
   ];
 
   options.stages.pc-base = {
