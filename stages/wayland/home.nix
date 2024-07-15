@@ -33,9 +33,9 @@ with lib;
       prismlauncher
       tenacity
 
-      gpodder
+      #gpodder
       #nyxt
-      transmission-qt
+      transmission_4-qt
       trackma-qt
       vesktop
       strawberry

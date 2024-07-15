@@ -74,6 +74,9 @@
             "<leader>pf" = {
               action = "find_files";
             };
+            "<leader>gr" = {
+              action = "live_grep";
+            };
             "<C-p>" = {
               action = "git_files";
             };
@@ -84,6 +87,7 @@
 
         treesitter = {
           enable = true;
+          folding = false;
           nixvimInjections = true;
         };
 
