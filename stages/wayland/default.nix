@@ -42,9 +42,9 @@ with lib;
 
     greetd.cmd = config.stages.wayland.desktop.greetd.cmd;
 
-    hardware.opengl = {
+    hardware.graphics = {
       enable = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
 
     xdg = {

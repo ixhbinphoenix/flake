@@ -66,7 +66,7 @@
       enable = true;
       daemon.enable = true;
     };
-    opengl.extraPackages = with pkgs; [
+    graphics.extraPackages = with pkgs; [
       rocm-opencl-icd
       rocm-opencl-runtime
       nur.repos.materus.amdgpu-pro-libs.amf
