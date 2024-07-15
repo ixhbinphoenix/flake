@@ -42,6 +42,13 @@
             options: ${options},
         )
       '';
+
+      extraConfigFiles."dictionary.ron".text = ''
+        Config(
+          prefix: ":def",
+          max_entries: 5,
+        )
+      '';
     };
   };
 }
