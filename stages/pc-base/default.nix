@@ -238,6 +238,7 @@ with lib;
           pkgs.nur.repos.ixhbinphoenix.todoit
           ansible
           pinentry-all
+          ripgrep
         ];
       };
     
