@@ -243,6 +243,17 @@ with lib;
           nvd
         ];
       };
+
+      programs.yazi = {
+        enable = true;
+        settings = {
+          yazi = {
+            manager = {
+              show_hidden = true;
+            };
+          };
+        };
+      };
     
       nixpkgs = {
         config = {
