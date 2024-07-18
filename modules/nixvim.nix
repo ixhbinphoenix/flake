@@ -77,7 +77,7 @@
             "<leader>gr" = {
               action = "live_grep";
             };
-            "<C-p>" = {
+            "<leader>gf" = {
               action = "git_files";
             };
           };

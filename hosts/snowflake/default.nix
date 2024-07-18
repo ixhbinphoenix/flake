@@ -27,6 +27,7 @@
     xivlauncher
     localsend
     nur.repos.ixhbinphoenix.localbooru-bin
+    jetbrains.idea-community-bin
     android-studio
   ];
 
