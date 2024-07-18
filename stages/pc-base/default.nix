@@ -239,6 +239,8 @@ with lib;
           ansible
           pinentry-all
           ripgrep
+          comma
+          nvd
         ];
       };
     
