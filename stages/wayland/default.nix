@@ -18,6 +18,19 @@ with lib;
         enable = mkEnableOption "Sway as a Window Manager";
       };
 
+      niri = {
+        enable = mkEnableOption "Niri as a Window Manager";
+      };
+
+      xwayland-satellite = {
+        enable = mkOption {
+          type = types.bool;
+          example = false;
+          default = config.stages.wayland.niri.enable;
+          description = "XWayland server independent of compositor";
+        };
+      };
+
       greetd = {
         cmd = mkOption {
           type = types.nonEmptyStr;
@@ -50,11 +63,10 @@ with lib;
     xdg = {
       portal = {
         enable = true;
+        xdgOpenUsePortal = true;
         extraPortals = with pkgs; [
           pkgs.xdg-desktop-portal-gtk
-          #(mkIf config.stages.wayland.desktop.hyprland.enable (
-            #pkgs.xdg-desktop-portal-hyprland
-          #))
+          (mkIf config.stages.wayland.desktop.niri.enable xdg-desktop-portal-gnome)
         ];
         config.common.default = "*";
       };
@@ -98,6 +110,7 @@ with lib;
         wayland
         egl-wayland
         glib
+        xwayland-satellite
         wl-clipboard
         wlprop
         mpv
@@ -131,6 +144,10 @@ with lib;
     environment.variables.XDG_CURRENT_DESKTOP = "hyprland";
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;
+  })
+
+  (mkIf config.stages.wayland.desktop.niri.enable {
+    environment.variables.XDG_CURRENT_DESKTOP = "";
   })
   ]);
 }

@@ -7,6 +7,7 @@
   config = {
     services.dunst = {
       enable = true;
+      catppuccin.enable = true;
       settings = {
         global = {
           follow = "mouse";
@@ -26,7 +27,6 @@
           horizontal_padding = 8;
           text_icon_padding = 0;
           frame_width = 4;
-          frame_color = "#89B4FA";
           seperator_color = "frame";
           sort = "yes";
 
@@ -71,19 +71,12 @@
           per_monitor_dpi = false;
         };
         urgency_low = {
-          background = "#1E1E2E";
-          foreground = "#CDD6F4";
           timeout = 10;
         };
         urgency_normal = {
-          background = "#1E1E2E";
-          foreground = "#CDD6F4";
           timeout = 10;
         };
         urgency_critical = {
-          background = "#1E1E2E";
-          foreground = "#CDD6F4";
-          frame_color = "#FAB387";
           timeout = 0;
         };
       };

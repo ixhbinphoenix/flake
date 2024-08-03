@@ -4,7 +4,6 @@ with lib;
   imports = [
     ../../modules/scripts
     ../../modules/zsh
-    ../../modules/bat.nix
     ../../modules/git.nix
     ../../modules/tmux.nix
     ../../modules/nixvim.nix
@@ -40,11 +39,20 @@ with lib;
       };
     };
 
+    programs.btop = {
+      enable = true;
+      catppuccin.enable = true;
+    };
+
+    programs.bat = {
+      enable = true;
+      catppuccin.enable = true;
+    };
+
     home.packages = with pkgs; [
       lsd
       xdg-utils
       hyfetch
-      btop
       onefetch
       ffmpeg
       p7zip

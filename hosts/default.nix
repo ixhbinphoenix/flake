@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, ...}:
 let
   system = "x86_64-linux";
 
@@ -17,7 +17,7 @@ in
       ../stages/pc-base
       ../stages/wayland
       home-manager.nixosModules.home-manager
-      hyprland.nixosModules.default
+      #hyprland.nixosModules.default
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -27,6 +27,8 @@ in
             nixvim.homeManagerModules.nixvim
             hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
+            niri.homeModules.niri
+            catppuccin.homeManagerModules.catppuccin
             ./snowflake/home.nix
             ../stages/pc-base/home.nix
             ../stages/wayland/home.nix
@@ -36,7 +38,6 @@ in
       {
         imports = [ aagl.nixosModules.default ];
         nix.settings = aagl.nixConfig;
-        programs.sleepy-launcher.enable = true;
         programs.honkers-railway-launcher.enable = true;
         programs.anime-game-launcher.enable = true;
       }
@@ -59,6 +60,7 @@ in
             nixvim.homeManagerModules.nixvim
             hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
+            catppuccin.homeManagerModules.catppuccin
             ./unique/home.nix
             ../stages/pc-base/home.nix
             ../stages/wayland/home.nix
@@ -87,6 +89,7 @@ in
           imports = [
             nixvim.homeManagerModules.nixvim
             anyrun.homeManagerModules.default
+            catppuccin.homeManagerModules.catppuccin
             ./twinkpad/home.nix
             ../stages/pc-base/home.nix
           ];

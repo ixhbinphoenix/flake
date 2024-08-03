@@ -6,6 +6,7 @@ with lib;
     ../../modules/anyrun.nix
     ../../modules/kitty
     ../../modules/hyprland
+    ../../modules/niri
   ];
 
   options.stages.wayland = {
@@ -22,14 +23,38 @@ with lib;
       }
     ];
 
-    hyprland.enable = true;
+    #hyprland.enable = true;
+    niri.enable = true;
+
+    catppuccin = {
+      enable = true;
+      accent = "mauve"; # default options, let's fucking go
+      flavor = "mocha";
+
+      pointerCursor = {
+        enable = true;
+        accent = "dark";
+      };
+    };
+
+    gtk.catppuccin = {
+      enable = true;
+
+      icon = {
+        enable = true;
+      };
+    };
+
+    programs.mpv = {
+      enable = true;
+      catppuccin.enable = true;
+    };
 
     home.packages = with pkgs; [
       pavucontrol
       keepassxc
       ani-cli
       yt-dlp
-      mpv
       prismlauncher
       tenacity
 

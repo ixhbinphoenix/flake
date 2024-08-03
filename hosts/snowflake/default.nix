@@ -52,8 +52,8 @@
 
   stages.wayland = {
     enable = true;
-    desktop.hyprland.enable = true;
-    desktop.greetd.cmd = "Hyprland";
+    desktop.niri.enable = true;
+    desktop.greetd.cmd = "niri-session";
   };
 
   boot.kernelPackages = pkgs.linuxPackages_zen;

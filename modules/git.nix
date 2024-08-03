@@ -44,6 +44,7 @@ with lib;
       lfs.enable = true;
       delta = mkIf config.git.delta {
         enable = true;
+        catppuccin.enable = true;
       };
       signing = mkIf config.git.signing.enable {
         signByDefault = true;

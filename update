@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
 
+nix flake update
 git restore --staged .
 git diff
 git add .
+nixos-rebuild build --flake .# --show-trace || exit
+nvd diff /run/current-system result
 doas nixos-rebuild switch --flake .# --show-trace
 git restore --staged .
