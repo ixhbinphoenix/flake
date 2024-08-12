@@ -56,7 +56,7 @@ with lib;
       ani-cli
       yt-dlp
       prismlauncher
-      modrinth # Tempoary, see PrismLauncher#2397
+      modrinth-app # Tempoary, see PrismLauncher#2397
       tenacity
 
       #gpodder
