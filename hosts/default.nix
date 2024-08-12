@@ -58,8 +58,9 @@ in
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim
-            hyprland.homeManagerModules.default
+            #hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
+            niri.homeModules.niri
             catppuccin.homeManagerModules.catppuccin
             ./unique/home.nix
             ../stages/pc-base/home.nix
