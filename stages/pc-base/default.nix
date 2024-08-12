@@ -140,7 +140,7 @@ with lib;
 
       programs.dconf.enable = true;
 
-      services.udev.packages = with pkgs; [ wooting-udev-rules ];
+      services.udev.packages = with pkgs; [ wooting-udev-rules via ];
     
       time.timeZone = config.stages.pc-base.localization.timeZone;
     

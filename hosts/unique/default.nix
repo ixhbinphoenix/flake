@@ -31,8 +31,8 @@
 
   stages.wayland = {
     enable = true;
-    desktop.hyprland.enable = true;
-    desktop.greetd.cmd = "Hyprland";
+    desktop.niri.enable = true;
+    desktop.greetd.cmd = "niri-session";
   };
 
   # TODOO: New gaming stage
@@ -44,6 +44,7 @@
     winetricks
     protontricks
     xivlauncher
+    via
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
