@@ -69,6 +69,8 @@ with lib;
       mpvpaper
       pcmanfm
 
+      obsidian
+
       swww
       thunderbird
       cava
