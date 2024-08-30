@@ -57,6 +57,8 @@
     scanmem
     godot_4
     blender
+    orca-slicer
+    freecad
   ];
 
   programs.obs-studio = {
