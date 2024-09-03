@@ -65,7 +65,7 @@ with lib;
       trackma-qt
       vesktop
       strawberry
-      nheko
+      #nheko
       gimp
       mpvpaper
       pcmanfm
