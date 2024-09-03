@@ -39,22 +39,19 @@
       url = github:n3oney/anyrun-nixos-options;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = github:sodiboo/niri-flake;
-    };
-    catppuccin = {
-      url = github:catppuccin/nix;
-    };
+    niri.url = github:sodiboo/niri-flake;
+    catppuccin.url = github:catppuccin/nix;
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware }:
     let
       user = "phoenix";
     in rec {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs user home-manager nur nixvim hyprland aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin;
+          inherit inputs nixpkgs user home-manager nur nixvim hyprland aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware;
         }
       );
       

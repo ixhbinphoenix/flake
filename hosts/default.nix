@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, ...}:
 let
   system = "x86_64-linux";
 
@@ -72,6 +72,33 @@ in
         imports = [ aagl.nixosModules.default ];
         nix.settings = aagl.nixConfig;
         programs.anime-game-launcher.enable = true;
+      }
+    ];
+  };
+  ramlethal = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit user inputs nur deploy-rs; };
+    modules = [
+      nixos-hardware.nixosModules.framework-16-7040-amd
+      nur.nixosModules.nur
+      ./ramlethal
+      ../stages/pc-base
+      ../stages/wayland
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options home-manager; };
+        home-manager.users.${user} = {
+          imports = [
+            nixvim.homeManagerModules.nixvim
+            anyrun.homeManagerModules.default
+            niri.homeModules.niri
+            catppuccin.homeManagerModules.catppuccin
+            ./ramlethal/home.nix
+            ../stages/pc-base/home.nix
+            ../stages/wayland/home.nix
+          ];
+        };
       }
     ];
   };
