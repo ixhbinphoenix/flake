@@ -28,7 +28,6 @@
     hostname = "ramlethal";
 
     bootloader.systemd-boot.enable = true;
-    bootloader.multi-boot = true;
 
     localization = {
       timeZone = "Europe/Berlin";
@@ -61,6 +60,8 @@
     };
     bluetooth.enable = true;
   };
+
+  services.fprintd.enable = true;
 
   programs.steam.enable = true;
 
