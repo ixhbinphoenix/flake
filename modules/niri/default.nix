@@ -50,18 +50,6 @@
           theme = "catppuccin-mocha-dark-cursors";
         };
 
-        workspaces = {
-          "1" = {
-            open-on-output = "DP-1";
-          };
-          "2" = {
-            open-on-output = "DP-2";
-          };
-          "3" = {
-            open-on-output = "HDMI-A-1";
-          };
-        };
-
         binds = with config.lib.niri.actions; let
           sh = spawn "sh" "-c";
         in {

@@ -21,6 +21,14 @@
       position.y = 0;
       scale = 1.5;
     };
+    "DP-4" = {
+      mode = {
+        width = 1920;
+        height = 1080;
+        refresh = 60.0;
+      };
+      scale = 1;
+    };
   };
   programs.niri.settings.input = {
     touchpad = {
