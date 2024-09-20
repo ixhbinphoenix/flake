@@ -7,7 +7,7 @@
 	// "modules-center": ["sway/window"],
   // "modules-left": ["hyprland/workspaces"],
   // "modules-center": ["hyprland/window"],
-	"modules-right": ["tray", "network", "clock"],
+	"modules-right": ["tray", "battery", "network", "clock"],
 	"exclusive": true,
   "hyprland/window": {
     "format": "{}",
