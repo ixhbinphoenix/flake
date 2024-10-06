@@ -59,13 +59,14 @@ with lib;
       modrinth-app # Tempoary, see PrismLauncher#2397
       tenacity
 
-      #gpodder
-      #nyxt
-      transmission_4-qt
+      gpodder
+
+      qbittorrent
+
       trackma-qt
       vesktop
       strawberry
-      #nheko
+      #nheko # When are those CVE's getting fixed wtf
       gimp
       mpvpaper
       pcmanfm
