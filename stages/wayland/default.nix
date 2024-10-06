@@ -60,6 +60,8 @@ with lib;
       enable32Bit = true;
     };
 
+    services.playerctld.enable = true;
+
     xdg = {
       portal = {
         enable = true;
@@ -115,6 +117,7 @@ with lib;
         wlprop
         mpv
         qiv
+        cage
       ];
     };
 
