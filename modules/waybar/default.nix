@@ -5,7 +5,6 @@
   options = {};
 
   config = {
-# Need to wait for Waybar#3551
     programs.waybar = {
       enable = true;
       settings = {
