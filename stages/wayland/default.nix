@@ -67,7 +67,7 @@ with lib;
         enable = true;
         xdgOpenUsePortal = true;
         extraPortals = with pkgs; [
-          pkgs.xdg-desktop-portal-gtk
+          xdg-desktop-portal-gtk
           (mkIf config.stages.wayland.desktop.niri.enable xdg-desktop-portal-gnome)
         ];
         config.common.default = "*";
