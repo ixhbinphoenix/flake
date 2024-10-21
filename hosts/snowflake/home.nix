@@ -17,7 +17,7 @@
         height = 1080;
         refresh = 60.0;
       };
-      position.x = 0;
+      position.x = -1920;
       position.y = 0;
       scale = 1;
     };
@@ -27,7 +27,7 @@
         height = 1440;
         refresh = 143.912;
       };
-      position.x = 1920;
+      position.x = 0;
       position.y = 0;
       scale = 1;
     };
@@ -38,7 +38,7 @@
         refresh = 60.0;
       };
 
-      position.x = 4480;
+      position.x = 2560;
       position.y = 0;
       scale = 1;
     };
@@ -51,7 +51,6 @@
     osu-lazer-bin
     youtube-music
     libsForQt5.kdenlive
-    cemu-ti
     BeatSaberModManager
     avalonia-ilspy
     scanmem

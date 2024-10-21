@@ -136,7 +136,7 @@ with lib;
       networking.hostName = config.stages.pc-base.hostname;
     
       networking.networkmanager.enable = true;
-      wireguard.enable = true;
+      #wireguard.enable = true;
 
       programs.dconf.enable = true;
 

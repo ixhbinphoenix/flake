@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs; [
     distrobox
     lutris
+    bottles
     protonup-qt
     gamescope
     virt-manager

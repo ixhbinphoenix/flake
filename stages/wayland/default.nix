@@ -118,6 +118,7 @@ with lib;
         mpv
         qiv
         cage
+        xwayland-run
       ];
     };
 
