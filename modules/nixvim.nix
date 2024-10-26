@@ -133,23 +133,23 @@
             gleam.enable = true;
             gopls.enable = true;
             html.enable = true;
-            java-language-server.enable = true;
-            kotlin-language-server.enable = true;
-            lua-ls = {
+            java_language_server.enable = true;
+            kotlin_language_server.enable = true;
+            lua_ls = {
               enable = true;
               settings.diagnostics.globals = [ "vim" ];
             };
             # nixd.enable = true;
             phpactor.enable = true;
             omnisharp.enable = true;
-            rust-analyzer = {
+            rust_analyzer = {
               enable = true;
               package = null;
               installCargo = false;
               installRustc = false;
             };
-            tsserver.enable = true;
-            typst-lsp.enable = true;
+            ts_ls.enable = true;
+            typst_lsp.enable = true;
             zls.enable = true;
           };
         };
@@ -199,6 +199,8 @@
             ];
           };
         };
+
+        web-devicons.enable = true;
 
         presence-nvim = {
           enable = false;
