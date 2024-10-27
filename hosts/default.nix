@@ -102,6 +102,13 @@ in
       }
     ];
   };
+  testament = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit user inputs nur deploy-rs; };
+    modules = [
+      ./testament
+    ];
+  };
   twinkpad = lib.nixosSystem {
     inherit system;
     specialArgs = { inherit user inputs nur; };

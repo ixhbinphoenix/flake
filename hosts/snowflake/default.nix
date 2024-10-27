@@ -29,6 +29,7 @@
     localsend
     nur.repos.ixhbinphoenix.localbooru-bin
     jetbrains.idea-community-bin
+    jetbrains.rider
     android-studio
   ];
 
@@ -70,8 +71,7 @@
       daemon.enable = true;
     };
     graphics.extraPackages = with pkgs; [
-      rocm-opencl-icd
-      rocm-opencl-runtime
+      rocmPackages.clr
       nur.repos.materus.amdgpu-pro-libs.amf
     ];
     bluetooth.enable = true;
