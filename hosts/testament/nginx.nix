@@ -100,15 +100,6 @@
         rewrite ^/.well-known/(card|cal)dav$ /dav.php last;
         '';
       };
-      "api.dl.ixhby.dev" = (proxy 9000) // {
-        extraConfig = ''
-        if ($http_referer = "https://spotifydown.com/") {
-          return 403;
-          break;
-        }
-        '';
-      };
-      "dl.ixhby.dev" = proxy 9001;
       "dock.ixhby.dev" = ssl // {
         extraConfig = ''
         client_max_body_size 1M;

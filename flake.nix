@@ -15,14 +15,12 @@
     nur.url = github:nix-community/NUR;
     nixvim = {
       url = github:nix-community/nixvim;
-      # nixpkgs broke stuff
-      #inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     aagl = {
       url = github:ezKEa/aagl-gtk-on-nix;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     anyrun = {
       url = github:Kirottu/anyrun;
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,18 +38,31 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = github:sodiboo/niri-flake;
+    niri.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = github:catppuccin/nix;
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    sops-nix.url = github:Mic92/sops-nix;
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    conduwuit.url = "https://git.gay/june/conduwuit/archive/main.tar.gz";
+    conduwuit.inputs.nixpkgs.follows = "nixpkgs";
+    conduwuit.inputs.rocksdb = {
+      url = "github:girlbossceo/rocksdb?ref=v9.7.3";
+      flake = false;
+    };
+
+    quadlet-nix.url = github:SEIAROTg/quadlet-nix;
+    quadlet-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix }:
     let
       user = "phoenix";
     in rec {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs user home-manager nur nixvim hyprland aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware;
+          inherit inputs nixpkgs user home-manager nur nixvim aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware sops-nix conduwuit quadlet-nix;
         }
       );
       

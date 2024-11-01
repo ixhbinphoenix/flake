@@ -1,10 +1,29 @@
-{ config, pkgs, lib, inputs, ... }:
-{
+{ config, pkgs, lib, inputs, ... }: let
+  cfg = config.services.forgejo;
+  users = config.users.users;
+in {
+
   users.users.git = {
     home = config.services.forgejo.stateDir;
     useDefaultShell = true;
     group = "git";
     isSystemUser = true;
+  };
+
+  users.groups.git = {};
+
+  sops.secrets = let
+    gitSecret = {
+      owner = users.git.name;
+      group = users.git.group;
+    };
+  in {
+    "forgejo/mailer/PASSWD" = gitSecret;
+    "forgejo/LFS_JWT_SECRET" = gitSecret;
+    "forgejo/security/INTERNAL_TOKEN" = gitSecret;
+    "forgejo/metrics/TOKEN" = gitSecret;
+    "forgejo/oauth2/JWT_SECRET" = gitSecret;
+    "forgejo/database_password" = gitSecret;
   };
 
   services.forgejo = {
@@ -16,17 +35,30 @@
 
     lfs.enable = true;
 
-    secrets = {
-      security.SECRET_KEY = "";
-      security.INTERNAL_TOKEN = "";
-      mailer.PASSWD = "";
-      oauth2.JWT_SECRET = "";
-      LFS_JWT_SECRET = "";
+    # Warning: This only works on nixos-unstable currently
+    secrets = let
+      secret = path: config.sops.secrets."forgejo/${path}".path;
+    in {
+      DEFAULT.LFS_JWT_SECRET = secret "LFS_JWT_SECRET";
+      metrics.TOKEN = secret "metrics/TOKEN";
+      security.INTERNAL_TOKEN = lib.mkForce (secret "security/INTERNAL_TOKEN");
+      oauth2.JWT_SECRET = lib.mkForce (secret "oauth2/JWT_SECRET");
+      mailer.PASSWD = secret "mailer/PASSWD";
+    };
+
+    database = {
+      type = "postgres";
+      createDatabase = true;
+      user = "git";
+      passwordFile = config.sops.secrets."forgejo/database_password".path;
+      name = "git";
     };
 
     settings = {
-      APP_NAME = "ixhby.dev git";
-      RUN_MODE = "prod";
+      DEFAULT = {
+        APP_NAME = "ixhby.dev\ git";
+        RUN_MODE = "prod";
+      };
       server = {
         DOMAIN = "git.ixhby.dev";
         ROOT_URL = "https://git.ixhby.dev/";
@@ -42,22 +74,12 @@
         SSH_DOMAIN = "git.ixhby.dev";
       };
 
-      database = {
-        HOST = "127.0.0.1:5432";
-        NAME = "gitea";
-        USER = "gitea";
-        PASSWD = "gitea";
-        SSL_MODE = "disable";
-        LOG_SQL = false;
-      };
-
       mailer = {
         ENABLED = true;
         SMTP_ADDR = "mail.mailtwo24.de";
         SMTP_PORT = 587;
         FROM = "git@ixhby.dev";
         USER = "git@ixhby.dev";
-        PASSWD = "TODO: Nix secrets";
       };
 
       service = {
@@ -70,7 +92,7 @@
         DEFAULT_KEEP_EMAIL_PRIVATE = false;
         DEFAULT_ALLOW_CREATE_ORGANIZATION = true;
         DEFAULT_ENABLE_TIMETRACKING = true;
-        NO_REPLY_ADDRESS = noreply.localhost;
+        NO_REPLY_ADDRESS = "noreply.localhost";
       };
 
       repository = {
@@ -78,13 +100,14 @@
         ENABLE_PUSH_CREATE_ORG = true;
         PREFERRED_LICENSES = "AGPL-3.0-only, AGPL-3.0-or-later, GPL-3.0-only, GPL-3.0-or-later, MIT";
         DEFAULT_BRANCH = "root";
+      };
 
-        pull-request = {
+      "repository.pull-request" = {
           DEFAULT_MERGE_STYLE = "merge";
-        };
-        signing = {
+      };
+
+      "repository.signing" = {
           DEFAULT_TRUST_MODEL = "committer";
-        };
       };
 
       security = {
@@ -104,23 +127,10 @@
         ENABLED = true;
         ENABLE_ISSUE_BY_LABEL = true;
         ENABLE_ISSUE_BY_REPOSITORY = true;
-        TOKEN = "TODO: Nix secrets";
       };
 
       # TODOO: ui.THEMES
       # TODOO: ui.CUSTOM_EMOJIS
-    };
-  };
-
-  services.postgresql = {
-    enable = true;
-
-    ensureDatabases = [
-      "gitea"
-    ];
-
-    ensureUsers.gitea = {
-      ensureDBOwnership = true;
     };
   };
 }

@@ -1,0 +1,16 @@
+keys:
+  - &ixhby_yubikey 91DB328E3FAB8A089AF652763E62370C1D773013
+  - &server_testament age1cg5uu38jujxush7r9f2rj79hk5yxkucrnh00qhhu0rw3eu9a3gus3vc7m8
+creation_rules:
+  - path_regex: secrets/[^/]+\.(ya?ml|json|env|ini)$
+    key_groups:
+      - pgp:
+        - *ixhby_yubikey
+        age:
+        - *server_testament
+  - path_regex: secrets/testament/[^/]+\.(ya?ml|json|env|ini)$
+    key_groups:
+      - pgp:
+        - *ixhby_yubikey
+        age:
+        - *server_testament

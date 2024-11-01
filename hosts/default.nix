@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, hyprland, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, ...}:
 let
   system = "x86_64-linux";
 
@@ -12,12 +12,12 @@ in
     inherit system;
     specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
+      sops-nix.nixosModules.sops
       nur.nixosModules.nur
       ./snowflake
       ../stages/pc-base
       ../stages/wayland
       home-manager.nixosModules.home-manager
-      #hyprland.nixosModules.default
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -25,7 +25,6 @@ in
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim
-            hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
             niri.homeModules.niri
             catppuccin.homeManagerModules.catppuccin
@@ -47,6 +46,7 @@ in
     inherit system;
     specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
+      sops-nix.nixosModules.sops
       nur.nixosModules.nur
       ./unique
       ../stages/pc-base
@@ -58,7 +58,6 @@ in
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim
-            #hyprland.homeManagerModules.default
             anyrun.homeManagerModules.default
             niri.homeModules.niri
             catppuccin.homeManagerModules.catppuccin
@@ -80,6 +79,7 @@ in
     specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
       nixos-hardware.nixosModules.framework-16-7040-amd
+      sops-nix.nixosModules.sops
       nur.nixosModules.nur
       ./ramlethal
       ../stages/pc-base
@@ -104,8 +104,10 @@ in
   };
   testament = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user inputs nur deploy-rs; };
+    specialArgs = { inherit user inputs nur deploy-rs conduwuit; };
     modules = [
+      sops-nix.nixosModules.sops
+      quadlet-nix.nixosModules.quadlet
       ./testament
     ];
   };

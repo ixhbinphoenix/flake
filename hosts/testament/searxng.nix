@@ -1,10 +1,20 @@
-{ config, pkgs, lib, inputs, ... }:
-{
+{ config, pkgs, lib, inputs, ... }: let
+  users = config.users.users;
+in {
+  sops.secrets.searx = {
+    sopsFile = ../../secrets/testament/searx.env;
+    format = "dotenv";
+    owner = users.searx.name;
+    group = users.searx.group;
+  };
+
   services.searx = {
     enable = true;
     package = pkgs.searxng;
 
     redisCreateLocally = true;
+
+    environmentFile = config.sops.secrets.searx.path;
 
     settings = {
       general = {
@@ -29,8 +39,7 @@
         limiter = true;
         public_instance = true;
 
-        # TODOOOOO: Set up nix secrets for SearXNG secret_key
-        secret_key = "TODO: Set up nix secrets";
+        secret_key = "SetInEnvironmentFile";
         image_proxy = true;
         http_protocol_version = "1.0";
         method = "POST";

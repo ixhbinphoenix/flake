@@ -37,6 +37,16 @@
           ];
         }];
       }
+      # TODO: Uptime Kuma metrics
+      {
+        job_name = "forgejo";
+        #bearer_token_file = config.sops.secrets."forgejo/metrics/TOKEN".path;
+        static_configs = [{
+          targets = [
+            "localhost:3000"
+          ];
+        }];
+      }
     ];
 
     exporters = {
@@ -64,7 +74,7 @@
 
         domain = "graph.ixhby.dev";
 
-        root_url = "https://%(domain)s/"
+        root_url = "https://%(domain)s/";
       };
     };
   };
