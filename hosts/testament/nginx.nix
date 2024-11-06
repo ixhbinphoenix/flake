@@ -2,7 +2,7 @@
 {
   security.acme = {
     acceptTerms = true;
-    defaults.email = "phoenix@ixhby.dev";
+    defaults.email = "contact+acme@ixhby.dev";
   };
 
   networking.firewall = let
@@ -11,6 +11,8 @@
     allowedUDPPorts = ports;
     allowedTCPPorts = ports;
   };
+
+  users.users.nginx.extraGroups = [ "acme" ];
 
   services.nginx = {
     enable = true;
@@ -26,7 +28,8 @@
 
     virtualHosts = let
       ssl = {
-        forceSSL = true;
+        #forceSSL = true;
+        onlySSL = true;
         enableACME = true;
       };
 
@@ -76,12 +79,12 @@
           };
         };
       };
-      "cinny.ixhby.dev" = (proxy 6167) // {
+      "cinny.ixhby.dev" = (proxy 6168) // {
         extraConfig = ''
         client_max_body_size 20M;
         '';
       };
-      "budget.ixhby.dev" = proxy 5006;
+      #"budget.ixhby.dev" = proxy 5006;
       "CalDAV HTTP" = {
         serverName = "dav.ixhby.dev";
         
@@ -99,15 +102,6 @@
         extraConfig = ''
         rewrite ^/.well-known/(card|cal)dav$ /dav.php last;
         '';
-      };
-      "dock.ixhby.dev" = ssl // {
-        extraConfig = ''
-        client_max_body_size 1M;
-        '';
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:5001";
-          proxyWebsockets = true;
-        };
       };
       "git.ixhby.dev" = ssl // {
         locations."/" = {
@@ -150,14 +144,14 @@
       };
       "i.ixhby.dev" = proxy 3333;
 
-      "garnix.dev" = ssl // {
-        root = "/opt/garnix.dev";
+      #"garnix.dev" = ssl // {
+      #  root = "/opt/garnix.dev";
 
-        locations."/" = {
-          index = "index.html";
-          tryFiles = "$uri $uri/ $uri/index.html =404";
-        };
-      };
+      #  locations."/" = {
+      #    index = "index.html";
+      #    tryFiles = "$uri $uri/ $uri/index.html =404";
+      #  };
+      #};
     };
   };
 }

@@ -13,6 +13,9 @@
     enable = true;
 
     settings.global = {
+      # Until nixpkgs#353651 gets merged
+      database_backend = "rocksdb";
+
       server_name = "ixhby.dev";
       trusted_servers = [
         "matrix.org"
@@ -77,6 +80,8 @@
 
   systemd.services.conduit.serviceConfig = {
     EnvironmentFile = config.sops.secrets.conduwuit.path;
+    wants = [ "network-online.target" ];
+    after = [ "network-online.target" ];
   };
 
   virtualisation.quadlet.containers.cinny.containerConfig = let 
@@ -115,7 +120,7 @@
       "-p 6168:80"
     ];
 
-    mounts = [
+    volumes = [
       "${configFile}:/app/config.json"
     ];
   };

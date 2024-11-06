@@ -69,7 +69,7 @@
     settings = {
       server = {
         protocol = "http";
-        http_port = 3000;
+        http_port = 1789;
         http_addr = "127.0.0.1";
 
         domain = "graph.ixhby.dev";
