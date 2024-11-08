@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, ...}:
 let
   system = "x86_64-linux";
 
@@ -104,7 +104,7 @@ in
   };
   testament = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user inputs nur deploy-rs conduwuit; };
+    specialArgs = { inherit user inputs nur deploy-rs conduwuit garnix-dev; };
     modules = [
       sops-nix.nixosModules.sops
       quadlet-nix.nixosModules.quadlet

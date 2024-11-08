@@ -53,16 +53,19 @@
 
     quadlet-nix.url = github:SEIAROTg/quadlet-nix;
     quadlet-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    garnix-dev.url = "https://git.ixhby.dev/ixhbinphoenix/garnix.dev/archive/master.tar.gz";
+    garnix-dev.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev }:
     let
       user = "phoenix";
     in rec {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs user home-manager nur nixvim aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware sops-nix conduwuit quadlet-nix;
+          inherit inputs nixpkgs user home-manager nur nixvim aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware sops-nix conduwuit quadlet-nix garnix-dev;
         }
       );
       

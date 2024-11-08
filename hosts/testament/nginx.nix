@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, garnix-dev, ... }:
 {
   security.acme = {
     acceptTerms = true;
@@ -144,14 +144,14 @@
       };
       "i.ixhby.dev" = proxy 3333;
 
-      #"garnix.dev" = ssl // {
-      #  root = "/opt/garnix.dev";
+      "garnix.dev" = ssl // {
+        root = garnix-dev.packages."x86_64-linux".default;
 
-      #  locations."/" = {
-      #    index = "index.html";
-      #    tryFiles = "$uri $uri/ $uri/index.html =404";
-      #  };
-      #};
+        locations."/" = {
+          index = "index.html";
+          tryFiles = "$uri $uri/ $uri/index.html =404";
+        };
+      };
     };
   };
 }

@@ -8,7 +8,8 @@
     ./ntfy.nix
     ./searxng.nix
     ./uptime-kuma.nix
-    ./baikal.nix
+    # TODOO: Fix baikal
+    #./baikal.nix
     ./matrix.nix
     ./zipline.nix
     ./actualbudget.nix
