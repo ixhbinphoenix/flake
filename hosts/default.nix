@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc, ...}:
 let
   system = "x86_64-linux";
 
@@ -21,7 +21,7 @@ in
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options home-manager; };
+        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options home-manager usc; };
         home-manager.users.${user} = {
           imports = [
             nixvim.homeManagerModules.nixvim

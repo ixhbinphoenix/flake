@@ -11,8 +11,6 @@ in {
     "z '${uploads}' 0700 root root - -"
     "d '${public}' 0700 root root - -"
     "z '${public}' 0700 root root - -"
-    "d '/var/lib/zipline-postgres' 0700 postgres postgres - -"
-    "z '/var/lib/zipline-postgres' 0700 postgres postgres - -"
   ];
 
   sops.secrets."zipline/db_password" = {
