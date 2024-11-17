@@ -39,6 +39,9 @@
       scroll-method = "two-finger";
     };
   };
+  programs.niri.settings.debug = {
+    render-drm-device = "/dev/dri/renderD128";
+  };
 
   home.stateVersion = "24.11";
 
