@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc, clock-lantern, ...}:
 let
   system = "x86_64-linux";
 
@@ -108,6 +108,7 @@ in
     modules = [
       sops-nix.nixosModules.sops
       quadlet-nix.nixosModules.quadlet
+      clock-lantern.nixosModules.${system}.default
       ./testament
     ];
   };

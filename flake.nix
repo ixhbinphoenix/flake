@@ -59,16 +59,19 @@
 
     usc.url = "https://git.ixhby.dev/ixhbinphoenix/usc-flake/archive/root.tar.gz";
     usc.inputs.nixpkgs.follows = "nixpkgs";
+
+    clock-lantern.url = "https://git.ixhby.dev/ixhbinphoenix/clock-lantern/archive/root.tar.gz";
+    clock-lantern.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc, clock-lantern }:
     let
       user = "phoenix";
     in rec {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs user home-manager nur nixvim aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware sops-nix conduwuit quadlet-nix garnix-dev usc;
+          inherit inputs nixpkgs user home-manager nur nixvim aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware sops-nix conduwuit quadlet-nix garnix-dev usc clock-lantern;
         }
       );
       

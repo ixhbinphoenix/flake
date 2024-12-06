@@ -126,7 +126,8 @@ with lib;
       packages = with pkgs; [
         nur.repos.suhr.iosevka-term
         iosevka
-        (nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" ]; })
+        nerd-fonts.iosevka
+        nerd-fonts.iosevka-term
         source-code-pro
         font-awesome
         noto-fonts-emoji

@@ -52,8 +52,6 @@
     usc.packages."x86_64-linux".default
     youtube-music
     libsForQt5.kdenlive
-    BeatSaberModManager
-    avalonia-ilspy
     scanmem
     godot_4
     blender

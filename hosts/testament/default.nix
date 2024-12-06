@@ -33,6 +33,10 @@
   sops = {
     defaultSopsFile = ../../secrets/testament.yaml;
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    secrets."clock-o-lantern.env" = {
+      sopsFile = ../../secrets/testament/clock-o-lantern.env;
+      format = "dotenv";
+    };
   };
 
   virtualisation = {
@@ -43,6 +47,11 @@
 
       defaultNetwork.settings.dns_enabled = true;
     };
+  };
+
+  services.clock-o-lantern = {
+    enable = true;
+    secretsFile = config.sops.secrets."clock-o-lantern.env".path;
   };
 
   networking.firewall.enable = true;

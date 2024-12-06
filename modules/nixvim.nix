@@ -141,7 +141,7 @@
             };
             # nixd.enable = true;
             phpactor.enable = true;
-            omnisharp.enable = true;
+            #omnisharp.enable = true;
             rust_analyzer = {
               enable = true;
               package = null;
