@@ -143,6 +143,7 @@
         };
       };
       "i.ixhby.dev" = proxy 3333;
+      "navi.ixhby.dev" = proxy 4533;
 
       "garnix.dev" = ssl // {
         root = garnix-dev.packages."x86_64-linux".default;
