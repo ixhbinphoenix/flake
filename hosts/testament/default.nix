@@ -14,6 +14,7 @@
     ./zipline.nix
     ./actualbudget.nix
     ./metrics.nix
+    ./navidrome.nix
   ];
 
   boot.tmp.cleanOnBoot = true;

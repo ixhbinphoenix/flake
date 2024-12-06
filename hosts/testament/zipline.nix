@@ -92,23 +92,22 @@ in {
       ];
 
       environments = {
-        CORE_RETURN_HTTPS = true;
+        CORE_RETURN_HTTPS = "true";
         CORE_HOST = "127.0.0.1";
-        CORE_PORT = 3333;
-        CORE_LOGGER = true;
-        EXIF_REMOVE_GPS = true;
-        FEATURES_ROBOTS_TXT = true;
-        MFA_TOTP_ENABLED = true;
+        CORE_PORT = "3333";
+        EXIF_REMOVE_GPS = "true";
+        FEATURES_ROBOTS_TXT = "true";
+        MFA_TOTP_ENABLED = "true";
         MFA_TOTP_ISSUER = "Ixhby Zipline";
-        RATELIMIT_ADMIN = 0;
+        RATELIMIT_ADMIN = "0";
         UPLOADER_DEFAULT_FORMAT = "RANDOM";
         UPLOADER_ROUTE = "/u";
-        UPLOADER_LENGTH = 8;
-        UPLOADER_ASSUME_MIMETYPES = true;
+        UPLOADER_LENGTH = "8";
+        UPLOADER_ASSUME_MIMETYPES = "true";
         URLS_ROUTE = "/s";
         WEBSITE_TITLE = "Ixhby's Zipline";
-        WEBSITE_SHOW_FILES_PER_USER = true;
-        WEBSITE_SHOW_VERSION = true;
+        WEBSITE_SHOW_FILES_PER_USER = "true";
+        WEBSITE_SHOW_VERSION = "true";
       };
     };
   };
