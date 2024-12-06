@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, user, ... }:
 with lib;
 {
   imports = [
@@ -26,6 +26,10 @@ with lib;
     home.homeDirectory = "/home/${config.stages.pc-base.user}";
 
     programs.home-manager.enable = true;
+
+    sops = {
+      gnupg.home = "/home/${user}/.gnupg";
+    };
 
     git = {
       name = "ixhbinphoenix";

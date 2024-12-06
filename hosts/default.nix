@@ -28,6 +28,7 @@ in
             anyrun.homeManagerModules.default
             niri.homeModules.niri
             catppuccin.homeManagerModules.catppuccin
+            sops-nix.homeManagerModules.sops
             ./snowflake/home.nix
             ../stages/pc-base/home.nix
             ../stages/wayland/home.nix
@@ -61,6 +62,7 @@ in
             anyrun.homeManagerModules.default
             niri.homeModules.niri
             catppuccin.homeManagerModules.catppuccin
+            sops-nix.homeManagerModules.sops
             ./unique/home.nix
             ../stages/pc-base/home.nix
             ../stages/wayland/home.nix
@@ -94,6 +96,7 @@ in
             anyrun.homeManagerModules.default
             niri.homeModules.niri
             catppuccin.homeManagerModules.catppuccin
+            sops-nix.homeManagerModules.sops
             ./ramlethal/home.nix
             ../stages/pc-base/home.nix
             ../stages/wayland/home.nix

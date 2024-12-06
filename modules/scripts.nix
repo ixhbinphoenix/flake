@@ -1,7 +1,11 @@
-{ pkgs, user, ... }:
+{ config, pkgs, user, ... }:
 {
   config = {
-    # TODOO: Replace this with actual packages, e.g. through writeShellApplication
+    sops.secrets.zipline-upload = {
+      sopsFile = ../secrets/zipline-upload.env;
+      format = "dotenv";
+    };
+
     home.packages = let
       ils = pkgs.writeShellApplication {
         name = "ils";
@@ -19,6 +23,19 @@
         text = ''
           nix-collect-garbage -d &&
           nix store optimise
+        '';
+      };
+      zipline-upload = pkgs.writeShellApplication {
+        name = "zipline-upload";
+
+        runtimeInputs = with pkgs; [ curl jq wl-clipboard libnotify ];
+
+        text = ''
+          #shellcheck disable=SC1091
+          set -a && source ${config.sops.secrets.zipline-upload.path} && set +a
+          curl -H "authorization: $ZIPLINE_TOKEN" https://i.ixhby.dev/api/upload -F file=@/tmp/screenshot.png -H "Content-Type: multipart/form-data" | jq -r '.files[0]' | tr -d '\n' | wl-copy
+          notify-send -h string:x-canonical-private-synchronous:shot-notify -u low "Screenshot uploaded. \
+          Link copied to clipboard"
         '';
       };
       screenshot = pkgs.writeShellApplication {
@@ -48,7 +65,7 @@
           fi
 
           if [ "$2" == "--upload" ]; then
-            /home/phoenix/zipline-upload.sh
+            ${zipline-upload}/bin/zipline-upload
           fi
 
           exit 0
@@ -141,6 +158,7 @@
     in [
       ils
       nix-gc
+      zipline-upload
       screenshot
       notify-pipe
       set_wallpaper
