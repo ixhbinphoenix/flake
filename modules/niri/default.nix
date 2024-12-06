@@ -56,11 +56,11 @@
           "Super+Return".action = spawn "kitty";
           "Super+Escape".action = spawn "anyrun";
           "Super+F4".action = spawn "wlogout";
-          "Super+Shift+w".action = sh "/home/phoenix/.local/bin/scripts/random_wallpaper";
+          "Super+Shift+w".action = sh "random_wallpaper";
 
           "Super+o".action = show-hotkey-overlay;
 
-          "Super+Shift+s".action = sh "/home/phoenix/.local/bin/scripts/screenshot --area --upload";
+          "Super+Shift+s".action = sh "screenshot --area --upload";
 
           "Super+f".action = fullscreen-window;
           "Super+m".action = maximize-column;
