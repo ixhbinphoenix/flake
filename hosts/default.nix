@@ -115,27 +115,4 @@ in
       ./testament
     ];
   };
-  twinkpad = lib.nixosSystem {
-    inherit system;
-    specialArgs = { inherit user inputs nur; };
-    modules = [
-      nur.modules.nixos.default
-      ./twinkpad
-      ../stages/pc-base
-      home-manager.nixosModules.home-manager {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options; };
-        home-manager.users.${user} = {
-          imports = [
-            nixvim.homeManagerModules.nixvim
-            anyrun.homeManagerModules.default
-            catppuccin.homeManagerModules.catppuccin
-            ./twinkpad/home.nix
-            ../stages/pc-base/home.nix
-          ];
-        };
-      }
-    ];
-  };
 }
