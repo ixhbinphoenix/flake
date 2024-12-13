@@ -28,7 +28,8 @@ with lib;
     programs.home-manager.enable = true;
 
     sops = {
-      gnupg.home = "/home/${user}/.gnupg";
+      #gnupg.home = "/home/${user}/.gnupg";
+      age.keyFile = "/home/${user}/.config/sops/age/keys.txt";
     };
 
     git = {

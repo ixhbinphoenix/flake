@@ -13,7 +13,7 @@ in
     specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
       sops-nix.nixosModules.sops
-      nur.nixosModules.nur
+      nur.modules.nixos.default
       ./snowflake
       ../stages/pc-base
       ../stages/wayland
@@ -48,7 +48,7 @@ in
     specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
       sops-nix.nixosModules.sops
-      nur.nixosModules.nur
+      nur.modules.nixos.default
       ./unique
       ../stages/pc-base
       ../stages/wayland
@@ -82,7 +82,7 @@ in
     modules = [
       nixos-hardware.nixosModules.framework-16-7040-amd
       sops-nix.nixosModules.sops
-      nur.nixosModules.nur
+      nur.modules.nixos.default
       ./ramlethal
       ../stages/pc-base
       ../stages/wayland
@@ -119,7 +119,7 @@ in
     inherit system;
     specialArgs = { inherit user inputs nur; };
     modules = [
-      nur.nixosModules.nur
+      nur.modules.nixos.default
       ./twinkpad
       ../stages/pc-base
       home-manager.nixosModules.home-manager {

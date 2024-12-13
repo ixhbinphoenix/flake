@@ -263,7 +263,7 @@ with lib;
           packageOverrides = super: let self = super.pkgs; in {
           };
         };
-        overlays = [ nur.overlay ];
+        overlays = [ nur.overlays.default ];
       };
     
       nix = {

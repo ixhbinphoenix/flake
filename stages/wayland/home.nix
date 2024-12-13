@@ -56,7 +56,7 @@ with lib;
       ani-cli
       yt-dlp
       prismlauncher
-      modrinth-app # Tempoary, see PrismLauncher#2397
+      everest-mons # nix package for olympus when
       tenacity
 
       gpodder
