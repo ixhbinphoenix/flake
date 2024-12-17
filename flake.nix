@@ -60,7 +60,7 @@
     usc.url = "https://git.ixhby.dev/ixhbinphoenix/usc-flake/archive/root.tar.gz";
     usc.inputs.nixpkgs.follows = "nixpkgs";
 
-    clock-lantern.url = "https://git.ixhby.dev/ixhbinphoenix/clock-lantern/archive/root.tar.gz";
+    clock-lantern.url = "https://git.ixhby.dev/ixhbinphoenix/clock-o-lantern/archive/root.tar.gz";
     clock-lantern.inputs.nixpkgs.follows = "nixpkgs";
   };
 

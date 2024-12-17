@@ -232,15 +232,15 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1732667113,
-        "narHash": "sha256-AOd3Cly8RyW8/O4oF1QhBoFM0tAakTaQDDCx1mq/7Rw=",
-        "rev": "816270de188e71b15f3249e831b922db3ab29517",
+        "lastModified": 1734468382,
+        "narHash": "sha256-74kIqq7x4oyMrByf4o4xRmy900Jk6O2ZCKW5fGugG1U=",
+        "rev": "25d546011fdc46eb1468aa1026b3b6ca271875a2",
         "type": "tarball",
-        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/clock-o-lantern/archive/816270de188e71b15f3249e831b922db3ab29517.tar.gz"
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/clock-o-lantern/archive/25d546011fdc46eb1468aa1026b3b6ca271875a2.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://git.ixhby.dev/ixhbinphoenix/clock-lantern/archive/root.tar.gz"
+        "url": "https://git.ixhby.dev/ixhbinphoenix/clock-o-lantern/archive/root.tar.gz"
       }
     },
     "complement": {
