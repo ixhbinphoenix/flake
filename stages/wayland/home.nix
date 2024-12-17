@@ -67,6 +67,7 @@ with lib;
       vesktop
       strawberry
       #nheko # When are those CVE's getting fixed wtf
+      signal-desktop
       gimp
       mpvpaper
       pcmanfm
