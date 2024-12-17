@@ -47,6 +47,15 @@
           ];
         }];
       }
+      {
+        job_name = "angie";
+        scrape_interval = "15s";
+        static_configs = [{
+          targets = [
+            "localhost:1616"
+          ];
+        }];
+      }
     ];
 
     exporters = {
