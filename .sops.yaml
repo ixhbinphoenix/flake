@@ -1,7 +1,8 @@
 keys:
   - &ixhby_yubikey 91DB328E3FAB8A089AF652763E62370C1D773013
   - &server_testament age1cg5uu38jujxush7r9f2rj79hk5yxkucrnh00qhhu0rw3eu9a3gus3vc7m8
-  - &flake_host age14j4utewnafy533m86n0tfslsn7q43j9ksvfqq6yxkttj2j4wp5zs3sekv0
+  - &snowflake_host age14j4utewnafy533m86n0tfslsn7q43j9ksvfqq6yxkttj2j4wp5zs3sekv0
+  - &ramlethal_host age179l4qmgvh453pk7vy2alqjk8ks7av6kh6g6axmq9n3hk60ytnqvq4s5g7n
 creation_rules:
   - path_regex: secrets/[^/]+\.(ya?ml|json|env|ini)$
     key_groups:
@@ -9,7 +10,8 @@ creation_rules:
         - *ixhby_yubikey
         age:
         - *server_testament
-        - *flake_host
+        - *snowflake_host
+        - *ramlethal_host
   - path_regex: secrets/testament/[^/]+\.(ya?ml|json|env|ini)$
     key_groups:
       - pgp:

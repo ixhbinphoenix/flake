@@ -66,6 +66,7 @@ with lib;
       trackma-qt
       vesktop
       strawberry
+      tauon
       #nheko # When are those CVE's getting fixed wtf
       signal-desktop
       gimp
