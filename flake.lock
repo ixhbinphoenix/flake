@@ -879,6 +879,24 @@
         "systems": "systems_8"
       },
       "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_8": {
+      "inputs": {
+        "systems": "systems_9"
+      },
+      "locked": {
         "lastModified": 1726560853,
         "narHash": "sha256-X6rJYSESBVr3hBoH0WbKE5KvhPU5bloyZ2L4K60/fPQ=",
         "owner": "numtide",
@@ -1013,6 +1031,25 @@
         "owner": "hercules-ci",
         "repo": "gitignore.nix",
         "type": "github"
+      }
+    },
+    "gleachring": {
+      "inputs": {
+        "flake-utils": "flake-utils_6",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1734832989,
+        "narHash": "sha256-HjF2qSv3iSpiJRgfsROPe4gTG1Y6L3WOL+XEGfMZmZ0=",
+        "rev": "8e2c9b891b2e3b8aa1e2deba55b4d42a695326b4",
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/gleachring/archive/8e2c9b891b2e3b8aa1e2deba55b4d42a695326b4.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/ixhbinphoenix/gleachring/archive/root.tar.gz"
       }
     },
     "home-manager": {
@@ -1627,7 +1664,7 @@
     },
     "nuschtosSearch": {
       "inputs": {
-        "flake-utils": "flake-utils_6",
+        "flake-utils": "flake-utils_7",
         "ixx": "ixx",
         "nixpkgs": [
           "nixvim",
@@ -1769,6 +1806,7 @@
         "conduwuit": "conduwuit",
         "deploy-rs": "deploy-rs",
         "garnix-dev": "garnix-dev",
+        "gleachring": "gleachring",
         "home-manager": "home-manager",
         "niri": "niri",
         "nixos-hardware": "nixos-hardware",
@@ -1954,6 +1992,21 @@
         "type": "github"
       }
     },
+    "systems_9": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
@@ -1998,7 +2051,7 @@
     },
     "usc": {
       "inputs": {
-        "flake-utils": "flake-utils_7",
+        "flake-utils": "flake-utils_8",
         "nixpkgs": [
           "nixpkgs"
         ]

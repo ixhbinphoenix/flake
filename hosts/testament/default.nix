@@ -55,6 +55,11 @@
     secretsFile = config.sops.secrets."clock-o-lantern.env".path;
   };
 
+  services.gleachring = {
+    enable = true;
+    domain = "gleach.garnix.dev";
+  };
+
   networking.firewall.enable = true;
   networking.firewall.allowedUDPPorts = [ 22 ];
   networking.firewall.allowedTCPPorts = [ 22 ];
