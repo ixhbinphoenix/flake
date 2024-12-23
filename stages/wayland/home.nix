@@ -58,6 +58,7 @@ with lib;
       prismlauncher
       everest-mons # nix package for olympus when
       tenacity
+      hyprpicker
 
       gpodder
 
