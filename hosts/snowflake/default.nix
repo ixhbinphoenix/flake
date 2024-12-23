@@ -67,8 +67,8 @@
 
   hardware = {
     opentabletdriver = {
-      #enable = true;
-      #daemon.enable = true;
+      enable = true;
+      daemon.enable = true;
     };
     graphics.extraPackages = with pkgs; [
       rocmPackages.clr

@@ -44,6 +44,10 @@
     };
   };
 
+  programs.niri.settings.input.tablet = {
+    map-to-output = "DP-1";
+  };
+
 
   home.stateVersion = "23.11";
 
