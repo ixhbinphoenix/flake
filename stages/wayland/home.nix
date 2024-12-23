@@ -70,6 +70,7 @@ with lib;
       tauon
       #nheko # When are those CVE's getting fixed wtf
       signal-desktop
+      gajim
       gimp
       mpvpaper
       pcmanfm
