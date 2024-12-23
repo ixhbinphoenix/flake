@@ -53,6 +53,8 @@
     "192.168.172.39" = ["snowflake"];
   };
 
+  networking.firewall.allowedTCPPorts = [ 8080 ];
+
   hardware = {
     opentabletdriver = {
       enable = true;
