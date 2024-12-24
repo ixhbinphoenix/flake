@@ -40,6 +40,7 @@ in
         nix.settings = aagl.nixConfig;
         programs.honkers-railway-launcher.enable = true;
         programs.anime-game-launcher.enable = true;
+        programs.sleepy-launcher.enable = true;
       }
     ];
   };
