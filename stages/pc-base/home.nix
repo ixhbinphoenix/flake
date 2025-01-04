@@ -32,6 +32,11 @@ with lib;
       age.keyFile = "/home/${user}/.config/sops/age/keys.txt";
     };
 
+    catppuccin = {
+      btop.enable = config.programs.btop.enable;
+      bat.enable = config.programs.bat.enable;
+    };
+
     git = {
       name = "ixhbinphoenix";
       email = "phoenix@ixhby.dev";
@@ -46,12 +51,10 @@ with lib;
 
     programs.btop = {
       enable = true;
-      catppuccin.enable = true;
     };
 
     programs.bat = {
       enable = true;
-      catppuccin.enable = true;
     };
 
     home.packages = with pkgs; [

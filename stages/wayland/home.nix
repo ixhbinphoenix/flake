@@ -31,23 +31,21 @@ with lib;
       accent = "mauve"; # default options, let's fucking go
       flavor = "mocha";
 
-      pointerCursor = {
+      cursors = {
         enable = true;
         accent = "dark";
       };
-    };
 
-    gtk.catppuccin = {
-      enable = true;
-
-      icon = {
+      gtk = {
         enable = true;
+        icon.enable = true;
       };
+
+      mpv.enable = config.programs.mpv.enable;
     };
 
     programs.mpv = {
       enable = true;
-      catppuccin.enable = true;
     };
 
     home.packages = with pkgs; [

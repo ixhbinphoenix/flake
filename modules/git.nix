@@ -38,28 +38,30 @@ with lib;
     delta = mkEnableOption "Use delta for git diffs";
   };
 
-  config = {
+  config = let
+    cfg = config.git;
+  in {
+    catppuccin.delta.enable = cfg.delta;
     programs.git = {
       enable = true;
       lfs.enable = true;
-      delta = mkIf config.git.delta {
+      delta = mkIf cfg.delta {
         enable = true;
-        catppuccin.enable = true;
       };
-      signing = mkIf config.git.signing.enable {
+      signing = mkIf cfg.signing.enable {
         signByDefault = true;
-        key = config.git.signing.key;
+        key = cfg.signing.key;
       };
       extraConfig = {
         alias = {
           staash = "stash --all";
         };
         user = {
-          name = config.git.name;
-          email = config.git.email;
+          name = cfg.name;
+          email = cfg.email;
         };
         init = {
-          defaultBranch = config.git.defaultBranch;
+          defaultBranch = cfg.defaultBranch;
         };
         push.autoSetupRemote = true;
         pull = {

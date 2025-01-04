@@ -1,13 +1,13 @@
-{pkgs, ...}:
+{ config, pkgs, ...}:
 {
   imports = [];
 
   options = {};
 
   config = {
+    catppuccin.dunst.enable = config.services.dunst.enable;
     services.dunst = {
       enable = true;
-      catppuccin.enable = true;
       settings = {
         global = {
           follow = "mouse";
