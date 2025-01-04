@@ -64,9 +64,11 @@
     clock-lantern.inputs.nixpkgs.follows = "nixpkgs";
     gleachring.url = "https://git.ixhby.dev/ixhbinphoenix/gleachring/archive/root.tar.gz";
     gleachring.inputs.nixpkgs.follows = "nixpkgs";
+
+    pr-370878-zipline.url = github:Defelo/nixpkgs/zipline;
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc, clock-lantern, gleachring }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc, clock-lantern, gleachring, pr-370878-zipline }:
     let
       user = "phoenix";
     in rec {
