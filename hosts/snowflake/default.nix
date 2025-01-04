@@ -10,7 +10,6 @@
   environment.systemPackages = with pkgs; [
     distrobox
     lutris
-    bottles
     protonup-qt
     gamescope
     virt-manager
@@ -71,7 +70,9 @@
       daemon.enable = true;
     };
     graphics.extraPackages = with pkgs; [
-      rocmPackages.clr
+      # Fixed in nixpkgs#368672
+      #TODO: Check on nixpkgs#368672
+      #rocmPackages.clr
       nur.repos.materus.amdgpu-pro-libs.amf
     ];
     bluetooth.enable = true;

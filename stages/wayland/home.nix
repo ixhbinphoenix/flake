@@ -84,7 +84,7 @@ with lib;
 
     services.syncthing.enable = true;
     services.arrpc.enable = true;
-    services.network-manager-applet.enable = true;
+    #services.network-manager-applet.enable = true;
 
     programs.librewolf.enable = true;
     home.file.".librewolf/native-messaging-hosts/org.kde.plasma.browser_integration.json".source = "${pkgs.kdePackages.plasma-browser-integration}/lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json";
