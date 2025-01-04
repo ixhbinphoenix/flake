@@ -1,4 +1,5 @@
 { config, pkgs, lib, inputs, ... }: {
+  # TODO: Remove this import, as well as the flake input, as soon as nixpkgs#370878 gets merged
   imports = [
     "${inputs.pr-370878-zipline}/nixos/modules/services/web-apps/zipline.nix"
   ];
