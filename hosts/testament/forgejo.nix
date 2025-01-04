@@ -78,7 +78,6 @@ in {
 
         OFFLINE_MODE = false;
 
-        # TODOOO: Figure out SSH for native forgejo again
         DISABLE_SSH = false;
         SSH_USER = "git";
         SSH_DOMAIN = "git.ixhby.dev";

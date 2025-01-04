@@ -3,6 +3,7 @@
   uploads = basePath + "/uploads";
   public = basePath + "/public";
 in {
+  # TODOOO: Test out new module in nixpkgs#370878
 
   systemd.tmpfiles.rules = [
     "d '${basePath}' 0700 root root - -"
@@ -49,7 +50,6 @@ in {
     format = "dotenv";
   };
 
-  # TODO: Make a network for this
 
   virtualisation.quadlet.containers.zipline-postgres = {
     containerConfig = {

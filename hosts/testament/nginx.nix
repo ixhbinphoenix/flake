@@ -407,9 +407,10 @@
         '';
       };
     in {
+      actual = default 5006 "actual";
+      baikal = default 727 "baikal";
       conduwuit = default 6167 "conduwuit";
       cinny = default 6168 "cinny";
-      baikal = default 727 "baikal";
       forgejo = default 3000 "forgejo";
       graphana = default 1789 "grafana";
       ntfy = default 42069 "ntfy";
@@ -446,6 +447,11 @@
       };
       proxy_upstream = upstream: ssl // {
         locations."/".proxyPass = "http://${upstream}";
+      };
+
+      ACME_dummy = {
+        enableACME = true;
+        addSSL = true;
       };
     in {
       "more wine, more women, more metrics" = {
@@ -495,7 +501,7 @@
         client_max_body_size 20M;
         '';
       };
-      #"budget.ixhby.dev" = proxy 5006;
+      "budget.ixhby.dev" = proxy_upstream "actual";
       "CalDAV HTTP" = {
         serverName = "dav.ixhby.dev";
         
