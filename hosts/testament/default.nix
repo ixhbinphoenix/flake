@@ -80,6 +80,12 @@
     config = {
       allowUnfree = true;
     };
+
+    overlays = [
+      (final: prev: {
+        inherit (inputs.pr-370878-zipline.legacyPackages.${prev.system}) zipline;
+      })
+    ];
   };
 
   nix = {

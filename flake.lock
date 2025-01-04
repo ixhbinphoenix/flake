@@ -1571,6 +1571,22 @@
         "type": "github"
       }
     },
+    "pr-370878-zipline": {
+      "locked": {
+        "lastModified": 1736008264,
+        "narHash": "sha256-7u2/FvfEasqIa7e23v9CMiBmtuM0h9X9T5OlYwxsKPA=",
+        "owner": "Defelo",
+        "repo": "nixpkgs",
+        "rev": "9ad0f017a2fdb496f4ecf98350b1a9dab643b5e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Defelo",
+        "ref": "zipline",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "quadlet-nix": {
       "inputs": {
         "nixpkgs": [
@@ -1626,6 +1642,7 @@
         "nixpkgs": "nixpkgs_6",
         "nixvim": "nixvim",
         "nur": "nur",
+        "pr-370878-zipline": "pr-370878-zipline",
         "quadlet-nix": "quadlet-nix",
         "sops-nix": "sops-nix",
         "usc": "usc"
