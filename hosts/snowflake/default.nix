@@ -70,8 +70,7 @@
       daemon.enable = true;
     };
     graphics.extraPackages = with pkgs; [
-      # Fixed in nixpkgs#368672
-      #TODO: Check on nixpkgs#368672
+      # TODO: https://nixpk.gs/pr-tracker.html?pr=370180
       #rocmPackages.clr
       nur.repos.materus.amdgpu-pro-libs.amf
     ];

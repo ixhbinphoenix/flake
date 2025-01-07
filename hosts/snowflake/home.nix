@@ -60,7 +60,7 @@
     godot_4
     blender
     # Reported in nixpkgs#369571
-    #TODO: Check on nixpkgs#369571
+    # TODO: Check on nixpkgs#369571
     #orca-slicer
     freecad
   ];
