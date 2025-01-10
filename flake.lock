@@ -802,11 +802,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1735000011,
-        "narHash": "sha256-ElQHCoLFUhrEIob3eZv6+b8T2q++eNjjbfxch6zxP5Y=",
-        "rev": "5b8863807e87fbf4b55212e498e84cc6a2590445",
+        "lastModified": 1736373203,
+        "narHash": "sha256-5UI8RcMadhSHERqpXKSeaX1qDDTi9GOalN3PCmUfW/Y=",
+        "rev": "e2ebf7a4f6b59a4a1a1ece34c31b6ffdc0f92178",
         "type": "tarball",
-        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/5b8863807e87fbf4b55212e498e84cc6a2590445.tar.gz"
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/e2ebf7a4f6b59a4a1a1ece34c31b6ffdc0f92178.tar.gz"
       },
       "original": {
         "type": "tarball",
