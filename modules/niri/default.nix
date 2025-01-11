@@ -57,6 +57,7 @@
           "Super+Escape".action = spawn "anyrun";
           "Super+F4".action = spawn "wlogout";
           "Super+Shift+w".action = sh "random_wallpaper";
+          "Super+w".action = spawn "waypaper";
           "Super+P".action = sh "hyprpicker | wl-copy";
 
           "Super+o".action = show-hotkey-overlay;

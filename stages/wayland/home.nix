@@ -76,6 +76,7 @@ with lib;
       obsidian
 
       swww
+      waypaper
       thunderbird
       cava
     ];
