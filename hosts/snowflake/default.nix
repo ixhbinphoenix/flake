@@ -71,7 +71,7 @@
     };
     graphics.extraPackages = with pkgs; [
       # TODO: https://nixpk.gs/pr-tracker.html?pr=370180
-      #rocmPackages.clr
+      rocmPackages.clr
       nur.repos.materus.amdgpu-pro-libs.amf
     ];
     bluetooth.enable = true;
