@@ -921,11 +921,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736627588,
-        "narHash": "sha256-1YRHgNQcSUWPfJn3see8B94bwtwy0DpSnobEAq1BNiY=",
-        "rev": "a10d5480747d650485127d671836d988c29ef56d",
+        "lastModified": 1736790511,
+        "narHash": "sha256-+1KdDl3EjU7tElHEbh+wPzuX6kzGKfCck3SrlrsJIeU=",
+        "rev": "f0e5e3359020ee665e637cbc47656f1b8399244f",
         "type": "tarball",
-        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/gleachring/archive/a10d5480747d650485127d671836d988c29ef56d.tar.gz"
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/gleachring/archive/f0e5e3359020ee665e637cbc47656f1b8399244f.tar.gz"
       },
       "original": {
         "type": "tarball",
