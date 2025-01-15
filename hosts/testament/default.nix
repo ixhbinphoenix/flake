@@ -20,6 +20,10 @@
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
 
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+  };
+
   networking.hostName = "testament";
   networking.domain = "testament.vps.webdock.cloud";
 
