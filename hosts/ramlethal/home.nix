@@ -47,6 +47,6 @@
 
   home.packages = with pkgs; [
     osu-lazer-bin
-    orca-slicer
+    #orca-slicer
   ];
 }
