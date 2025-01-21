@@ -130,6 +130,16 @@
             block-out-from = "screen-capture";
           }
         ];
+
+        layer-rules = [
+          {
+            matches = [{
+              namespace = "notifications";
+            }];
+
+            block-out-from = "screen-capture";
+          }
+        ];
       };
     };
   };
