@@ -567,7 +567,7 @@
 
         locations."/" = {
           index = "index.html";
-          tryFiles = "$uri $uri/ $uri/index.html =404";
+          tryFiles = "$uri $uri.html $uri/ $uri/index.html =404";
         };
       };
     };

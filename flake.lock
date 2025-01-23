@@ -724,14 +724,17 @@
     },
     "flake-utils_4": {
       "inputs": {
-        "systems": "systems_6"
+        "systems": [
+          "garnix-dev",
+          "systems"
+        ]
       },
       "locked": {
-        "lastModified": 1726560853,
-        "narHash": "sha256-X6rJYSESBVr3hBoH0WbKE5KvhPU5bloyZ2L4K60/fPQ=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
@@ -799,14 +802,15 @@
         "flake-utils": "flake-utils_4",
         "nixpkgs": [
           "nixpkgs"
-        ]
+        ],
+        "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1736952449,
-        "narHash": "sha256-nRL8Op0r9MxcMHRAD1F/XTQAoQ4MvCzfA204MUU8rVM=",
-        "rev": "24eaccdf84e4fdf35694ecb4bb501ffee0b90497",
+        "lastModified": 1737558140,
+        "narHash": "sha256-GUQT6Ntx7fDGU/tdMcig7K7BMh7dS+bTf0LZqY++7+s=",
+        "rev": "9ff79c6a53814551bc7dd5aae2af2904fa9dafb0",
         "type": "tarball",
-        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/24eaccdf84e4fdf35694ecb4bb501ffee0b90497.tar.gz"
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/9ff79c6a53814551bc7dd5aae2af2904fa9dafb0.tar.gz"
       },
       "original": {
         "type": "tarball",
