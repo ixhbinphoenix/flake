@@ -806,11 +806,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1737558140,
-        "narHash": "sha256-GUQT6Ntx7fDGU/tdMcig7K7BMh7dS+bTf0LZqY++7+s=",
-        "rev": "9ff79c6a53814551bc7dd5aae2af2904fa9dafb0",
+        "lastModified": 1737890361,
+        "narHash": "sha256-nbeRSGuVryEQgQGt/6V3NKaHpemzHxGVHz4xSIvP5ug=",
+        "rev": "a48160b18f5b8d5f2c032d550ab1dbb12930b2d6",
         "type": "tarball",
-        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/9ff79c6a53814551bc7dd5aae2af2904fa9dafb0.tar.gz"
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/a48160b18f5b8d5f2c032d550ab1dbb12930b2d6.tar.gz"
       },
       "original": {
         "type": "tarball",
