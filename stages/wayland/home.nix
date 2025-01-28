@@ -62,7 +62,8 @@ with lib;
 
       qbittorrent
 
-      trackma-qt
+      # TODO: https://github.com/NixOS/nixpkgs/issues/377206
+      #trackma-qt
       vesktop
       strawberry
       tauon

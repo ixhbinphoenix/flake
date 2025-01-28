@@ -59,8 +59,7 @@
     scanmem
     godot_4
     blender
-    # TODO: Check on https://nixpk.gs/pr-tracker.html?pr=369729
-    #orca-slicer
+    orca-slicer
     freecad
   ];
 
