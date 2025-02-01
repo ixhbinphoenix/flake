@@ -754,11 +754,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1737890361,
-        "narHash": "sha256-nbeRSGuVryEQgQGt/6V3NKaHpemzHxGVHz4xSIvP5ug=",
-        "rev": "a48160b18f5b8d5f2c032d550ab1dbb12930b2d6",
+        "lastModified": 1738422895,
+        "narHash": "sha256-fuatwJZC8ryw9o8Xl+raaI4WfZtsSpIiCOR1YbXwcMw=",
+        "rev": "7544e4ef8f12ddcc4b7d389aa9cdc78a41d01f8c",
         "type": "tarball",
-        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/a48160b18f5b8d5f2c032d550ab1dbb12930b2d6.tar.gz"
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/7544e4ef8f12ddcc4b7d389aa9cdc78a41d01f8c.tar.gz"
       },
       "original": {
         "type": "tarball",
