@@ -35,6 +35,8 @@ with lib;
     catppuccin = {
       btop.enable = config.programs.btop.enable;
       bat.enable = config.programs.bat.enable;
+      lsd.enable = config.programs.lsd.enable;
+      fzf.enable = config.programs.fzf.enable;
     };
 
     git = {
@@ -49,16 +51,16 @@ with lib;
       };
     };
 
-    programs.btop = {
+    programs.btop.enable = true;
+    programs.bat.enable = true;
+    programs.lsd.enable = true;
+    programs.fzf = {
       enable = true;
+      enableZshIntegration = true;
     };
 
-    programs.bat = {
-      enable = true;
-    };
 
     home.packages = with pkgs; [
-      lsd
       xdg-utils
       hyfetch
       onefetch
