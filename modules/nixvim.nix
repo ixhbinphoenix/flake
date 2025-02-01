@@ -1,4 +1,4 @@
-{ pkgs, nixvim, ... }:
+{ pkgs, ... }:
 {
   imports = [];
 
@@ -74,11 +74,14 @@
             "<leader>pf" = {
               action = "find_files";
             };
-            "<leader>gr" = {
+            "<leader>pr" = {
               action = "live_grep";
             };
-            "<leader>gf" = {
+            "<leader>pg" = {
               action = "git_files";
+            };
+            "<leader>bb" = {
+              action = "buffers";
             };
           };
         };
@@ -201,6 +204,15 @@
 
         web-devicons.enable = true;
 
+        render-markdown = {
+          enable = true;
+          settings = {
+            render_modes = [
+              "n" "i" "t" "c"
+            ];
+          };
+        };
+
         presence-nvim = {
           enable = false;
           autoUpdate = true;
@@ -237,7 +249,6 @@
 
       extraPlugins = with pkgs.vimPlugins; [
         feline-nvim
-        nvim-web-devicons
         tabby-nvim
         plenary-nvim
       ];
