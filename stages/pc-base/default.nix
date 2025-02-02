@@ -276,7 +276,6 @@ with lib;
           dates = "weekly";
           options = "--delete-older-than 7d";
         };
-        package = pkgs.nixVersions.stable;
         registry.nixpkgs.flake = inputs.nixpkgs;
         extraOptions = "experimental-features = nix-command flakes";
       };

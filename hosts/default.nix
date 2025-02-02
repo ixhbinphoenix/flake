@@ -1,4 +1,4 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc, clock-lantern, gleachring, ...}:
+{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc, clock-lantern, gleachring, lix-module, ...}:
 let
   system = "x86_64-linux";
 
@@ -8,10 +8,12 @@ let
   };
 in
 {
+  # TODOO: make a function/template for most of this
   snowflake = lib.nixosSystem {
     inherit system;
     specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
+      lix-module.nixosModules.default
       sops-nix.nixosModules.sops
       nur.modules.nixos.default
       ./snowflake
@@ -48,6 +50,7 @@ in
     inherit system;
     specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
+      lix-module.nixosModules.default
       sops-nix.nixosModules.sops
       nur.modules.nixos.default
       ./unique
@@ -81,6 +84,7 @@ in
     inherit system;
     specialArgs = { inherit user inputs nur deploy-rs; };
     modules = [
+      lix-module.nixosModules.default
       nixos-hardware.nixosModules.framework-16-7040-amd
       sops-nix.nixosModules.sops
       nur.modules.nixos.default
@@ -115,6 +119,7 @@ in
     inherit system;
     specialArgs = { inherit user inputs nur deploy-rs conduwuit garnix-dev; };
     modules = [
+      lix-module.nixosModules.default
       sops-nix.nixosModules.sops
       quadlet-nix.nixosModules.quadlet
       clock-lantern.nixosModules.${system}.default

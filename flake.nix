@@ -7,41 +7,45 @@
   };
 
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = github:nix-community/home-manager;
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur.url = github:nix-community/NUR;
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/stable.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur.url = "github:nix-community/NUR";
     nixvim = {
-      url = github:nix-community/nixvim;
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     aagl = {
-      url = github:ezKEa/aagl-gtk-on-nix;
+      url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     anyrun = {
-      url = github:Kirottu/anyrun;
+      url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     arrpc = {
-      url = github:NotAShelf/arrpc-flake;
+      url = "github:NotAShelf/arrpc-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     deploy-rs = {
-      url = github:serokell/deploy-rs;
+      url = "github:serokell/deploy-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     anyrun-nixos-options = {
-      url = github:n3oney/anyrun-nixos-options;
+      url = "github:n3oney/anyrun-nixos-options";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri.url = github:sodiboo/niri-flake;
+    niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
-    catppuccin.url = github:catppuccin/nix;
+    catppuccin.url = "github:catppuccin/nix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    sops-nix.url = github:Mic92/sops-nix;
+    sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     conduwuit.url = "https://git.gay/june/conduwuit/archive/main.tar.gz";
@@ -51,7 +55,7 @@
       flake = false;
     };
 
-    quadlet-nix.url = github:SEIAROTg/quadlet-nix;
+    quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     quadlet-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     garnix-dev.url = "https://git.ixhby.dev/ixhbinphoenix/garnix.dev/archive/master.tar.gz";
@@ -74,7 +78,7 @@
         import ./hosts {
           inherit (nixpkgs) lib;
           inherit inputs nixpkgs user;
-          inherit (inputs) home-manager nur nixvim aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware sops-nix conduwuit quadlet-nix garnix-dev usc clock-lantern gleachring;
+          inherit (inputs) lix-module home-manager nur nixvim aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware sops-nix conduwuit quadlet-nix garnix-dev usc clock-lantern gleachring;
         }
       );
 
