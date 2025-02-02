@@ -3,7 +3,7 @@ with lib;
 {
   imports = [
     ../../modules/scripts.nix
-    ../../modules/zsh
+    ../../modules/zsh.nix
     ../../modules/git.nix
     ../../modules/tmux.nix
     ../../modules/nixvim.nix
