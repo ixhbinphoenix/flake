@@ -64,6 +64,9 @@
             nvimtree = true;
             treesitter = true;
           };
+          color_overrides.mocha = {
+            blue = "#cba6f7";
+          };
         };
       };
 
@@ -211,15 +214,6 @@
               "n" "i" "t" "c"
             ];
           };
-        };
-
-        presence-nvim = {
-          enable = false;
-          autoUpdate = true;
-          neovimImageText = "NixVim";
-          mainImage = "file";
-          enableLineNumber = false;
-          showTime = true;
         };
 
         nvim-tree = {
