@@ -21,6 +21,7 @@
         cat = "bat";
         icat = "kitten icat";
         ":q" = "exit";
+        "qq" = "exit";
       };
 
       initExtra = ''
