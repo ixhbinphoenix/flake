@@ -232,6 +232,10 @@
           git.ignore = false;
         };
 
+        lualine = {
+          enable = true;
+        };
+
         packer = {
           enable = true;
           plugins = [
@@ -242,8 +246,6 @@
       };
 
       extraPlugins = with pkgs.vimPlugins; [
-        feline-nvim
-        tabby-nvim
         plenary-nvim
       ];
 
@@ -253,13 +255,7 @@
           vim.g.neovide_cursor_animation_length = 0
         end
 
-        require('gitsigns').setup()
         require('nvim-terminal').setup()
-        require('tabby').setup({
-          tabline = require("tabby.presets").active_tab_with_wins
-        })
-        require("feline").setup()
-
         vim.keymap.set('n', '<Leader>gs', vim.cmd.Git);
 
         vim.diagnostic.config({
@@ -270,8 +266,6 @@
           require("nvim-tree.api").tree.open()
         end
         -- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
-
-        local tele = require('telescope.builtin')
       '';
     };
   };
