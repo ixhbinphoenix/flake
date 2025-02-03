@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, garnix-dev, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
   security.acme = {
     acceptTerms = true;
@@ -563,7 +563,7 @@
       "navi.ixhby.dev" = proxy_upstream "navidrome";
 
       "garnix.dev" = ssl // {
-        root = garnix-dev.packages."x86_64-linux".default;
+        root = inputs.garnix-dev.packages.${pkgs.system}.default;
 
         locations."/" = {
           index = "index.html";

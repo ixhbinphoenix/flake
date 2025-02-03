@@ -1,5 +1,4 @@
-{ config, pkgs, lib, user, usc, ... }:
-
+{ inputs, config, pkgs, lib, user, ... }:
 {
   imports = [];
 
@@ -53,7 +52,7 @@
 
   home.packages = with pkgs; [
     osu-lazer-bin
-    usc.packages."x86_64-linux".default
+    inputs.usc.packages.${pkgs.system}.default
     youtube-music
     libsForQt5.kdenlive
     scanmem

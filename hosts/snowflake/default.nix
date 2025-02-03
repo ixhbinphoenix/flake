@@ -1,4 +1,4 @@
-{ config, pkgs, lib, user, deploy-rs, ... }:
+{ inputs, config, pkgs, lib, user, ... }:
 {
   imports =
   [
@@ -20,7 +20,7 @@
     android-udev-rules
     signify
     wootility
-    deploy-rs.packages.x86_64-linux.default
+    inputs.deploy-rs.packages.${pkgs.system}.default
     wineWowPackages.stagingFull
     winetricks
     protontricks
@@ -31,6 +31,10 @@
     #jetbrains.rider
     android-studio
   ];
+
+  programs.honkers-railway-launcher.enable = true;
+  programs.anime-game-launcher.enable = true;
+  programs.sleepy-launcher.enable = true;
 
   stages.pc-base = {
     enable = true;

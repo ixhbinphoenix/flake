@@ -1,5 +1,5 @@
 # This will be a problem
-{pkgs, osConfig, home-manager, anyrun, anyrun-nixos-options, ...}: {
+{ inputs, pkgs, osConfig, ...}: {
   imports = [];
 
   options = {};
@@ -9,10 +9,10 @@
       enable = true;
       config = {
         plugins = [
-          anyrun.packages.${pkgs.system}.applications
-            anyrun.packages.${pkgs.system}.rink
-            anyrun.packages.${pkgs.system}.dictionary
-            anyrun-nixos-options.packages.${pkgs.system}.default
+          inputs.anyrun.packages.${pkgs.system}.applications
+          inputs.anyrun.packages.${pkgs.system}.rink
+          inputs.anyrun.packages.${pkgs.system}.dictionary
+          inputs.anyrun-nixos-options.packages.${pkgs.system}.default
         ];
         width = { fraction = 0.3; };
         height = { absolute = 0; };
@@ -32,7 +32,7 @@
 
       extraConfigFiles."nixos-options.ron".text = let
         nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
-        hm-options = home-manager.packages.${pkgs.system}.docs-json + "/share/doc/home-manager/options.json";
+        hm-options = inputs.home-manager.packages.${pkgs.system}.docs-json + "/share/doc/home-manager/options.json";
         options = builtins.toJSON {
           ":nix" = [nixos-options];
           ":hm" = [hm-options];

@@ -5,7 +5,6 @@ with lib;
     ../../modules/wlogout.nix
     ../../modules/anyrun.nix
     ../../modules/kitty
-    ../../modules/hyprland
     ../../modules/niri
   ];
 

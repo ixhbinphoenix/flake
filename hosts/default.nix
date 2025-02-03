@@ -1,130 +1,65 @@
-{nixpkgs, lib, inputs, user, home-manager, nur, nixvim, aagl, anyrun, anyrun-nixos-options, arrpc, deploy-rs, niri, catppuccin, nixos-hardware, sops-nix, conduwuit, quadlet-nix, garnix-dev, usc, clock-lantern, gleachring, lix-module, ...}:
+{nixpkgs, lib, inputs, user, ...}:
 let
-  system = "x86_64-linux";
-
   pkgs = import nixpkgs {
-    inherit system;
+    system = "x86_64-linux";
     config.allowUnfree = true;
+  };
+
+  mkSystem = {hostname, additionalModules}: {
+    specialArgs = { inherit user inputs; };
+    modules = [
+      inputs.lix-module.nixosModules.default
+      inputs.sops-nix.nixosModules.sops
+      ./${hostname}/default.nix
+    ] ++ additionalModules;
+  };
+
+  mkHomeSystem = {hostname, additionalModules ? [], additionalHomeModules ? []}: mkSystem {
+    inherit hostname;
+    additionalModules = [
+      ../stages/pc-base
+      ../stages/wayland
+      inputs.home-manager.nixosModules.home-manager
+      inputs.aagl.nixosModules.default
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit user inputs; };
+        home-manager.users.${user} = {
+          imports = [
+            inputs.nixvim.homeManagerModules.nixvim
+            inputs.anyrun.homeManagerModules.default
+            inputs.niri.homeModules.niri
+            inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.sops-nix.homeManagerModules.sops
+            ./${hostname}/home.nix
+            ../stages/pc-base/home.nix
+            ../stages/wayland/home.nix
+          ] ++ additionalHomeModules;
+        };
+      }
+    ] ++ additionalModules;
   };
 in
 {
-  # TODOO: make a function/template for most of this
-  snowflake = lib.nixosSystem {
-    inherit system;
-    specialArgs = { inherit user inputs nur deploy-rs; };
-    modules = [
-      lix-module.nixosModules.default
-      sops-nix.nixosModules.sops
-      nur.modules.nixos.default
-      ./snowflake
-      ../stages/pc-base
-      ../stages/wayland
-      home-manager.nixosModules.home-manager
-      {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options home-manager usc; };
-        home-manager.users.${user} = {
-          imports = [
-            nixvim.homeManagerModules.nixvim
-            anyrun.homeManagerModules.default
-            niri.homeModules.niri
-            catppuccin.homeManagerModules.catppuccin
-            sops-nix.homeManagerModules.sops
-            ./snowflake/home.nix
-            ../stages/pc-base/home.nix
-            ../stages/wayland/home.nix
-          ];
-        };
-      }
-      {
-        imports = [ aagl.nixosModules.default ];
-        nix.settings = aagl.nixConfig;
-        programs.honkers-railway-launcher.enable = true;
-        programs.anime-game-launcher.enable = true;
-        programs.sleepy-launcher.enable = true;
-      }
+  snowflake = lib.nixosSystem (mkHomeSystem {
+    hostname = "snowflake";
+  });
+  unique = lib.nixosSystem (mkHomeSystem {
+    hostname = "unique";
+  });
+  ramlethal = lib.nixosSystem (mkHomeSystem {
+    hostname = "ramlethal";
+    additionalModules = [
+      inputs.nixos-hardware.nixosModules.framework-16-7040-amd
     ];
-  };
-  unique = lib.nixosSystem {
-    inherit system;
-    specialArgs = { inherit user inputs nur deploy-rs; };
-    modules = [
-      lix-module.nixosModules.default
-      sops-nix.nixosModules.sops
-      nur.modules.nixos.default
-      ./unique
-      ../stages/pc-base
-      ../stages/wayland
-      home-manager.nixosModules.home-manager {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options home-manager; };
-        home-manager.users.${user} = {
-          imports = [
-            nixvim.homeManagerModules.nixvim
-            anyrun.homeManagerModules.default
-            niri.homeModules.niri
-            catppuccin.homeManagerModules.catppuccin
-            sops-nix.homeManagerModules.sops
-            ./unique/home.nix
-            ../stages/pc-base/home.nix
-            ../stages/wayland/home.nix
-          ];
-        };
-      }
-      {
-        imports = [ aagl.nixosModules.default ];
-        nix.settings = aagl.nixConfig;
-        programs.anime-game-launcher.enable = true;
-      }
+  });
+  testament = lib.nixosSystem(mkSystem {
+    hostname = "testament";
+    additionalModules = [
+      inputs.quadlet-nix.nixosModules.quadlet
+      inputs.clock-lantern.nixosModules.${pkgs.system}.default
+      inputs.gleachring.nixosModules.${pkgs.system}.default
     ];
-  };
-  ramlethal = lib.nixosSystem {
-    inherit system;
-    specialArgs = { inherit user inputs nur deploy-rs; };
-    modules = [
-      lix-module.nixosModules.default
-      nixos-hardware.nixosModules.framework-16-7040-amd
-      sops-nix.nixosModules.sops
-      nur.modules.nixos.default
-      ./ramlethal
-      ../stages/pc-base
-      ../stages/wayland
-      home-manager.nixosModules.home-manager {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user anyrun anyrun-nixos-options home-manager; };
-        home-manager.users.${user} = {
-          imports = [
-            nixvim.homeManagerModules.nixvim
-            anyrun.homeManagerModules.default
-            niri.homeModules.niri
-            catppuccin.homeManagerModules.catppuccin
-            sops-nix.homeManagerModules.sops
-            ./ramlethal/home.nix
-            ../stages/pc-base/home.nix
-            ../stages/wayland/home.nix
-          ];
-        };
-      }
-      {
-        imports = [ aagl.nixosModules.default ];
-        nix.settings = aagl.nixConfig;
-        programs.sleepy-launcher.enable = true;
-      }
-    ];
-  };
-  testament = lib.nixosSystem {
-    inherit system;
-    specialArgs = { inherit user inputs nur deploy-rs conduwuit garnix-dev; };
-    modules = [
-      lix-module.nixosModules.default
-      sops-nix.nixosModules.sops
-      quadlet-nix.nixosModules.quadlet
-      clock-lantern.nixosModules.${system}.default
-      gleachring.nixosModules.${system}.default
-      ./testament
-    ];
-  };
+  });
 }

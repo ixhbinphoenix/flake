@@ -1,4 +1,4 @@
-{ config, pkgs, lib, user, deploy-rs, ... }:
+{ config, pkgs, lib, user, inputs, ... }:
 {
   imports =
   [
@@ -14,7 +14,7 @@
     dotnet-sdk
     dotnet-runtime
     signify
-    deploy-rs.packages.x86_64-linux.default
+    inputs.deploy-rs.packages.${pkgs.system}.default
     wineWowPackages.stagingFull
     winetricks
     protontricks
@@ -45,6 +45,8 @@
     desktop.niri.enable = true;
     desktop.greetd.cmd = "niri-session";
   };
+
+  programs.sleepy-launcher.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 

@@ -50,10 +50,6 @@
 
     conduwuit.url = "https://git.gay/june/conduwuit/archive/main.tar.gz";
     conduwuit.inputs.nixpkgs.follows = "nixpkgs";
-    conduwuit.inputs.rocksdb = {
-      url = "github:girlbossceo/rocksdb?ref=v9.7.3";
-      flake = false;
-    };
 
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     quadlet-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -78,7 +74,6 @@
         import ./hosts {
           inherit (nixpkgs) lib;
           inherit inputs nixpkgs user;
-          inherit (inputs) lix-module home-manager nur nixvim aagl anyrun anyrun-nixos-options arrpc deploy-rs niri catppuccin nixos-hardware sops-nix conduwuit quadlet-nix garnix-dev usc clock-lantern gleachring;
         }
       );
 

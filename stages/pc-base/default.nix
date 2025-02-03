@@ -1,4 +1,4 @@
-{ config, lib, pkgs, nur, inputs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 with lib;
 {
   imports = [
@@ -263,7 +263,7 @@ with lib;
           packageOverrides = super: let self = super.pkgs; in {
           };
         };
-        overlays = [ nur.overlays.default ];
+        overlays = [ inputs.nur.overlays.default ];
       };
     
       nix = {

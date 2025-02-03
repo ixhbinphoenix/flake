@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, conduwuit, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ./networking.nix # generated at runtime by nixos-infect
