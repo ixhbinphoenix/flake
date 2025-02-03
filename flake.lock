@@ -787,11 +787,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1738605608,
-        "narHash": "sha256-jhUWOCjd3A3Uv+LSXrPzi+WZTtuQa/uBTsDtXRATcw4=",
-        "rev": "c3e3588c5d3ba7553031f21ae54c67c85f64cf92",
+        "lastModified": 1738610255,
+        "narHash": "sha256-jq7J/E9pXcHy1fK9fXfF5nCYN0iBjRGH+wBZ3pPYktE=",
+        "rev": "254ec4e4c1a52d97f2df89b5563516935e5ee30e",
         "type": "tarball",
-        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/c3e3588c5d3ba7553031f21ae54c67c85f64cf92.tar.gz?rev=c3e3588c5d3ba7553031f21ae54c67c85f64cf92"
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/254ec4e4c1a52d97f2df89b5563516935e5ee30e.tar.gz?rev=254ec4e4c1a52d97f2df89b5563516935e5ee30e"
       },
       "original": {
         "type": "tarball",
