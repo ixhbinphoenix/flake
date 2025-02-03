@@ -74,7 +74,6 @@
       daemon.enable = true;
     };
     graphics.extraPackages = with pkgs; [
-      # TODO: https://nixpk.gs/pr-tracker.html?pr=370180
       rocmPackages.clr
       nur.repos.materus.amdgpu-pro-libs.amf
     ];
