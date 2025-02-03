@@ -25,8 +25,54 @@
         maxEntries = 10;
       };
       extraCss = ''
-        window {
-          opacity: 0%;
+        @define-color bg rgb(30, 30, 46);
+        @define-color border rgb(30, 30, 46);
+        @define-color selected rgb(203, 166, 247);
+        @define-color text rgb(205, 214, 244);
+
+        * {
+          transition: 200ms ease;
+          font-family: "Iosevka Nerd Font";
+          caret-color: @text;
+        }
+
+        #window {
+          background: transparent;
+        }
+
+        #plugin,
+        #main {
+          border: 3px solid @border;
+          color: @text;
+          background-color: @bg;
+        }
+
+        #entry {
+          color: @text;
+          background: @bg;
+          border: 2px solid @selected;
+          box-shadow: none;
+        }
+
+        #match:selected {
+          color: @bg;
+          background: @selected;
+        }
+
+        #match {
+          padding: 3px;
+          border-radius: 16px;
+        }
+
+        #entry, #plugin:hover {
+          border-radius: 16px;
+        }
+
+        box#main {
+          background: @bg;
+          border: 1px solid @border;
+          border-radius: 15px;
+          padding: 5px;
         }
       '';
 
