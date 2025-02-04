@@ -49,7 +49,6 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     conduwuit.url = "https://git.gay/june/conduwuit/archive/main.tar.gz";
-    conduwuit.inputs.nixpkgs.follows = "nixpkgs";
 
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
     quadlet-nix.inputs.nixpkgs.follows = "nixpkgs";
