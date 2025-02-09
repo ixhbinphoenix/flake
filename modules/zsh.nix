@@ -56,9 +56,9 @@
           renamed = "[~$count](fg:#fab387) ";
           deleted = "[-$count](fg:#f38ba8) ";
 
-          ahead = "[⇡$count](fg:#a6e3a1)";
-          behind = "[⇣$count](fg:#a6e3a1)";
-          diverged = "[⇡$ahead_count⇣$behind_count](fg:#a6e3a1)";
+          ahead = "[⇡$count](fg:#a6e3a1) ";
+          behind = "[⇣$count](fg:#a6e3a1) ";
+          diverged = "[⇡$ahead_count⇣$behind_count](fg:#a6e3a1) ";
         };
         status = {
           format = "[$symbol$status]($style)";
