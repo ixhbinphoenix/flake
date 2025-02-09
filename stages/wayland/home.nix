@@ -4,7 +4,7 @@ with lib;
   imports = [
     ../../modules/wlogout.nix
     ../../modules/anyrun.nix
-    ../../modules/kitty
+    ../../modules/kitty.nix
     ../../modules/niri
   ];
 
@@ -63,7 +63,9 @@ with lib;
 
       # TODO: https://github.com/NixOS/nixpkgs/issues/377206
       #trackma-qt
-      vesktop
+      (vesktop.override {
+        electron = pkgs.electron_32;
+      })
       strawberry
       tauon
       #nheko # When are those CVE's getting fixed wtf
