@@ -21,7 +21,8 @@
         cat = "bat";
         icat = "kitten icat";
         ":q" = "exit";
-        "qq" = "exit";
+        qq = "exit";
+        v = "nvim";
       };
 
       initExtra = ''
