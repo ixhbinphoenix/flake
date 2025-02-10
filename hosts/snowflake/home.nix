@@ -57,7 +57,6 @@
     libsForQt5.kdenlive
     scanmem
     godot_4
-    blender
     orca-slicer
     freecad
   ];

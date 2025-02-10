@@ -1,5 +1,40 @@
 { config, pkgs, lib, inputs, ... }: let
   users = config.users.users;
+
+  # TODO: https://github.com/NixOS/nixpkgs/issues/380351
+  override = (pkgs.searxng.override {
+    python3 = pkgs.python3.override { 
+      packageOverrides = pyFinal: pyPrev: {
+        httpx = pyPrev.httpx.overridePythonAttrs (o: rec {
+          version = "0.27.2";
+          src = pkgs.fetchFromGitHub {
+            owner = "encode";
+            repo = o.pname;
+            tag = version;
+            hash = "sha256-N0ztVA/KMui9kKIovmOfNTwwrdvSimmNkSvvC+3gpck=";
+          };
+        });
+        starlette = pyPrev.starlette.overridePythonAttrs (o: rec {
+          version = "0.41.2";
+          src = pkgs.fetchFromGitHub {
+            owner = "encode";
+            repo = o.pname;
+            tag = version;
+            hash = "sha256-ZNB4OxzJHlsOie3URbUnZywJbqOZIvzxS/aq7YImdQ0=";
+          };
+        });
+        httpx-socks = pyPrev.httpx-socks.overridePythonAttrs (o: rec {
+          version = "0.9.2";
+          src = pkgs.fetchFromGitHub {
+            owner = "romis2012";
+            repo = o.pname;
+            tag = "v${version}";
+            hash = "sha256-PUiciSuDCO4r49st6ye5xPLCyvYMKfZY+yHAkp5j3ZI=";
+          };
+        });
+      };
+    };
+  });
 in {
   sops.secrets.searx = {
     sopsFile = ../../secrets/testament/searx.env;
@@ -10,7 +45,7 @@ in {
 
   services.searx = {
     enable = true;
-    package = pkgs.searxng;
+    package = override;
 
     redisCreateLocally = true;
 
