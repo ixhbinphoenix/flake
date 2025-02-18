@@ -116,6 +116,7 @@
 
         lsp = {
           enable = true;
+          capabilities = "capabilities.semanticTokensProvider = nil";
           keymaps = {
             diagnostic = {
               "[d" = "goto_next";
