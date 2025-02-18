@@ -776,20 +776,36 @@
         "type": "github"
       }
     },
+    "flockenzeit": {
+      "locked": {
+        "lastModified": 1671185345,
+        "narHash": "sha256-+5IWi+iJAYcRxvLN15hKO2hVwNokfN3U+lvWf/zFtCg=",
+        "owner": "balsoft",
+        "repo": "Flockenzeit",
+        "rev": "90abba65671690d95b5d28ce6dd8de7959aa1339",
+        "type": "github"
+      },
+      "original": {
+        "owner": "balsoft",
+        "repo": "Flockenzeit",
+        "type": "github"
+      }
+    },
     "garnix-dev": {
       "inputs": {
         "flake-utils": "flake-utils_3",
+        "flockenzeit": "flockenzeit",
         "nixpkgs": [
           "nixpkgs"
         ],
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1738615969,
-        "narHash": "sha256-HOg6+xtsHXYDsKBa3U9gPhmjMEh3rTIIdz+0BLKQcsc=",
-        "rev": "b3503193bec0cea207ece947e3c4371abd90d5cb",
+        "lastModified": 1739314073,
+        "narHash": "sha256-WlJdX2m12QZ9e5gEKTAPtQ0Uu9JLrStIYj9zUbYpOcQ=",
+        "rev": "2cc9ad292785b6cafc6646ff034627aa05c11911",
         "type": "tarball",
-        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/b3503193bec0cea207ece947e3c4371abd90d5cb.tar.gz?rev=b3503193bec0cea207ece947e3c4371abd90d5cb"
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/2cc9ad292785b6cafc6646ff034627aa05c11911.tar.gz?rev=2cc9ad292785b6cafc6646ff034627aa05c11911"
       },
       "original": {
         "type": "tarball",
