@@ -10,6 +10,7 @@
     ./uptime-kuma.nix
     # TODOO: Fix baikal
     #./baikal.nix
+    ./bluesky.nix
     ./matrix.nix
     ./zipline.nix
     ./actualbudget.nix

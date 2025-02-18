@@ -1,8 +1,23 @@
 { config, pkgs, lib, inputs, ... }:
 {
+  sops.secrets.acme = {
+    sopsFile = ../../secrets/testament/acme.env;
+    format = "dotenv";
+  };
+  
   security.acme = {
     acceptTerms = true;
     defaults.email = "contact+acme@ixhby.dev";
+
+    certs = {
+      "pds.ixhby.dev" = {
+        dnsProvider = "porkbun";
+        webroot = lib.mkForce null;
+        email = "phoenixgames.phoenix13@gmail.com";
+        extraDomainNames = [ "*.pds.ixhby.dev" ];
+        environmentFile = config.sops.secrets.acme.path;
+      };
+    };
   };
 
   networking.firewall = let
@@ -418,6 +433,7 @@
       uptime-kuma = default 3001 "uptime-kuma";
       zipline = default 3333 "zipline";
       navidrome = default 4533 "navidrome";
+      bluesky = default 6145 "bluesky";
     };
 
     virtualHosts = let
@@ -561,6 +577,14 @@
       };
       "i.ixhby.dev" = proxy_upstream "zipline";
       "navi.ixhby.dev" = proxy_upstream "navidrome";
+      "pds.ixhby.dev" = ssl // {
+        serverAliases = [ "*.pds.ixhby.dev" ];
+
+        locations."/" = {
+          proxyPass = "http://bluesky";
+          proxyWebsockets = true;
+        };
+      };
 
       "garnix.dev" = ssl // {
         root = inputs.garnix-dev.packages.${pkgs.system}.default;
