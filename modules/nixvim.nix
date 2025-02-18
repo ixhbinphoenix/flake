@@ -236,6 +236,10 @@
           enable = true;
         };
 
+        rainbow-delimiters = {
+          enable = true;
+        };
+
         packer = {
           enable = true;
           plugins = [
