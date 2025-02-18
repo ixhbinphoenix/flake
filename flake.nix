@@ -68,7 +68,7 @@
   outputs = inputs @ { self, nixpkgs, deploy-rs, ... }:
     let
       user = "phoenix";
-    in rec {
+    in {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
