@@ -1,12 +1,13 @@
-{ config, pkgs, lib, inputs, ... }: {
+{ config, lib, ... }: {
 
   services.zipline = {
     enable = true;
     environmentFiles = [ config.sops.secrets.ziplineenv.path ];
+    database.createLocally = false;
     settings = {
-      CORE_RETURN_HTTPS = "true";
-      CORE_HOST = "127.0.0.1";
+      CORE_HOSTNAME = "127.0.0.1";
       CORE_PORT = 3333;
+      DATABASE_URL = "postgresql://ziplinev4@localhost/ziplinev4?host=/run/postgresql";
       EXIF_REMOVE_GPS = "true";
       FEATURES_ROBOTS_TXT = "true";
       MFA_TOTP_ISSUER = "Ixhby's Zipline";
@@ -21,7 +22,14 @@
       WEBSITE_SHOW_FILES_PER_USER = "true";
       WEBSITE_SHOW_VERSION = "true";
     };
-    database.createLocally = true;
+  };
+
+  services.postgresql = {
+    ensureUsers = lib.singleton {
+      name = "ziplinev4";
+      ensureDBOwnership = true;
+    };
+    ensureDatabases = [ "ziplinev4" ];
   };
 
   sops.secrets.ziplineenv = {

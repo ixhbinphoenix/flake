@@ -33,7 +33,7 @@
         text = ''
           #shellcheck disable=SC1091
           set -a && source ${config.sops.secrets.zipline-upload.path} && set +a
-          curl -H "authorization: $ZIPLINE_TOKEN" https://i.ixhby.dev/api/upload -F file=@/tmp/screenshot.png -H "Content-Type: multipart/form-data" | jq -r '.files[0]' | tr -d '\n' | wl-copy
+          curl -H "authorization: $ZIPLINE_TOKEN" https://i.ixhby.dev/api/upload -F file=@/tmp/screenshot.png -H "Content-Type: multipart/form-data" | jq -r '.files[0].url' | tr -d '\n' | wl-copy
           notify-send -h string:x-canonical-private-synchronous:shot-notify -u low "Screenshot uploaded. \
           Link copied to clipboard"
         '';
