@@ -119,6 +119,7 @@ with lib;
         qiv
         cage
         xwayland-run
+        nautilus
       ];
     };
 
