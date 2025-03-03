@@ -434,6 +434,7 @@
       zipline = default 3333 "zipline";
       navidrome = default 4533 "navidrome";
       bluesky = default 6145 "bluesky";
+      soulseek = default 5030 "soulseek";
     };
 
     virtualHosts = let
@@ -582,6 +583,12 @@
 
         locations."/" = {
           proxyPass = "http://bluesky";
+          proxyWebsockets = true;
+        };
+      };
+      "slskd.ixhby.dev" = ssl // {
+        locations."/" = {
+          proxyPass = "http://soulseek";
           proxyWebsockets = true;
         };
       };

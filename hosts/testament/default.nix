@@ -16,6 +16,7 @@
     ./actualbudget.nix
     ./metrics.nix
     ./navidrome.nix
+    ./soulseek.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -23,6 +24,7 @@
 
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
+    "fs.inotify.max_user_watches" = 1048576;
   };
 
   networking.hostName = "testament";
