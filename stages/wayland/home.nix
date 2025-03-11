@@ -63,9 +63,7 @@ with lib;
 
       # TODO: https://github.com/NixOS/nixpkgs/issues/377206
       #trackma-qt
-      (vesktop.override {
-        electron = pkgs.electron_32;
-      })
+      vesktop
       strawberry
       tauon
       #nheko # When are those CVE's getting fixed wtf
