@@ -16,7 +16,6 @@
           "/var/lib/navidrome-music"
           "!/var/lib/navidrome-music/spezi-ell"
           "!/var/lib/navidrome-music/soundboard"
-          "!/var/lib/navidrome-music/Linkin Park - From Zero"
         ];
         filters = [
           "rsync.sh$"
