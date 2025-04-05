@@ -32,7 +32,7 @@
   };
   programs.niri.settings.input = {
     touchpad = {
-      disabled-on-external-mouse = true;
+      disabled-on-external-mouse = false;
       # FUCK NATURAL SCROLL!!!!!!
       # PIECE OF SHIT!!!!
       natural-scroll = false;
