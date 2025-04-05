@@ -155,6 +155,16 @@
           ${set_animated_wallpaper}/bin/set_animated_wallpaper "$WALLPAPER"
         '';
       };
+      liju_protocol = pkgs.writeShellApplication {
+        name = "liju_protocol";
+
+        runtimeInputs = with pkgs; [ comrak xdg-utils ];
+
+        text = ''
+          comrak --gfm -t html -o "$1-protocol.html" "$1-protocol.md"
+          xdg-open "$1-protocol.html"
+        '';
+      };
     in [
       ils
       nix-gc
@@ -165,6 +175,7 @@
       random_wallpaper
       set_animated_wallpaper
       random_animated_wallpaper
+      liju_protocol
     ];
   };
 }
