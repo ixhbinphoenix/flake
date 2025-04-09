@@ -140,6 +140,10 @@
             gleam.enable = true;
             gopls.enable = true;
             html.enable = true;
+            hls = {
+              enable = true;
+              installGhc = false;
+            };
             java_language_server.enable = true;
             kotlin_language_server.enable = true;
             lua_ls = {
