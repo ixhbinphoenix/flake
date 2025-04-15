@@ -24,6 +24,10 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     arrpc = {
       url = "github:NotAShelf/arrpc-flake";
       inputs.nixpkgs.follows = "nixpkgs";
