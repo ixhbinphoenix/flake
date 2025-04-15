@@ -43,7 +43,6 @@
     wineWowPackages.stagingFull
     winetricks
     protontricks
-    xivlauncher
     via
   ];
 

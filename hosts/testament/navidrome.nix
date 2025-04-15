@@ -1,9 +1,7 @@
 { config, pkgs, lib, inputs, ... }: {
   systemd.tmpfiles.settings.navidromeDirs = {
     "/var/lib/navidrome-music"."d" = {
-      mode = "777";
-      user = config.services.navidrome.user;
-      group = config.services.navidrome.group;
+      mode = lib.mkForce "777";
     };
   };
 

@@ -425,7 +425,6 @@
       actual = default 5006 "actual";
       baikal = default 727 "baikal";
       conduwuit = default 6167 "conduwuit";
-      cinny = default 6168 "cinny";
       forgejo = default 3000 "forgejo";
       graphana = default 1789 "grafana";
       ntfy = default 42069 "ntfy";
@@ -485,38 +484,6 @@
           prometheus all;
           '';
         };
-      };
-      "ixhby.dev" = ssl // {
-        listen = defaultListen ++ [
-          (SSLv4 8448)
-          (SSLv6 8448)
-        ];
-
-        extraConfig = ''
-        merge_slashes off;
-        '';
-
-        locations = {
-          "/_matrix/" = {
-            proxyPass = "http://conduwuit";
-            extraConfig = ''
-            proxy_buffering off;
-            proxy_read_timeout 5m;
-            '';
-          };
-          "/.well-known/matrix/" = {
-            proxyPass = "http://conduwuit";
-            extraConfig = ''
-            proxy_buffering off;
-            proxy_read_timeout 5m;
-            '';
-          };
-        };
-      };
-      "cinny.ixhby.dev" = (proxy_upstream "cinny") // {
-        extraConfig = ''
-        client_max_body_size 20M;
-        '';
       };
       "budget.ixhby.dev" = proxy_upstream "actual";
       "CalDAV HTTP" = {

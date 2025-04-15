@@ -59,6 +59,7 @@
     godot_4
     orca-slicer
     freecad
+    bs-manager
   ];
 
   programs.obs-studio = {

@@ -28,9 +28,8 @@ let
         home-manager.users.${user} = {
           imports = [
             inputs.nixvim.homeManagerModules.nixvim
-            inputs.anyrun.homeManagerModules.default
             inputs.niri.homeModules.niri
-            inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.catppuccin.homeModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
             ./${hostname}/home.nix
             ../stages/pc-base/home.nix

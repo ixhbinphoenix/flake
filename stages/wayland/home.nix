@@ -67,7 +67,7 @@ with lib;
       strawberry
       tauon
       #nheko # When are those CVE's getting fixed wtf
-      signal-desktop
+      signal-desktop-bin
       gajim
       gimp
       mpvpaper

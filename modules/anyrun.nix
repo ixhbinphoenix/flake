@@ -9,9 +9,6 @@
       enable = true;
       config = {
         plugins = [
-          inputs.anyrun.packages.${pkgs.system}.applications
-          inputs.anyrun.packages.${pkgs.system}.rink
-          inputs.anyrun.packages.${pkgs.system}.dictionary
           inputs.anyrun-nixos-options.packages.${pkgs.system}.default
         ];
         width = { fraction = 0.3; };

@@ -97,21 +97,6 @@
           nixvimInjections = true;
         };
 
-        harpoon = {
-          enable = true;
-          keymaps = {
-            addFile = "<leader>a";
-            toggleQuickMenu = "<C-e>";
-
-            navFile = {
-              "1" = "<C-h>";
-              "2" = "<C-t>";
-              "3" = "<C-n>";
-              "4" = "<C-h>";
-            };
-          };
-        };
-
         fugitive.enable = true;
 
         lsp = {
@@ -244,18 +229,19 @@
         rainbow-delimiters = {
           enable = true;
         };
-
-        packer = {
-          enable = true;
-          plugins = [
-            "s1n7ax/nvim-terminal"
-            "rhaiscript/vim-rhai"
-          ];
-        };
       };
 
       extraPlugins = with pkgs.vimPlugins; [
         plenary-nvim
+        (pkgs.vimUtils.buildVimPlugin {
+          name = "nvim-terminal";
+          src = pkgs.fetchFromGitHub {
+            owner = "s1n7ax";
+            repo = "nvim-terminal";
+            rev = "e058de4b8029d7605b17275f30f83be8f8df5f62";
+            hash = "sha256-+sP7BDPVc+XbWfCjRkWV/n3dHh6VYiunrCAhf3mImWQ=";
+          };
+        })
       ];
 
       extraConfigLua = ''
