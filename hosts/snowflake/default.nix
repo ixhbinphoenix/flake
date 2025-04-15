@@ -24,12 +24,12 @@
     wineWowPackages.stagingFull
     winetricks
     protontricks
-    xivlauncher
     localsend
     nur.repos.ixhbinphoenix.localbooru-bin
     jetbrains.idea-community-bin
     #jetbrains.rider
     android-studio
+    stash
   ];
 
   programs.honkers-railway-launcher.enable = true;
@@ -67,6 +67,8 @@
     "192.168.172.189" = ["twinkpad"];
     "192.168.172.115" = ["ramlethal"];
   };
+
+  networking.firewall.allowedTCPPorts = [ 7590 9999 ];
 
   hardware = {
     opentabletdriver = {
