@@ -72,6 +72,7 @@ with lib;
       gimp
       mpvpaper
       pcmanfm
+      picard
 
       obsidian
 
