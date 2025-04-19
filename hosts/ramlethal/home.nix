@@ -29,6 +29,26 @@
       };
       scale = 1;
     };
+    "DP-12" = {
+      mode = {
+        width = 1920;
+        height = 1080;
+        refresh = 60.0;
+      };
+      scale = 1;
+      position.x = 4480;
+      position.y = 0;
+    };
+    "DP-10" = {
+      mode = {
+        width = 1920;
+        height = 1080;
+        refresh = 60.0;
+      };
+      scale = 1;
+      position.x = 2560;
+      position.y = 0;
+    };
   };
   programs.niri.settings.input = {
     touchpad = {
