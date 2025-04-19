@@ -658,7 +658,7 @@
     },
     "flake-utils_4": {
       "inputs": {
-        "systems": "systems_6"
+        "systems": "systems_7"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -676,7 +676,7 @@
     },
     "flake-utils_5": {
       "inputs": {
-        "systems": "systems_7"
+        "systems": "systems_8"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -694,7 +694,7 @@
     },
     "flake-utils_6": {
       "inputs": {
-        "systems": "systems_8"
+        "systems": "systems_9"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -712,7 +712,7 @@
     },
     "flake-utils_7": {
       "inputs": {
-        "systems": "systems_9"
+        "systems": "systems_10"
       },
       "locked": {
         "lastModified": 1726560853,
@@ -762,21 +762,46 @@
       "inputs": {
         "flake-utils": "flake-utils_3",
         "flockenzeit": "flockenzeit",
+        "garnix-highlighter": "garnix-highlighter",
         "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems_6"
+      },
+      "locked": {
+        "lastModified": 1745104762,
+        "narHash": "sha256-nv/PqLoBQ6B2Uq4L/TfDxAFDPev53UaSlp5dlz30N04=",
+        "rev": "6a34f1ac1d58c02f29830fa9cb5b0e3ba430b7fa",
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/6a34f1ac1d58c02f29830fa9cb5b0e3ba430b7fa.tar.gz?rev=6a34f1ac1d58c02f29830fa9cb5b0e3ba430b7fa"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/ixhbinphoenix/garnix.dev/archive/master.tar.gz"
+      }
+    },
+    "garnix-highlighter": {
+      "inputs": {
+        "flake-utils": [
+          "garnix-dev",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "garnix-dev",
           "nixpkgs"
         ],
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1744754262,
-        "narHash": "sha256-orhQQ9vdnutfeUPb2pdripqs8A86j7kJunTknGPO7ko=",
-        "rev": "bb03f0994615219e930609e2122faa92f96ccf30",
+        "lastModified": 1745103513,
+        "narHash": "sha256-VV6Ns2SpzZbnagX+ueB6WY6AzuXFOL4yV66hp3qtrCA=",
+        "rev": "c53ccd73d96e464cc16afef79defdc047c6f08f7",
         "type": "tarball",
-        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix.dev/archive/bb03f0994615219e930609e2122faa92f96ccf30.tar.gz?rev=bb03f0994615219e930609e2122faa92f96ccf30"
+        "url": "https://git.ixhby.dev/api/v1/repos/ixhbinphoenix/garnix-highlighter/archive/c53ccd73d96e464cc16afef79defdc047c6f08f7.tar.gz?rev=c53ccd73d96e464cc16afef79defdc047c6f08f7"
       },
       "original": {
         "type": "tarball",
-        "url": "https://git.ixhby.dev/ixhbinphoenix/garnix.dev/archive/master.tar.gz"
+        "url": "https://git.ixhby.dev/ixhbinphoenix/garnix-highlighter/archive/root.tar.gz"
       }
     },
     "git-hooks": {
@@ -1519,6 +1544,21 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "systems_10": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
         "type": "github"
       }
     },

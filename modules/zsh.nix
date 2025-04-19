@@ -23,6 +23,7 @@
         ":q" = "exit";
         qq = "exit";
         v = "nvim";
+        "+x" = "chmod +x";
       };
 
       initExtra = ''
