@@ -1,5 +1,4 @@
-{ config, pkgs, lib, inputs, ... }: let
-  cfg = config.services.forgejo;
+{ config, pkgs, lib, ... }: let
   users = config.users.users;
 in {
 
@@ -24,7 +23,12 @@ in {
     "forgejo/metrics/TOKEN" = gitSecret;
     "forgejo/oauth2/JWT_SECRET" = gitSecret;
     "forgejo/database_password" = gitSecret;
+    forgejo-runner = {
+      sopsFile = ../../secrets/testament/forgejo-runner.env;
+      format = "dotenv";
+    };
   };
+
 
   services.postgresql = {
     authentication = pkgs.lib.mkOverride 10 ''
@@ -34,6 +38,31 @@ in {
       host  all      all    127.0.0.1/32 trust
       host  all      all    ::1/128      trust
     '';
+  };
+
+  services.gitea-actions-runner = {
+    package = pkgs.forgejo-runner;
+    instances.default = {
+      enable = true;
+      name = "testament-01";
+      url = "https://git.ixhby.dev";
+      tokenFile = config.sops.secrets.forgejo-runner.path;
+      labels = [
+        "docker:docker://docker.io/library/alpine:latest"
+        "alpine:docker://docker.io/library/alpine:latest"
+        "alpine-latest:docker://docker.io/library/alpine:latest"
+        "debian:docker://docker.io/library/debian:bookworm"
+        "debian-bookworm:docker://docker.io/library/debian:bookworm"
+        "lix:docker://git.lix.systems/lix-project/lix:latest"
+      ];
+
+      settings = {
+        cache = {
+          enabled = true;
+          port = 0;
+        };
+      };
+    };
   };
 
   services.forgejo = {
