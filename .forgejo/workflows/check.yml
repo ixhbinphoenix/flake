@@ -18,4 +18,4 @@ jobs:
 
       - name: Run flake checks
         run: |
-          nix --extra-experimental-features "nix-command flakes" flake check
+          nix --extra-experimental-features "nix-command flakes" flake check --accept-flake-config
