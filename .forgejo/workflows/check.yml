@@ -9,6 +9,10 @@ jobs:
     runs-on: lix
     if: github.repository == 'ixhbinphoenix/flake'
     steps:
+      - name: Install node :(
+        run: |
+          nix-env -i nodejs
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
