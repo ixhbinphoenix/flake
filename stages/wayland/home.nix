@@ -47,6 +47,11 @@ with lib;
       enable = true;
     };
 
+    services.emacs = {
+      enable = true;
+      package = pkgs.emacs-gtk;
+    };
+
     home.packages = with pkgs; [
       pavucontrol
       keepassxc
@@ -80,6 +85,7 @@ with lib;
       waypaper
       thunderbird
       cava
+      emacs-gtk
     ];
 
     services.syncthing.enable = true;
