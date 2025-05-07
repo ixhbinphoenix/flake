@@ -86,6 +86,7 @@ with lib;
       thunderbird
       cava
       emacs-gtk
+      texliveFull
     ];
 
     services.syncthing.enable = true;
