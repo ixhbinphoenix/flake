@@ -60,6 +60,10 @@ with lib;
       enable32Bit = true;
     };
 
+    services.twingate = {
+      enable = true;
+    };
+
     services.playerctld.enable = true;
 
     xdg = {
