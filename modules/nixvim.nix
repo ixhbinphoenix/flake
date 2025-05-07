@@ -51,6 +51,7 @@
       {action = "\"+y";key = "Y";mode = "n";}
       ];
 
+      clipboard.register = "unnamedplus";
       clipboard.providers.wl-copy.enable = true;
 
       colorschemes.catppuccin = {
