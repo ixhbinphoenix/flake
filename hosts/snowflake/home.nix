@@ -52,7 +52,7 @@
 
   home.packages = with pkgs; [
     osu-lazer-bin
-    inputs.usc.packages.${pkgs.system}.default
+    #inputs.usc.packages.${pkgs.system}.default
     youtube-music
     libsForQt5.kdenlive
     scanmem

@@ -65,6 +65,9 @@ in {
     };
   };
 
+  systemd.services."gitea-runner-default".wants = [ "forgejo.service" ];
+  systemd.services."gitea-runner-default".after = [ "forgejo.service" ];
+
   services.forgejo = {
     enable = true;
     package = pkgs.forgejo;

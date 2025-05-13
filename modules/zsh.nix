@@ -17,7 +17,7 @@
       };
 
       shellAliases = {
-        ls = "lsd --color=auto -la";
+        ls = pkgs.lib.mkForce "lsd --color=auto -la";
         cat = "bat";
         icat = "kitten icat";
         ":q" = "exit";
@@ -26,7 +26,7 @@
         "+x" = "chmod +x";
       };
 
-      initExtra = ''
+      initContent = pkgs.lib.mkAfter ''
       eval $(starship init zsh)
       '';
     };

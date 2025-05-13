@@ -243,6 +243,7 @@ with lib;
           ripgrep
           comma
           nvd
+          nix-output-monitor
         ];
       };
 

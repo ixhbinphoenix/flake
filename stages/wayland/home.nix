@@ -30,6 +30,9 @@ with lib;
       accent = "mauve"; # default options, let's fucking go
       flavor = "mocha";
 
+      # TODO: catppuccin/nix#552
+      mako.enable = false;
+
       cursors = {
         enable = true;
         accent = "dark";
@@ -69,8 +72,8 @@ with lib;
       # TODO: https://github.com/NixOS/nixpkgs/issues/377206
       #trackma-qt
       vesktop
-      strawberry
-      tauon
+      # TODO: https://nixpk.gs/pr-tracker.html?pr=404228
+      # tauon
       #nheko # When are those CVE's getting fixed wtf
       signal-desktop-bin
       gajim

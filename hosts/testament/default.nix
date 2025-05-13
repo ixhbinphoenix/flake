@@ -7,12 +7,8 @@
     ./forgejo.nix
     ./ntfy.nix
     ./searxng.nix
-    ./uptime-kuma.nix
-    # TODOO: Fix baikal
-    #./baikal.nix
     ./bluesky.nix
     ./zipline.nix
-    ./actualbudget.nix
     ./metrics.nix
     ./navidrome.nix
     ./soulseek.nix

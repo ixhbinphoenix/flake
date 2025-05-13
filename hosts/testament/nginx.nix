@@ -422,14 +422,11 @@
         '';
       };
     in {
-      actual = default 5006 "actual";
-      baikal = default 727 "baikal";
       conduwuit = default 6167 "conduwuit";
       forgejo = default 3000 "forgejo";
       graphana = default 1789 "grafana";
       ntfy = default 42069 "ntfy";
       searxng = default 3030 "searxng";
-      uptime-kuma = default 3001 "uptime-kuma";
       zipline = default 3333 "zipline";
       navidrome = default 4533 "navidrome";
       bluesky = default 6145 "bluesky";
@@ -485,25 +482,6 @@
           '';
         };
       };
-      "budget.ixhby.dev" = proxy_upstream "actual";
-      "CalDAV HTTP" = {
-        serverName = "dav.ixhby.dev";
-        
-        extraConfig = ''
-        rewrite ^/.well-known/(card|cal)dav$ /dav.php last;
-        '';
-
-        locations."/dav.php".proxyPass = "http://baikal";
-
-        locations."/".return = "301 https://$server_name$request_uri";
-      };
-      "CalDAV HTTPS" = (proxy_upstream "baikal") // {
-        serverName = "dav.ixhby.dev";
-
-        extraConfig = ''
-        rewrite ^/.well-known/(card|cal)dav$ /dav.php last;
-        '';
-      };
       "git.ixhby.dev" = ssl // {
         locations."/" = {
           proxyPass = "http://forgejo";
@@ -534,15 +512,6 @@
         };
       };
       "search.ixhby.dev" = proxy_upstream "searxng";
-      "up.ixhby.dev" = ssl // {
-        extraConfig = ''
-        client_max_body_size 1M;
-        '';
-        locations."/" = {
-          proxyPass = "http://uptime-kuma";
-          proxyWebsockets = true;
-        };
-      };
       "i.ixhby.dev" = proxy_upstream "zipline";
       "navi.ixhby.dev" = proxy_upstream "navidrome";
       "pds.ixhby.dev" = ssl // {
