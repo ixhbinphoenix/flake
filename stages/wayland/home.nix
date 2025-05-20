@@ -64,26 +64,21 @@ with lib;
       everest-mons # nix package for olympus when
       tenacity
       hyprpicker
-
       gpodder
-
       qbittorrent
-
       # TODO: https://github.com/NixOS/nixpkgs/issues/377206
       #trackma-qt
       vesktop
       # TODO: https://nixpk.gs/pr-tracker.html?pr=404228
       # tauon
-      #nheko # When are those CVE's getting fixed wtf
       signal-desktop-bin
       gajim
       gimp
       mpvpaper
       pcmanfm
       picard
-
+      lrcget
       obsidian
-
       swww
       waypaper
       thunderbird
@@ -94,7 +89,7 @@ with lib;
 
     services.syncthing.enable = true;
     services.arrpc.enable = true;
-    #services.network-manager-applet.enable = true;
+    services.network-manager-applet.enable = true;
 
     programs.librewolf.enable = true;
     home.file.".librewolf/native-messaging-hosts/org.kde.plasma.browser_integration.json".source = "${pkgs.kdePackages.plasma-browser-integration}/lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json";
