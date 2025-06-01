@@ -56,7 +56,6 @@ in
   testament = lib.nixosSystem(mkSystem {
     hostname = "testament";
     additionalModules = [
-      inputs.quadlet-nix.nixosModules.quadlet
       inputs.clock-lantern.nixosModules.${pkgs.system}.default
       inputs.gleachring.nixosModules.${pkgs.system}.default
     ];

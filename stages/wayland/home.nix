@@ -70,7 +70,7 @@ with lib;
       #trackma-qt
       vesktop
       # TODO: https://nixpk.gs/pr-tracker.html?pr=404228
-      # tauon
+      tauon
       signal-desktop-bin
       gajim
       gimp

@@ -66,6 +66,7 @@
   networking.hosts = {
     "192.168.172.189" = ["twinkpad"];
     "192.168.172.115" = ["ramlethal"];
+    "167.235.25.252" = ["minio.plasmatrap.com" "imgproxy.plasmatrap.com"];
   };
 
   networking.firewall.allowedTCPPorts = [ 7590 9999 ];
