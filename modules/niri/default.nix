@@ -16,7 +16,7 @@
         prefer-no-csd = true;
 
         input = {
-          warp-mouse-to-focus = true;
+          warp-mouse-to-focus.enable = true;
           focus-follows-mouse.enable = true;
 
           keyboard.xkb = {

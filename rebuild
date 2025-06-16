@@ -3,5 +3,5 @@
 git restore --staged .
 git diff
 git add .
-nixos-rebuild switch --flake .# --use-remote-sudo --log-format internal-json -v 2>&1 | nom --json
+doas nixos-rebuild switch --flake .# --log-format internal-json -v 2>&1 | nom --json
 git restore --staged .

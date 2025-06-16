@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    yubikey-personalization-gui
     yubico-piv-tool
     yubioath-flutter
   ];
