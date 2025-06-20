@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ...}: with lib;
+{...}: 
 {
   imports = [];
 
@@ -20,11 +20,19 @@
             "niri/window"
           ];
           modules-right = [
+            "image#ampel"
             "tray"
             "battery"
             "network"
             "clock"
           ];
+
+          "image#ampel" = {
+            exec = "curl https://ampel.entropia.de/ampel.png --output /tmp/ampel.png;
+            echo /tmp/ampel.png";
+            size = 32;
+            interval = 10;
+          };
 
           "niri/window" = {
             format = "{}";
@@ -114,7 +122,8 @@
         #tray,
         #battery,
         #network,
-        #clock{
+        #clock,
+        #ampel{
           background: @bg;
           border: 2px solid @mauve;
           border-radius: 10px;
