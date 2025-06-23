@@ -6,15 +6,13 @@ keys:
 creation_rules:
   - path_regex: secrets/[^/]+\.(ya?ml|json|env|ini)$
     key_groups:
-      - pgp:
-        - *ixhby_yubikey
-        age:
+      - age:
         - *server_testament
         - *snowflake_host
         - *ramlethal_host
   - path_regex: secrets/testament/[^/]+\.(ya?ml|json|env|ini)$
     key_groups:
-      - pgp:
-        - *ixhby_yubikey
-        age:
+      - age:
         - *server_testament
+        - *snowflake_host
+        - *ramlethal_host
