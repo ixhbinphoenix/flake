@@ -10,6 +10,7 @@
   boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "xen_blkfront" "vmw_pvscsi" ];
   boot.initrd.kernelModules = [ "nvme" ];
   fileSystems."/" = { device = "/dev/sda2"; fsType = "ext4"; };
-  virtualisation.lxd.agent.enable = true;
+  #virtualisation.lxd.agent.enable = true;
+  virtualisation.incus.agent.enable = true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
