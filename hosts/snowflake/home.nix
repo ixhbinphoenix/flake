@@ -53,10 +53,8 @@
   home.packages = with pkgs; [
     osu-lazer-bin
     #inputs.usc.packages.${pkgs.system}.default
-    youtube-music
     libsForQt5.kdenlive
     scanmem
-    godot_4
     orca-slicer
     freecad
     bs-manager
