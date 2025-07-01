@@ -93,5 +93,24 @@ with lib;
 
     programs.librewolf.enable = true;
     home.file.".librewolf/native-messaging-hosts/org.kde.plasma.browser_integration.json".source = "${pkgs.kdePackages.plasma-browser-integration}/lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json";
+
+    programs.chromium = {
+      enable = true;
+      package = pkgs.ungoogled-chromium;
+      dictionaries = [
+        pkgs.hunspellDictsChromium.en_US
+        pkgs.hunspellDictsChromium.de_DE
+      ];
+      extensions = [
+        "ddkjiahejlhfcafbddmgiahcphecmpfh" # ublock origin lite
+        "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock
+        "eimadpbcbfnmbkopoojfekhnkhdbieeh" # dark reader
+        "enamippconapkdmgfgjchkhakpfinmaj" # dearrow
+        "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
+        "mpbjkejclgfgadiemmefgebjfooflfhl" # buster
+        "mdjildafknihdffpkfmmpnpoiajfjnjd" # consent-o-matic
+        "oboonakemofpalcgghocfoadofidjkkk" # KeePassXC-Browser
+      ];
+    };
   };
 }
