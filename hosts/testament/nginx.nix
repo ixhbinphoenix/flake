@@ -7,15 +7,29 @@
   
   security.acme = {
     acceptTerms = true;
-    defaults.email = "contact+acme@ixhby.dev";
+    defaults = {
+      dnsProvider = "porkbun";
+      webroot = lib.mkForce null;
+      email = "phoenixgames.phoenix13@gmail.com";
+      environmentFile = config.sops.secrets.acme.path;
+    };
 
-    certs = {
-      "pds.ixhby.dev" = {
+    certs = let
+      pork = {
         dnsProvider = "porkbun";
         webroot = lib.mkForce null;
         email = "phoenixgames.phoenix13@gmail.com";
-        extraDomainNames = [ "*.pds.ixhby.dev" ];
         environmentFile = config.sops.secrets.acme.path;
+      };
+    in {
+      "garnix.dev" = pork // {
+        extraDomainNames = [ "*.garnix.dev" ];
+      };
+      "ixhby.dev" = pork // {
+        extraDomainNames = [ "*.ixhby.dev" ];
+      };
+      "pds.ixhby.dev" = pork // {
+        extraDomainNames = [ "*.pds.ixhby.dev" ];
       };
     };
   };
@@ -422,7 +436,6 @@
         '';
       };
     in {
-      conduwuit = default 6167 "conduwuit";
       forgejo = default 3000 "forgejo";
       graphana = default 1789 "grafana";
       ntfy = default 42069 "ntfy";
@@ -434,37 +447,14 @@
     };
 
     virtualHosts = let
-      ssl = {
-        #forceSSL = true;
+      ssl = root: {
         onlySSL = true;
-        enableACME = true;
+        sslCertificate = "/var/lib/acme/${root}/cert.pem";
+        sslCertificateKey = "/var/lib/acme/${root}/key.pem";
       };
 
-      SSLv4 = port: {
-        inherit port;
-        addr = "0.0.0.0";
-        ssl = true;
-      };
-      SSLv6 = port: {
-        inherit port;
-        addr = "[::0]";
-        ssl = true;
-      };
-      defaultListen = [
-        (SSLv4 443)
-        (SSLv6 443)
-      ];
-
-      proxy = port: ssl // {
-        locations."/".proxyPass = "http://127.0.0.1:${builtins.toString port}";
-      };
-      proxy_upstream = upstream: ssl // {
+      proxy_upstream = upstream: root: (ssl root) // {
         locations."/".proxyPass = "http://${upstream}";
-      };
-
-      ACME_dummy = {
-        enableACME = true;
-        addSSL = true;
       };
     in {
       "more wine, more women, more metrics" = {
@@ -482,7 +472,7 @@
           '';
         };
       };
-      "git.ixhby.dev" = ssl // {
+      "git.ixhby.dev" = (ssl "ixhby.dev") // {
         locations."/" = {
           proxyPass = "http://forgejo";
           extraConfig = ''
@@ -490,14 +480,14 @@
           '';
         };
       };
-      "graph.ixhby.dev" = ssl // {
+      "graph.ixhby.dev" = (ssl "ixhby.dev") // {
         locations."/".proxyPass = "http://graphana";
         locations."/api/live" = {
           proxyPass = "http://graphana";
           proxyWebsockets = true;
         };
       };
-      "ntfy.ixhby.dev" = ssl // {
+      "ntfy.ixhby.dev" = (ssl "ixhby.dev") // {
         locations."/" = {
           proxyPass = "http://ntfy";
           proxyWebsockets = true;
@@ -511,10 +501,12 @@
           '';
         };
       };
-      "search.ixhby.dev" = proxy_upstream "searxng";
-      "i.ixhby.dev" = proxy_upstream "zipline";
-      "navi.ixhby.dev" = proxy_upstream "navidrome";
-      "pds.ixhby.dev" = ssl // {
+      "search.ixhby.dev" = proxy_upstream "searxng" "ixhby.dev";
+      "i.ixhby.dev" = proxy_upstream "zipline" "ixhby.dev";
+      "navi.ixhby.dev" = proxy_upstream "navidrome" "ixhby.dev";
+      "pds.ixhby.dev" = {
+        onlySSL = true;
+        enableACME = true;
         serverAliases = [ "*.pds.ixhby.dev" ];
 
         locations."/" = {
@@ -522,14 +514,14 @@
           proxyWebsockets = true;
         };
       };
-      "slskd.ixhby.dev" = ssl // {
+      "slskd.ixhby.dev" = (ssl "ixhby.dev") // {
         locations."/" = {
           proxyPass = "http://soulseek";
           proxyWebsockets = true;
         };
       };
 
-      "garnix.dev" = ssl // {
+      "garnix.dev" = (ssl "garnix.dev") // {
         root = inputs.garnix-dev.packages.${pkgs.system}.default;
 
         locations."/" = {
@@ -537,6 +529,9 @@
           tryFiles = "$uri $uri.html $uri/ $uri/index.html =404";
         };
       };
+      "gleach.garnix.dev".enableACME = lib.mkForce false;
+      "gleach.garnix.dev".sslCertificate = "/var/lib/acme/garnix.dev/cert.pem";
+      "gleach.garnix.dev".sslCertificateKey = "/var/lib/acme/garnix.dev/key.pem";
     };
   };
 }
