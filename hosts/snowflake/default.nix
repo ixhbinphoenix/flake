@@ -26,7 +26,7 @@
     protontricks
     localsend
     nur.repos.ixhbinphoenix.localbooru-bin
-    jetbrains.idea-community-bin
+    #jetbrains.idea-community-bin
     #jetbrains.rider
     android-studio
     stash
