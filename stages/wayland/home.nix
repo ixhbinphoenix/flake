@@ -69,8 +69,7 @@ with lib;
       # TODO: https://github.com/NixOS/nixpkgs/issues/377206
       #trackma-qt
       vesktop
-      # TODO: https://nixpk.gs/pr-tracker.html?pr=424658
-      #tauon
+      tauon
       signal-desktop-bin
       gajim
       gimp
@@ -119,6 +118,8 @@ with lib;
             canvasblocker
             catppuccin-mocha-mauve
             consent-o-matic
+            container-tab-groups
+            containerise
             darkreader
             dearrow
             gnu_terry_pratchett

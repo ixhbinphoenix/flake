@@ -261,6 +261,9 @@ with lib;
       nixpkgs = {
         config = {
           allowUnfree = true;
+          permittedInsecurePackages = [
+            "libsoup-2.74.3"
+          ];
           packageOverrides = super: let self = super.pkgs; in {
           };
         };
