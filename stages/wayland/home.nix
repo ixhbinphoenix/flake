@@ -38,11 +38,6 @@ with lib;
         accent = "dark";
       };
 
-      gtk = {
-        enable = true;
-        icon.enable = true;
-      };
-
       mpv.enable = config.programs.mpv.enable;
     };
 

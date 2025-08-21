@@ -207,22 +207,6 @@
           };
         };
 
-        nvim-tree = {
-          enable = true;
-          hijackCursor = true;
-          sortBy = "name";
-          syncRootWithCwd = true;
-
-          view.width = 40;
-          renderer.icons.gitPlacement = "signcolumn";
-
-          filters.custom = [
-            "^.git$"
-          ];
-
-          git.ignore = false;
-        };
-
         lualine = {
           enable = true;
         };
@@ -257,11 +241,6 @@
         vim.diagnostic.config({
           virtual_text = true
         })
-
-        local function open_nvim_tree()
-          require("nvim-tree.api").tree.open()
-        end
-        -- vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
       '';
     };
   };

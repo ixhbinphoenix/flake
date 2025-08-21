@@ -27,7 +27,7 @@ let
         home-manager.extraSpecialArgs = { inherit user inputs; };
         home-manager.users.${user} = {
           imports = [
-            inputs.nixvim.homeManagerModules.nixvim
+            inputs.nixvim.homeModules.nixvim
             inputs.niri.homeModules.niri
             inputs.catppuccin.homeModules.catppuccin
             inputs.sops-nix.homeManagerModules.sops
