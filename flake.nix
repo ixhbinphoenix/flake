@@ -61,6 +61,19 @@
         }
       );
 
+      deploy.nodes.lucy = {
+        hostname = "lucy";
+        profiles.system = {
+          path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.lucy;
+          sshUser = "root";
+          user = "root";
+          autoRollback = true;
+          magicRollback = true;
+          activationTimeout = 600;
+          confirmTimeout = 60;
+        };
+      };
+
       deploy.nodes.testament = {
         hostname = "testament";
         profiles.system = {

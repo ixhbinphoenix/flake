@@ -5,7 +5,7 @@ let
     config.allowUnfree = true;
   };
 
-  mkSystem = {hostname, additionalModules}: {
+  mkSystem = {hostname, additionalModules ? []}: {
     specialArgs = { inherit user inputs; };
     modules = [
       inputs.lix-module.nixosModules.default
@@ -59,5 +59,8 @@ in
       inputs.clock-lantern.nixosModules.${pkgs.system}.default
       inputs.gleachring.nixosModules.${pkgs.system}.default
     ];
+  });
+  lucy = lib.nixosSystem(mkSystem {
+    hostname = "lucy";
   });
 }
