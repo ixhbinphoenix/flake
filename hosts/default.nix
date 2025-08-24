@@ -63,4 +63,7 @@ in
   lucy = lib.nixosSystem(mkSystem {
     hostname = "lucy";
   });
+  ino = lib.nixosSystem(mkSystem {
+    hostname = "ino";
+  });
 }
