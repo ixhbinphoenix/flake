@@ -44,9 +44,6 @@ in
   snowflake = lib.nixosSystem (mkHomeSystem {
     hostname = "snowflake";
   });
-  unique = lib.nixosSystem (mkHomeSystem {
-    hostname = "unique";
-  });
   ramlethal = lib.nixosSystem (mkHomeSystem {
     hostname = "ramlethal";
     additionalModules = [
