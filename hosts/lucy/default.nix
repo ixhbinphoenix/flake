@@ -23,8 +23,40 @@
     ];
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 ];
-  networking.firewall.allowedUDPPorts = [ 22 ];
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+  };
+
+  sops = {
+    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    secrets."wg0.key" = {
+      sopsFile = ../../secrets/wireguard/lucy/private.key;
+      format = "binary";
+    };
+  };
+
+  networking.wireguard = {
+    enable = true;
+    interfaces = {
+      "wg0" = {
+        privateKeyFile = config.sops.secrets."wg0.key".path;
+        listenPort = 51820;
+        ips = [
+          "10.0.1.1/24"
+        ];
+        peers = [
+        {
+          name = "ino";
+          publicKey = "qHMx1AVRw9eqY3udX41cEnLnV8CV6VoG1Ic9hivRIXQ=";
+          endpoint = "45.81.233.66:51820";
+          allowedIPs = [
+            "10.0.1.4/32"
+          ];
+        }
+        ];
+      };
+    };
+  };
 
   system.stateVersion = "25.05";
 }

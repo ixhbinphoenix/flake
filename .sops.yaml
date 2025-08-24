@@ -1,6 +1,8 @@
 keys:
   - &ixhby_yubikey 91DB328E3FAB8A089AF652763E62370C1D773013
   - &server_testament age1cg5uu38jujxush7r9f2rj79hk5yxkucrnh00qhhu0rw3eu9a3gus3vc7m8
+  - &server_lucy age1w7ncwyp6u9u3fu98zgrxxde7xtl7qzw7vxgudfdlemsh7eldtfcsm5gg4f
+  - &server_ino age1l8qnnqpqak9yhqal9ftf0fg6qg9c27vg8d0lyndxhhzx7eydusnqgpm9c8
   - &snowflake_host age14j4utewnafy533m86n0tfslsn7q43j9ksvfqq6yxkttj2j4wp5zs3sekv0
   - &ramlethal_host age179l4qmgvh453pk7vy2alqjk8ks7av6kh6g6axmq9n3hk60ytnqvq4s5g7n
 creation_rules:
@@ -14,5 +16,17 @@ creation_rules:
     key_groups:
       - age:
         - *server_testament
+        - *snowflake_host
+        - *ramlethal_host
+  - path_regex: secrets/wireguard/lucy/[^/]+\.key$
+    key_groups:
+      - age:
+        - *server_lucy
+        - *snowflake_host
+        - *ramlethal_host
+  - path_regex: secrets/wireguard/ino/[^/]+\.key$
+    key_groups:
+      - age:
+        - *server_ino
         - *snowflake_host
         - *ramlethal_host
