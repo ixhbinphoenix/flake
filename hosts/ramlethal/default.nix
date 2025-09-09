@@ -19,7 +19,7 @@
     winetricks
     protontricks
     nur.repos.ixhbinphoenix.localbooru-bin
-    jetbrains.idea-community-bin
+    #jetbrains.idea-community-bin
   ];
 
   stages.pc-base = {
