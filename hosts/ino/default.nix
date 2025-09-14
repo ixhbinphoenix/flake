@@ -32,6 +32,10 @@
     };
   };
 
+  #
+  # ino (VPS)
+  #
+
   networking.wireguard = {
     enable = true;
     interfaces = {
@@ -39,7 +43,7 @@
         privateKeyFile = config.sops.secrets."wg0.key".path;
         listenPort = 51820;
         ips = [
-          "10.0.1.4/24"
+          "10.0.1.1/24"
         ];
 
         peers = [
@@ -47,13 +51,16 @@
           name = "lucy";
           publicKey = "cuK0XiL42gB15FW7Mq7N9zbP+ItVTgdB79n61KhMgCU=";
           allowedIPs = [
-            "0.0.0.0/0"
+            "45.81.235.222/32"
           ];
         }
         ];
       };
     };
   };
+
+  networking.firewall.allowedTCPPorts = [ 51820 ];
+  networking.firewall.allowedUDPPorts = [ 51820 ];
 
   system.stateVersion = "23.11";
 }

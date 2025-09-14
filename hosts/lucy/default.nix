@@ -35,6 +35,10 @@
     };
   };
 
+  #
+  # lucy (server at home)
+  #
+
   networking.wireguard = {
     enable = true;
     interfaces = {
@@ -42,7 +46,7 @@
         privateKeyFile = config.sops.secrets."wg0.key".path;
         listenPort = 51820;
         ips = [
-          "10.0.1.1/24"
+          "45.81.235.222/32"
         ];
         peers = [
         {
@@ -50,13 +54,16 @@
           publicKey = "qHMx1AVRw9eqY3udX41cEnLnV8CV6VoG1Ic9hivRIXQ=";
           endpoint = "45.81.233.66:51820";
           allowedIPs = [
-            "10.0.1.4/32"
+            "0.0.0.0/0"
           ];
         }
         ];
       };
     };
   };
+
+  networking.firewall.allowedTCPPorts = [ 51820 ];
+  networking.firewall.allowedUDPPorts = [ 51820 ];
 
   system.stateVersion = "25.05";
 }
