@@ -21,7 +21,7 @@
 
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
-    "net.ipv4.conf.all.ip_forwarding" = 1;
+    "net.ipv4.ip_forward" = 1;
   };
 
   sops = {
@@ -46,12 +46,22 @@
           "10.0.1.1/24"
         ];
 
+        postSetup = ''
+        ${pkgs.iptables}/bin/iptables -t nat -A PREROUTING -d 45.81.235.222 -j DNAT --to-destination 10.0.2.2
+        ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -j MASQUERADE
+        '';
+
+        postShutdown = ''
+        ${pkgs.iptables}/bin/iptables -t nat -D PREROUTING -d 45.81.235.222 -j DNAT --to-destination 10.0.2.2
+        ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -j MASQUERADE
+        '';
+
         peers = [
         {
           name = "lucy";
           publicKey = "cuK0XiL42gB15FW7Mq7N9zbP+ItVTgdB79n61KhMgCU=";
           allowedIPs = [
-            "45.81.235.222/32"
+            "10.0.2.2/32"
           ];
         }
         ];
@@ -59,7 +69,6 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 51820 ];
   networking.firewall.allowedUDPPorts = [ 51820 ];
 
   system.stateVersion = "23.11";
