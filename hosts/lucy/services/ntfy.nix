@@ -1,6 +1,18 @@
-{ config, pkgs, lib, inputs, ... }: {
+{ config, pkgs, lib, inputs, ... }:
+{
+  users.users.ntfy-sh = {
+    isSystemUser = true;
+    useDefaultShell = true;
+    group = "ntfy-sh";
+    uid = 991;
+  };
+
+  users.groups.ntfy-sh = {
+    gid = 987;
+  };
+
   sops.secrets.ntfy = {
-    sopsFile = ../../secrets/testament/ntfy.env;
+    sopsFile = ../../../secrets/ntfy.env;
     owner = config.users.users.ntfy-sh.name;
     group = config.users.users.ntfy-sh.group;
     format = "dotenv";
@@ -26,10 +38,6 @@
       attachment-file-size-limit = "15M";
       attachment-expiry-duration = "24h";
 
-      smtp-sender-addr = "mail.mailtwo24.de:587";
-      smtp-sender-from = "ntfy@ixhby.dev";
-      smtp-sender-user = "ntfy@ixhby.dev";
-
       web-push-public-key = "BNX2aVLta5vTDFpneKffQy-UUMBRrksQBSJrkPn2uJrsWlyYqHBI6DKE9qNP-RMvFQ8GLM1lMk8BnwJZJCcYwWE";
       web-push-file = "/var/lib/ntfy-sh/webpush.db";
       web-push-email-address = "ntfy@ixhby.dev";
@@ -41,6 +49,34 @@
 
       enable-metris = true;
       metrics-listen-http = "127.0.0.1:9834";
+    };
+  };
+
+  services.nginx.upstreams.ntfy = {
+    servers = {
+      "127.0.0.1:42069" = {};
+    };
+    extraConfig = ''
+    zone ntfy 64K;
+    '';
+  };
+
+  services.nginx.virtualHosts."ntfy.ixhby.dev" = {
+    onlySSL = true; 
+    sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
+    sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
+
+    locations."/" = {
+      proxyPass = "http://ntfy";
+      proxyWebsockets = true;
+
+      extraConfig = ''
+      proxy_connect_timeout 3m;
+      proxy_send_timeout 3m;
+      proxy_read_timeout 3m;
+
+      client_max_body_size 0;
+      '';
     };
   };
 }

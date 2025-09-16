@@ -50,15 +50,19 @@ in
       inputs.nixos-hardware.nixosModules.framework-16-7040-amd
     ];
   });
-  testament = lib.nixosSystem(mkSystem {
+  /*testament = lib.nixosSystem(mkSystem {
     hostname = "testament";
     additionalModules = [
       inputs.clock-lantern.nixosModules.${pkgs.system}.default
       inputs.gleachring.nixosModules.${pkgs.system}.default
     ];
-  });
+  });*/
   lucy = lib.nixosSystem(mkSystem {
     hostname = "lucy";
+    additionalModules = [
+      inputs.catppuccin.nixosModules.default
+      inputs.gleachring.nixosModules.${pkgs.system}.default
+    ];
   });
   ino = lib.nixosSystem(mkSystem {
     hostname = "ino";

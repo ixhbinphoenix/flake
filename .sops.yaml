@@ -10,6 +10,7 @@ creation_rules:
     key_groups:
       - age:
         - *server_testament
+        - *server_lucy
         - *snowflake_host
         - *ramlethal_host
   - path_regex: secrets/testament/[^/]+\.(ya?ml|json|env|ini)$

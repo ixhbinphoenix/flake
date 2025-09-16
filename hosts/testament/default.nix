@@ -6,12 +6,9 @@
     ./nginx.nix
     ./forgejo.nix
     ./ntfy.nix
-    ./searxng.nix
     ./bluesky.nix
     ./zipline.nix
     ./metrics.nix
-    ./navidrome.nix
-    ./soulseek.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
