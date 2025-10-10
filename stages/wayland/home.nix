@@ -231,7 +231,7 @@ with lib;
             };
             "sponsorBlocker@ajay.app" = { # SponsorBlock
               permissions = [
-                "storage" "scripting"
+                "storage" "scripting" "unlimitedStorage"
                 "https://sponsor.ajay.app/*" "https://*.youtube.com/*" "https://www.youtube-nocookie.com/embed/*"
               ];
             };

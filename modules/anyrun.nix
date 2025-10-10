@@ -12,6 +12,7 @@
           inputs.anyrun.packages.${pkgs.system}.applications
           inputs.anyrun.packages.${pkgs.system}.rink
           inputs.anyrun.packages.${pkgs.system}.dictionary
+          inputs.anyrun.packages.${pkgs.system}.nix-run
           inputs.anyrun-nixos-options.packages.${pkgs.system}.default
         ];
         width = { fraction = 0.3; };
@@ -34,45 +35,46 @@
           transition: 200ms ease;
           font-family: "Iosevka Nerd Font";
           caret-color: @text;
+          margin: 0;
+          padding: 0;
         }
 
-        #window {
+        window {
           background: transparent;
         }
 
-        #plugin,
-        #main {
-          border: 3px solid @border;
+        text {
+          padding: 5px;
+        }
+
+        .plugin,
+        .main {
           color: @text;
           background-color: @bg;
         }
 
-        #entry {
+        .matches {
           color: @text;
           background: @bg;
-          border: 2px solid @selected;
           box-shadow: none;
+          border-radius: 16px;
         }
 
-        #match:selected {
-          color: @bg;
-          background: @selected;
+        .match:selected {
+          border: 3px solid @selected;
+          background: @bg;
         }
 
-        #match {
+        .match {
           padding: 3px;
           border-radius: 16px;
         }
 
-        #entry, #plugin:hover {
-          border-radius: 16px;
-        }
-
-        box#main {
+        box.main {
           background: @bg;
-          border: 1px solid @border;
-          border-radius: 15px;
+          border: 2px solid @selected;
           padding: 5px;
+          border-radius: 16px
         }
       '';
 
@@ -92,6 +94,15 @@
       extraConfigFiles."dictionary.ron".text = ''
         Config(
           prefix: ":def",
+          max_entries: 5,
+        )
+      '';
+
+      extraConfigFiles."nix-run.ron".text = ''
+        Config(
+          prefix: ":run",
+          allow_unfree: true,
+          channel: "nixpkgs-unstable",
           max_entries: 5,
         )
       '';

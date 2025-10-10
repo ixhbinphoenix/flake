@@ -53,7 +53,7 @@
   home.packages = with pkgs; [
     osu-lazer-bin
     #inputs.usc.packages.${pkgs.system}.default
-    libsForQt5.kdenlive
+    kdePackages.kdenlive
     scanmem
     orca-slicer
     freecad
