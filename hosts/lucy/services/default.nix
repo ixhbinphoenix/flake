@@ -9,5 +9,6 @@
     ./gar.nix
     ./gleach.nix
     ./unbound.nix
+    ./immich.nix
   ];
 }
