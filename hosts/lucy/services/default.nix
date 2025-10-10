@@ -8,5 +8,6 @@
     ./zipline.nix
     ./gar.nix
     ./gleach.nix
+    ./unbound.nix
   ];
 }
