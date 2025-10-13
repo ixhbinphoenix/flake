@@ -10,6 +10,7 @@
       enable = true;
 
       opts = {
+        mouse = false;
         number = true;
         relativenumber = true;
 

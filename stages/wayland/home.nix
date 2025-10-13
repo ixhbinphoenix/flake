@@ -79,6 +79,7 @@ with lib;
       cava
       emacs-gtk
       texliveFull
+      calibre
     ];
 
     services.syncthing.enable = true;

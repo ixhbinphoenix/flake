@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ...}: with lib;
+{ config, lib, ...}: with lib;
 {
   imports = [
     ../dunst.nix
@@ -21,6 +21,7 @@
 
           keyboard.xkb = {
             layout = "us";
+            options = "compose:ralt";
           };
         };
 

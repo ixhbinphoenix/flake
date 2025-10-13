@@ -61,7 +61,7 @@ with lib;
     };
 
     services.twingate = {
-      enable = true;
+      enable = false;
     };
 
     services.playerctld.enable = true;

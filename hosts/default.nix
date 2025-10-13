@@ -10,6 +10,7 @@ let
     modules = [
       inputs.lix-module.nixosModules.default
       inputs.sops-nix.nixosModules.sops
+      inputs.catppuccin.nixosModules.catppuccin
       ./${hostname}/default.nix
     ] ++ additionalModules;
   };
