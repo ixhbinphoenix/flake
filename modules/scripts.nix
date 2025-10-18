@@ -165,6 +165,14 @@
           xdg-open "$1-protocol.html"
         '';
       };
+      v_hflip = pkgs.writeShellApplication {
+        name = "v_hflip";
+        runtimeInputs = with pkgs; [ ffmpeg ];
+
+        text = ''
+          ffmpeg -i "$1.mp4" -vf hflip "$1_flipped.mp4" && rm "$1.mp4"
+        '';
+      };
     in [
       ils
       nix-gc
@@ -176,6 +184,7 @@
       set_animated_wallpaper
       random_animated_wallpaper
       liju_protocol
+      v_hflip
     ];
   };
 }
