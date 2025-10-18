@@ -42,8 +42,8 @@ let
   };
 in
 {
-  snowflake = lib.nixosSystem (mkHomeSystem {
-    hostname = "snowflake";
+  dizzy = lib.nixosSystem (mkHomeSystem {
+    hostname = "dizzy";
   });
   ramlethal = lib.nixosSystem (mkHomeSystem {
     hostname = "ramlethal";

@@ -39,11 +39,11 @@
     mkdir -p /var/lib/libvirt/hooks/qemu.d/win10/release/end
     mkdir -p /var/lib/libvirt/vgabios
 
-    ln -sf /home/${user}/flake/hosts/snowflake/vfio/qemu /var/lib/libvirt/hooks/qemu
-    ln -sf /home/${user}/flake/hosts/snowflake/vfio/kvm.conf /var/lib/libvirt/hooks/kvm.conf
-    ln -sf /home/${user}/flake/hosts/snowflake/vfio/start.sh /var/lib/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh
-    ln -sf /home/${user}/flake/hosts/snowflake/vfio/stop.sh /var/lib/libvirt/hooks/qemu.d/win10/release/end/stop.sh
-    ln -sf /home/${user}/flake/hosts/snowflake/vfio/vbios.rom /var/lib/libvirt/vgabios/vbios.rom
+    ln -sf /home/${user}/flake/hosts/dizzy/vfio/qemu /var/lib/libvirt/hooks/qemu
+    ln -sf /home/${user}/flake/hosts/dizzy/vfio/kvm.conf /var/lib/libvirt/hooks/kvm.conf
+    ln -sf /home/${user}/flake/hosts/dizzy/vfio/start.sh /var/lib/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh
+    ln -sf /home/${user}/flake/hosts/dizzy/vfio/stop.sh /var/lib/libvirt/hooks/qemu.d/win10/release/end/stop.sh
+    ln -sf /home/${user}/flake/hosts/dizzy/vfio/vbios.rom /var/lib/libvirt/vgabios/vbios.rom
 
     chmod +x /var/lib/libvirt/hooks/qemu
     chmod +x /var/lib/libvirt/hooks/kvm.conf
