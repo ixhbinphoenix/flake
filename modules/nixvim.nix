@@ -10,7 +10,7 @@
       enable = true;
 
       opts = {
-        mouse = false;
+        mouse = "";
         number = true;
         relativenumber = true;
 
@@ -206,6 +206,13 @@
               "n" "i" "t" "c"
             ];
           };
+        };
+
+        vimtex = {
+          enable = true;
+        };
+        cmp-vimtex = {
+          enable = true;
         };
 
         lualine = {
