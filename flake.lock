@@ -87,26 +87,6 @@
         "type": "github"
       }
     },
-    "arrpc": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1718977415,
-        "narHash": "sha256-lYWZOfG+a+0eWW4deI/7bufvqKeuGtGdEoAFUSpziBE=",
-        "owner": "NotAShelf",
-        "repo": "arrpc-flake",
-        "rev": "a25ef99d5107e11a16cd8aa295bdb9f5b7850550",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NotAShelf",
-        "repo": "arrpc-flake",
-        "type": "github"
-      }
-    },
     "catppuccin": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -828,7 +808,6 @@
         "aagl": "aagl",
         "anyrun": "anyrun",
         "anyrun-nixos-options": "anyrun-nixos-options",
-        "arrpc": "arrpc",
         "catppuccin": "catppuccin",
         "clock-lantern": "clock-lantern",
         "deploy-rs": "deploy-rs",

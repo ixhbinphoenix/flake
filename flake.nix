@@ -26,8 +26,6 @@
     aagl.inputs.nixpkgs.follows = "nixpkgs";
     anyrun.url = "github:anyrun-org/anyrun";
     anyrun.inputs.nixpkgs.follows = "nixpkgs";
-    arrpc.url = "github:NotAShelf/arrpc-flake";
-    arrpc.inputs.nixpkgs.follows = "nixpkgs";
     deploy-rs.url = "github:serokell/deploy-rs";
     deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
     anyrun-nixos-options.url = "github:n3oney/anyrun-nixos-options";
