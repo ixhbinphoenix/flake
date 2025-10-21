@@ -8,35 +8,35 @@
 
   inputs = {
     # package repos
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
+    nixpkgs.url = "https://git.ixhby.dev/mirrors/nixpkgs/archive/nixos-unstable.tar.gz"; # github:nixos/nixpkgs
+    home-manager.url = "https://git.ixhby.dev/mirrors/home-manager/archive/master.tar.gz"; # github:nix-community/home-manager
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nur.url = "github:nix-community/NUR";
+    nur.url = "https://git.ixhby.dev/mirrors/NUR/archive/main.tar.gz"; # github:nix-community/NUR
 
     # foundational
-    lix-module.url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+    lix-module.url = "https://git.ixhby.dev/mirrors/lixos-module/archive/main.tar.gz"; # git.lix.systems/lix-project/nixos-module
     lix-module.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    sops-nix.url = "github:Mic92/sops-nix";
+    nixos-hardware.url = "https://git.ixhby.dev/mirrors/nixos-hardware/archive/master.tar.gz"; # github:nixos/nixos-hardware
+    sops-nix.url = "https://git.ixhby.dev/mirrors/sops-nix/archive/master.tar.gz"; # github:Mic92/sops-nix
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     # speific packages
-    nixvim.url = "github:nix-community/nixvim";
-    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
+    nixvim.url = "https://git.ixhby.dev/mirrors/nixvim/archive/main.tar.gz"; # github:nix-community/nixvim
+    aagl.url = "https://git.ixhby.dev/mirrors/aagl-gtk-on-nix/archive/main.tar.gz"; # github:ezKEa/aagl-gtk-on-nix
     aagl.inputs.nixpkgs.follows = "nixpkgs";
-    anyrun.url = "github:anyrun-org/anyrun";
+    anyrun.url = "https://git.ixhby.dev/mirrors/anyrun/archive/master.tar.gz"; # github:anyrun-org/anyrun
     anyrun.inputs.nixpkgs.follows = "nixpkgs";
-    deploy-rs.url = "github:serokell/deploy-rs";
+    deploy-rs.url = "https://git.ixhby.dev/mirrors/deploy-rs/archive/master.tar.gz"; # github:serokell/deploy-rs
     deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
     anyrun-nixos-options.url = "github:n3oney/anyrun-nixos-options";
     anyrun-nixos-options.inputs.nixpkgs.follows = "nixpkgs";
-    niri.url = "github:sodiboo/niri-flake";
+    niri.url = "https://git.ixhby.dev/mirrors/niri-flake/archive/main.tar.gz"; # github:sodiboo/niri-flake
     niri.inputs.nixpkgs.follows = "nixpkgs";
     usc.url = "https://git.ixhby.dev/ixhbinphoenix/usc-flake/archive/root.tar.gz";
     usc.inputs.nixpkgs.follows = "nixpkgs";
 
     # misc modules
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "https://git.ixhby.dev/mirrors/catppuccin-nix/archive/main.tar.gz"; # github:catppuccin/nix
 
     # testament
     garnix-dev.url = "https://git.ixhby.dev/ixhbinphoenix/garnix.dev/archive/master.tar.gz";

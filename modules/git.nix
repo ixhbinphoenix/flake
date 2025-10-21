@@ -42,17 +42,19 @@ with lib;
     cfg = config.git;
   in {
     catppuccin.delta.enable = cfg.delta;
+    programs.delta = {
+      enable = cfg.delta;
+      enableGitIntegration = cfg.delta;
+    };
     programs.git = {
       enable = true;
       lfs.enable = true;
-      delta = mkIf cfg.delta {
-        enable = true;
-      };
       signing = mkIf cfg.signing.enable {
         signByDefault = true;
         key = cfg.signing.key;
       };
-      extraConfig = {
+
+      settings = {
         alias = {
           staash = "stash --all";
         };
