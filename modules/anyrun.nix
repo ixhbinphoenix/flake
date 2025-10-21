@@ -66,7 +66,7 @@
         }
 
         .match {
-          padding: 3px;
+          border: 3px solid @bg;
           border-radius: 16px;
         }
 
