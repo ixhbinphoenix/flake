@@ -82,6 +82,10 @@ in {
         SSH_DOMAIN = "git.ixhby.dev";
       };
 
+      "git.timeout" = {
+        MIGRATE = 60000;
+      };
+
       mailer = {
         ENABLED = true;
         SMTP_ADDR = "smtp.purelymail.com";
