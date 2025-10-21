@@ -58,6 +58,7 @@
     orca-slicer
     freecad
     bs-manager
+    olympus
   ];
 
   programs.obs-studio = {
