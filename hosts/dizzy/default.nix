@@ -64,8 +64,8 @@
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   networking.hosts = {
-    "192.168.178.2" = ["bridget" "bridget.internal.ixhby.dev"];
-    "192.168.178.88" = ["lucy" "lucy.internal.ixhby.dev"];
+    "bridget.internal.ixhby.dev" = ["bridget"];
+    "lucy.internal.ixhby.dev" = ["lucy"];
     "167.235.25.252" = ["minio.plasmatrap.com" "imgproxy.plasmatrap.com"];
   };
 

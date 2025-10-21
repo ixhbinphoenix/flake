@@ -16,7 +16,7 @@
         environmentFile = config.sops.secrets.acme.path;
       };
       wildcard = domain: pork // {
-        extraDomainNames = [ "*.${domain}" ];
+        extraDomainNames = [ "*.${domain}" "*.internal.${domain}" ];
       };
     in {
       "garnix.dev" = wildcard "garnix.dev";

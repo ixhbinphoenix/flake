@@ -42,6 +42,7 @@
   };
 
   services.nginx.virtualHosts."im.ixhby.dev" = {
+    serverAliases = [ "immich.internal.ixhby.dev" ];
     onlySSL = true;
     sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
     sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
