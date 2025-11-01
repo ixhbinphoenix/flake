@@ -15,10 +15,24 @@ let
     ] ++ additionalModules;
   };
 
+  mkServerSystem = {hostname, additionalModules ? []}: mkSystem {
+    inherit hostname;
+    additionalModules = [
+      ../stages/server
+      {
+        stages.server.hostname = hostname;
+      }
+      ../modules/server
+    ] ++ additionalModules;
+  };
+
   mkHomeSystem = {hostname, additionalModules ? [], additionalHomeModules ? []}: mkSystem {
     inherit hostname;
     additionalModules = [
       ../stages/pc-base
+      {
+        stages.pc-base.hostname = hostname;
+      }
       ../stages/wayland
       inputs.home-manager.nixosModules.home-manager
       inputs.aagl.nixosModules.default
@@ -51,21 +65,14 @@ in
       inputs.nixos-hardware.nixosModules.framework-16-7040-amd
     ];
   });
-  /*testament = lib.nixosSystem(mkSystem {
-    hostname = "testament";
-    additionalModules = [
-      inputs.clock-lantern.nixosModules.${pkgs.system}.default
-      inputs.gleachring.nixosModules.${pkgs.system}.default
-    ];
-  });*/
-  lucy = lib.nixosSystem(mkSystem {
+  lucy = lib.nixosSystem(mkServerSystem {
     hostname = "lucy";
     additionalModules = [
       inputs.catppuccin.nixosModules.default
       inputs.gleachring.nixosModules.${pkgs.system}.default
     ];
   });
-  ino = lib.nixosSystem(mkSystem {
+  ino = lib.nixosSystem(mkServerSystem {
     hostname = "ino";
   });
 }

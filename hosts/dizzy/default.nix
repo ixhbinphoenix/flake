@@ -39,7 +39,6 @@
   stages.pc-base = {
     enable = true;
     user = user;
-    hostname = "dizzy";
 
     bootloader.systemd-boot.enable = true;
     bootloader.multi-boot = true;

@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./nginx.nix
     ./soulseek.nix
     ./navidrome.nix
     ./searxng.nix
@@ -7,7 +8,6 @@
     ./forgejo.nix
     ./zipline.nix
     ./gar.nix
-    ./gleach.nix
     ./unbound.nix
     ./immich.nix
   ];

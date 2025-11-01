@@ -25,7 +25,6 @@
   stages.pc-base = {
     enable = true;
     user = user;
-    hostname = "ramlethal";
 
     bootloader.systemd-boot.enable = true;
 
