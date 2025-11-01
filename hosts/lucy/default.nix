@@ -14,6 +14,7 @@
   stages.server = {
     enable = true;
 
+    metrics.enable = true;
     services = {
       nginx = {
         enable = true;

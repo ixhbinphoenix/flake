@@ -6,7 +6,7 @@ keys:
   - &snowflake_host age14j4utewnafy533m86n0tfslsn7q43j9ksvfqq6yxkttj2j4wp5zs3sekv0
   - &ramlethal_host age179l4qmgvh453pk7vy2alqjk8ks7av6kh6g6axmq9n3hk60ytnqvq4s5g7n
 creation_rules:
-  - path_regex: secrets/[^/]+\.(ya?ml|json|env|ini)$
+  - path_regex: secrets/[^/]+\.(ya?ml|json|env|ini|txt)$
     key_groups:
       - age:
         - *server_testament

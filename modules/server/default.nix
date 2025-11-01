@@ -10,5 +10,6 @@
     ./gar.nix
     ./unbound.nix
     ./immich.nix
+    ./metrics.nix
   ];
 }
