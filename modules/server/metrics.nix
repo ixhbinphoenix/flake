@@ -47,8 +47,41 @@
               }
             ];
           }
+          {
+            job_name = "pve-exporter";
+            static_configs = [
+              {
+                targets = ["bridget.internal.ixhby.dev:8006"];
+              }
+            ];
+            metrics_path = "/pve";
+            params = {
+              module = ["default"];
+              cluster = ["1"];
+              node = ["1"];
+            };
+            relabel_configs = [
+            {
+              source_labels = ["__address__"];
+              target_label = "__param_target";
+            }
+            {
+              source_labels = ["__param_target"];
+              target_label = "intance";
+            }
+            {
+              target_label = "__address__";
+              replacement = "127.0.0.1:9221";
+            }
+            ];
+          }
         ];
       };
+    };
+
+    sops.secrets.pve = {
+      sopsFile = ../../secrets/pve.txt;
+      format = "binary";
     };
 
     services.prometheus.exporters = {
@@ -62,6 +95,10 @@
       };
       postgres = {
         enable = true;
+      };
+      pve = {
+        enable = true;
+        configFile = config.sops.secrets.pve.path;
       };
     };
 
