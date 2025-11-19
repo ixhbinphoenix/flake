@@ -1,4 +1,4 @@
-{ ... }: { 
+{ inputs, ... }: { 
   imports = [
     ./hardware-configuration.nix
     ./networking.nix
@@ -32,6 +32,9 @@
       immich.enable = true;
     };
   };
+
+  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+  nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "25.05";
 }

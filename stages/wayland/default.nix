@@ -136,7 +136,7 @@ with lib;
         nerd-fonts.iosevka-term
         source-code-pro
         font-awesome
-        noto-fonts-emoji
+        noto-fonts-color-emoji
         ipafont
       ];
       fontconfig.defaultFonts = {

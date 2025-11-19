@@ -70,6 +70,7 @@ in
     additionalModules = [
       inputs.catppuccin.nixosModules.default
       inputs.gleachring.nixosModules.${pkgs.system}.default
+      inputs.nix-minecraft.nixosModules.minecraft-servers
     ];
   });
   ino = lib.nixosSystem(mkServerSystem {

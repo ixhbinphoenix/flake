@@ -38,14 +38,15 @@
     # misc modules
     catppuccin.url = "https://git.ixhby.dev/mirrors/catppuccin-nix/archive/main.tar.gz"; # github:catppuccin/nix
 
-    # testament
+    # server stuffs
     garnix-dev.url = "https://git.ixhby.dev/ixhbinphoenix/garnix.dev/archive/master.tar.gz";
     garnix-dev.inputs.nixpkgs.follows = "nixpkgs";
     clock-lantern.url = "https://git.ixhby.dev/ixhbinphoenix/clock-o-lantern/archive/root.tar.gz";
     clock-lantern.inputs.nixpkgs.follows = "nixpkgs";
     gleachring.url = "https://git.ixhby.dev/ixhbinphoenix/gleachring/archive/root.tar.gz";
     gleachring.inputs.nixpkgs.follows = "nixpkgs";
-
+    nix-minecraft.url = "https://git.ixhby.dev/mirrors/nix-minecraft/archive/master.tar.gz";
+    nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ { self, nixpkgs, deploy-rs, ... }:

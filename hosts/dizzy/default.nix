@@ -17,7 +17,6 @@
     dotnet-sdk
     dotnet-runtime
     android-tools
-    android-udev-rules
     signify
     wootility
     inputs.deploy-rs.packages.${pkgs.system}.default
