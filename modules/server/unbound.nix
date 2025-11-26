@@ -28,10 +28,12 @@
 
           private-address = [ "192.168.0.0/16" "10.0.0.0/8" "fe80::/10" ];
 
-          local-zone = [ "internal.ixhby.dev. static" ];
+          local-zone = [ "internal.ixhby.dev. static" "lucy.ixhby.dev static" "ixhby.dev transparent" ];
           local-data = [
             "'bridget.internal.ixhby.dev. A 192.168.178.2'"
 
+            "'ixhby.dev. A 192.168.178.22'"
+            "'lucy.ixhby.dev. A 192.168.178.22'"
             "'lucy.internal.ixhby.dev. A 192.168.178.22'"
             "'immich.internal.ixhby.dev. A 192.168.178.22'"
 

@@ -7,7 +7,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    lutris
+    #lutris
     protonup-qt
     gamescope
     glibc
