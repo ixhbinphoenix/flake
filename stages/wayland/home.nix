@@ -80,6 +80,7 @@ with lib;
       emacs-gtk
       texliveFull
       calibre
+      syncplay
     ];
 
     services.syncthing.enable = true;
