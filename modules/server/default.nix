@@ -11,5 +11,6 @@
     ./unbound.nix
     ./immich.nix
     ./metrics.nix
+    ./jellyfin.nix
   ];
 }

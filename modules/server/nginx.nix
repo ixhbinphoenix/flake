@@ -7,6 +7,7 @@
       default = [
         "garnix.dev"
         "ixhby.dev"
+        "faggirl.gay"
       ];
     };
     internalDomains = lib.mkEnableOption "*.internal.domain domains";

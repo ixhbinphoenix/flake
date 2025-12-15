@@ -18,7 +18,7 @@
     services = {
       nginx = {
         enable = true;
-        domains = [ "garnix.dev" "ixhby.dev" ];
+        domains = [ "garnix.dev" "ixhby.dev" "faggirl.gay" ];
         internalDomains = true;
       };
       slskd.enable = true;
@@ -30,6 +30,7 @@
       garnix.enable = true;
       unbound.enable = true;
       immich.enable = true;
+      jellyfin.enable = true;
     };
   };
 
