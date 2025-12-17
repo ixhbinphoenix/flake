@@ -89,10 +89,10 @@
         };
       };
 
-      deploy.nodes.testament = {
-        hostname = "testament";
+      deploy.nodes.axl = {
+        hostname = "axl.internal.ixhby.dev";
         profiles.system = {
-          path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.testament;
+          path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.axl;
           sshUser = "root";
           user = "root";
           autoRollback = true;

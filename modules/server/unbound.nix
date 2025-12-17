@@ -40,6 +40,8 @@
             "'lucy.internal.ixhby.dev. A 192.168.178.22'"
             "'immich.internal.ixhby.dev. A 192.168.178.22'"
 
+            "'axl.internal.ixhby.dev. A 192.168.178.39'"
+
             "'dizzy.internal.ixhby.dev. A 192.168.178.23'"
           ];
         };

@@ -76,4 +76,17 @@ in
   ino = lib.nixosSystem(mkServerSystem {
     hostname = "ino";
   });
+  axl = lib.nixosSystem {
+    specialArgs = { inherit user inputs; };
+    modules = [
+      inputs.sops-nix.nixosModules.sops
+      inputs.catppuccin.nixosModules.catppuccin
+      ./axl/default.nix
+      ../stages/server
+      {
+        stages.server.hostname = "axl";
+      }
+      ../modules/server
+    ];
+  };
 }

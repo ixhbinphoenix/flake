@@ -3,6 +3,7 @@ keys:
   - &server_testament age1cg5uu38jujxush7r9f2rj79hk5yxkucrnh00qhhu0rw3eu9a3gus3vc7m8
   - &server_lucy age1w7ncwyp6u9u3fu98zgrxxde7xtl7qzw7vxgudfdlemsh7eldtfcsm5gg4f
   - &server_ino age1csqeanwl85a8fux7xvfcu2muv3f5kl9l0pjpvhl3ed97cep0aygsy5r6y6
+  - &server_axl age1gdwxehs50jd283eqz5kdh6q7w07hx4zsj0kx9m2kd9g5ul8pap5qfhx02w
   - &snowflake_host age14j4utewnafy533m86n0tfslsn7q43j9ksvfqq6yxkttj2j4wp5zs3sekv0
   - &ramlethal_host age179l4qmgvh453pk7vy2alqjk8ks7av6kh6g6axmq9n3hk60ytnqvq4s5g7n
 creation_rules:
@@ -29,5 +30,11 @@ creation_rules:
     key_groups:
       - age:
         - *server_ino
+        - *snowflake_host
+        - *ramlethal_host
+  - path_regex: secrets/wireguard/axl/[^/]+\.key$
+    key_groups:
+      - age:
+        - *server_axl
         - *snowflake_host
         - *ramlethal_host
