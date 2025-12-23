@@ -59,6 +59,8 @@
     desktop.greetd.cmd = "niri-session";
   };
 
+  programs.noisetorch.enable = true;
+
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   networking.hosts = {
