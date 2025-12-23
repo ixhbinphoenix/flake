@@ -54,7 +54,16 @@
         ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -o end0 -j MASQUERADE
         '';
 
-        peers = [];
+        peers = [
+        {
+          name = "beeper";
+          publicKey = "ljNqviSO3SPYkAHKgFDq2nEbsxlii5DQGCjrynMgTXc=";
+          allowedIPs = [
+            "10.0.0.2/32"
+            "fd42:42:42::3/128"
+          ];
+        }
+        ];
       };
     };
   };
