@@ -14,7 +14,7 @@
     nur.url = "https://git.ixhby.dev/mirrors/NUR/archive/main.tar.gz"; # github:nix-community/NUR
 
     # foundational
-    lix.url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+    lix.url = "https://git.ixhby.dev/mirrors/lix/archive/main.tar.gz";
     lix.flake = false;
     lix-module.url = "https://git.ixhby.dev/mirrors/lixos-module/archive/main.tar.gz"; # git.lix.systems/lix-project/nixos-module
     lix-module.inputs.nixpkgs.follows = "nixpkgs";

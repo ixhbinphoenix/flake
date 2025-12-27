@@ -14,7 +14,7 @@
     dotnet-sdk
     dotnet-runtime
     signify
-    inputs.deploy-rs.packages.${pkgs.system}.default
+    inputs.deploy-rs.packages.${pkgs.stdenv.hostPlatform.system}.default
     wineWowPackages.stagingFull
     winetricks
     protontricks

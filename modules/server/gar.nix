@@ -9,7 +9,7 @@
       sslCertificate = "/var/lib/acme/garnix.dev/cert.pem";
       sslCertificateKey = "/var/lib/acme/garnix.dev/key.pem";
 
-      root = inputs.garnix-dev.packages.${pkgs.system}.default;
+      root = inputs.garnix-dev.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
       locations."/" = {
         index = "index.html";

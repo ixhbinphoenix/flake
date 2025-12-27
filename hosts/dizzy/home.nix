@@ -1,5 +1,4 @@
-{ inputs, config, pkgs, lib, user, ... }:
-{
+{ pkgs, user, ... }: {
   imports = [];
 
   stages.pc-base = {
@@ -52,7 +51,7 @@
 
   home.packages = with pkgs; [
     osu-lazer-bin
-    #inputs.usc.packages.${pkgs.system}.default
+    #inputs.usc.packages.${pkgs.stdenv.hostPlatform.system}.default
     kdePackages.kdenlive
     scanmem
     orca-slicer

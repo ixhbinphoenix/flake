@@ -19,7 +19,7 @@
     android-tools
     signify
     wootility
-    inputs.deploy-rs.packages.${pkgs.system}.default
+    inputs.deploy-rs.packages.${pkgs.stdenv.hostPlatform.system}.default
     wineWowPackages.stagingFull
     winetricks
     protontricks

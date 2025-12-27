@@ -9,11 +9,11 @@
       enable = true;
       config = {
         plugins = [
-          inputs.anyrun.packages.${pkgs.system}.applications
-          inputs.anyrun.packages.${pkgs.system}.rink
-          inputs.anyrun.packages.${pkgs.system}.dictionary
-          inputs.anyrun.packages.${pkgs.system}.nix-run
-          inputs.anyrun-nixos-options.packages.${pkgs.system}.default
+          inputs.anyrun.packages.${pkgs.stdenv.hostPlatform.system}.applications
+          inputs.anyrun.packages.${pkgs.stdenv.hostPlatform.system}.rink
+          inputs.anyrun.packages.${pkgs.stdenv.hostPlatform.system}.dictionary
+          inputs.anyrun.packages.${pkgs.stdenv.hostPlatform.system}.nix-run
+          inputs.anyrun-nixos-options.packages.${pkgs.stdenv.hostPlatform.system}.default
         ];
         width = { fraction = 0.3; };
         height = { absolute = 0; };
@@ -80,7 +80,7 @@
 
       extraConfigFiles."nixos-options.ron".text = let
         nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
-        hm-options = inputs.home-manager.packages.${pkgs.system}.docs-json + "/share/doc/home-manager/options.json";
+        hm-options = inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.docs-json + "/share/doc/home-manager/options.json";
         options = builtins.toJSON {
           ":nix" = [nixos-options];
           ":hm" = [hm-options];
