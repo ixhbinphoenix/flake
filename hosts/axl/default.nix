@@ -42,7 +42,7 @@
         privateKeyFile = config.sops.secrets."wg0.key".path;
         listenPort = 51820;
         ips = [
-          "10.0.0.1/24" "fd42:42:42::1/64"
+          "10.0.0.1/24"
         ];
 
         postSetup = ''
@@ -59,8 +59,14 @@
           name = "beeper";
           publicKey = "ljNqviSO3SPYkAHKgFDq2nEbsxlii5DQGCjrynMgTXc=";
           allowedIPs = [
-            "10.0.0.2/32"
-            "fd42:42:42::3/128"
+            "10.0.0.10/32"
+          ];
+        }
+        {
+          name = "ramlethal";
+          publicKey = "TTqZr5e60YtgBFYrzS2+K5KgFZyZQ0arWukzv9AlyTo=";
+          allowedIPs = [
+            "10.0.0.11/32"
           ];
         }
         ];

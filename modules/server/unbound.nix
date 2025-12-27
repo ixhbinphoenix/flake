@@ -30,8 +30,8 @@
 
           private-address = [ "192.168.0.0/16" "10.0.0.0/8" "fe80::/10" ];
 
-          response-ip = [ "45.81.235.222/32 redirect" ];
-          response-ip-data = [ "45.81.235.222/32 'A 192.168.178.22'" ];
+          #response-ip = [ "45.81.235.222/32 redirect" ];
+          #response-ip-data = [ "45.81.235.222/32 'A 192.168.178.22'" ];
 
           local-zone = [ "internal.ixhby.dev. static" "lucy.ixhby.dev static" "ixhby.dev transparent" ];
           local-data = [

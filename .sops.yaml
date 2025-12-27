@@ -38,3 +38,9 @@ creation_rules:
         - *server_axl
         - *snowflake_host
         - *ramlethal_host
+  - path_regex: secrets/wireguard/ramlethal/[^/]+\.key$
+    key_groups:
+      - age:
+        - *server_axl
+        - *snowflake_host
+        - *ramlethal_host
