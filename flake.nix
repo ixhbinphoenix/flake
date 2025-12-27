@@ -38,6 +38,9 @@
     usc.url = "https://git.ixhby.dev/ixhbinphoenix/usc-flake/archive/root.tar.gz";
     usc.inputs.nixpkgs.follows = "nixpkgs";
 
+    copyparty.url = "https://git.ixhby.dev/mirrors/copyparty/archive/hovudstraum.tar.gz";
+    copyparty.inputs.nixpkgs.follows = "nixpkgs";
+
     # misc modules
     catppuccin.url = "https://git.ixhby.dev/mirrors/catppuccin-nix/archive/main.tar.gz"; # github:catppuccin/nix
 
@@ -64,7 +67,7 @@
       );
 
       deploy.nodes.lucy = {
-        hostname = "lucy.internal.ixhby.dev";
+        hostname = "ixhby.dev";
         profiles.system = {
           path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.lucy;
           sshUser = "root";

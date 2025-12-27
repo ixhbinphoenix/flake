@@ -31,6 +31,7 @@
       unbound.enable = true;
       immich.enable = true;
       jellyfin.enable = true;
+      copyparty.enable = true;
     };
   };
 

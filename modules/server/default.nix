@@ -12,5 +12,6 @@
     ./immich.nix
     ./metrics.nix
     ./jellyfin.nix
+    ./copyparty.nix
   ];
 }

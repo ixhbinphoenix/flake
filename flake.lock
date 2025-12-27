@@ -119,6 +119,25 @@
         "url": "https://git.ixhby.dev/ixhbinphoenix/clock-o-lantern/archive/root.tar.gz"
       }
     },
+    "copyparty": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766769718,
+        "narHash": "sha256-HUFMhHktTdcdXL31Bhhjm+35W32xhts7ki67zADYwmw=",
+        "rev": "4642d32366e30c131d933c8bd0a519b69f4d3fff",
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/api/v1/repos/mirrors/copyparty/archive/4642d32366e30c131d933c8bd0a519b69f4d3fff.tar.gz?rev=4642d32366e30c131d933c8bd0a519b69f4d3fff"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/mirrors/copyparty/archive/hovudstraum.tar.gz"
+      }
+    },
     "deploy-rs": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -290,6 +309,21 @@
       }
     },
     "flake-utils_2": {
+      "locked": {
+        "lastModified": 1678901627,
+        "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "93a2b84fc4b70d9e089d029deacc3583435c2ed6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_3": {
       "inputs": {
         "systems": [
           "garnix-dev",
@@ -310,7 +344,7 @@
         "type": "github"
       }
     },
-    "flake-utils_3": {
+    "flake-utils_4": {
       "inputs": {
         "systems": "systems_6"
       },
@@ -328,7 +362,7 @@
         "type": "github"
       }
     },
-    "flake-utils_4": {
+    "flake-utils_5": {
       "inputs": {
         "systems": "systems_7"
       },
@@ -346,7 +380,7 @@
         "type": "github"
       }
     },
-    "flake-utils_5": {
+    "flake-utils_6": {
       "inputs": {
         "systems": "systems_8"
       },
@@ -364,7 +398,7 @@
         "type": "github"
       }
     },
-    "flake-utils_6": {
+    "flake-utils_7": {
       "inputs": {
         "systems": "systems_10"
       },
@@ -414,7 +448,7 @@
     },
     "garnix-dev": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils_3",
         "flockenzeit": "flockenzeit",
         "garnix-highlighter": "garnix-highlighter",
         "nixpkgs": [
@@ -460,7 +494,7 @@
     },
     "gleachring": {
       "inputs": {
-        "flake-utils": "flake-utils_3",
+        "flake-utils": "flake-utils_4",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -511,7 +545,7 @@
     },
     "lix-module": {
       "inputs": {
-        "flake-utils": "flake-utils_4",
+        "flake-utils": "flake-utils_5",
         "flakey-profile": "flakey-profile",
         "lix": [
           "lix"
@@ -591,7 +625,7 @@
     "nix-minecraft": {
       "inputs": {
         "flake-compat": "flake-compat_3",
-        "flake-utils": "flake-utils_5",
+        "flake-utils": "flake-utils_6",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -774,6 +808,7 @@
         "anyrun-nixos-options": "anyrun-nixos-options",
         "catppuccin": "catppuccin",
         "clock-lantern": "clock-lantern",
+        "copyparty": "copyparty",
         "deploy-rs": "deploy-rs",
         "garnix-dev": "garnix-dev",
         "gleachring": "gleachring",
@@ -978,7 +1013,7 @@
     },
     "usc": {
       "inputs": {
-        "flake-utils": "flake-utils_6",
+        "flake-utils": "flake-utils_7",
         "nixpkgs": [
           "nixpkgs"
         ]
