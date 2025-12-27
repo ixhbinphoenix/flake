@@ -49,12 +49,37 @@
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
-  networking.hosts = {
-    "192.168.172.189" = ["twinkpad"];
-    "192.168.172.39" = ["snowflake"];
+  networking.firewall.allowedTCPPorts = [ 8080 ];
+
+  sops.age.keyFile = "/home/phoenix/.config/sops/age/keys.txt";
+  sops.secrets.wg-private = {
+    sopsFile = ../../secrets/wireguard/ramlethal/private.key;
+    format = "binary";
   };
 
-  networking.firewall.allowedTCPPorts = [ 8080 ];
+  networking.wireguard = {
+    enable = true;
+    interfaces = {
+      "wg0" = {
+        privateKeyFile = config.sops.secrets.wg-private.path;
+        ips = [
+          "10.0.0.11/24"
+        ];
+
+        peers = [
+        {
+          name = "axl";
+          publicKey = "iWbimRyfBsRgze8Dp2U50FkDbrU8lERz41Gdgr8sa1o=";
+          endpoint = "[2a00:1f:8482:2101:ff49:46db:bb28:ad2b]:51820";
+          allowedIPs = [
+            "10.0.0.0/24"
+            "192.168.0.0/24"
+          ];
+        }
+        ];
+      };
+    };
+  };
 
   hardware = {
     opentabletdriver = {
@@ -63,6 +88,8 @@
     };
     bluetooth.enable = true;
   };
+
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   services.fprintd.enable = true;
 
