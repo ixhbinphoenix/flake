@@ -13,5 +13,6 @@
     ./metrics.nix
     ./jellyfin.nix
     ./copyparty.nix
+    ./kanidm.nix
   ];
 }

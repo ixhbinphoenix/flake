@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: { 
+{ config, inputs, pkgs, ... }: { 
   imports = [
     ./hardware-configuration.nix
     ./networking.nix
@@ -32,6 +32,52 @@
       immich.enable = true;
       jellyfin.enable = true;
       copyparty.enable = true;
+
+      kanidm = {
+        enable = true;
+        domain = "auth.ixhby.dev";
+        provision.autoRemove = true;
+      };
+    };
+  };
+
+  sops.secrets = let
+    kanidmSecret = {
+      owner = "kanidm";
+      group = "kanidm";
+      mode = "700";
+    };
+    oauthSecret = service: "kanidm/oauth2/${service}/secret";
+  in {
+    "${oauthSecret "forgejo"}" = kanidmSecret;
+  };
+
+  services.kanidm.provision = {
+    persons = {
+      ixhby = {
+        displayName = "ixhby";
+        mailAddresses = [ "phoenix@ixhby.dev" ];
+        groups = [ "forgejo_users" ];
+      };
+    };
+
+    groups = {
+      forgejo_users = {};
+    };
+
+    systems.oauth2 = let
+      oauthSecret = service: config.sops.secrets."kanidm/oauth2/${service}/secret".path;
+    in {
+      forgejo = {
+        displayName = "Forgejo";
+        originUrl = "https://git.ixhby.dev/user/login";
+        originLanding = "https://git.ixhby.dev/user/oauth2/ixhby.dev%20SSO/callback";
+        scopeMaps = {
+          "forgejo_users" = [ "email" "openid" "profile" "groups" ];
+        };
+        allowInsecureClientDisablePkce = true;
+        basicSecretFile = oauthSecret "forgejo";
+      };
     };
   };
 
