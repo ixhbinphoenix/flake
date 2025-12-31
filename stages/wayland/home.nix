@@ -203,8 +203,8 @@ with lib;
             };
             "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}" = { # Video DownloadHelper
               permissions = [
-                "nativeMessaging" "contextMenus" "downloads" "menus" "notifications" "scripting" "storage" "tabs" "webNavigation" "webRequest" "webRequestBlocking"
-                "<all_urls>" "*://*.downloadhelper.net/*" "*://*.downloadhelper.net/changelog/*" "*://*.downloadhelper.net/debugger"
+                "nativeMessaging" "contextMenus" "downloads" "menus" "notifications" "scripting" "storage" "tabs" "webNavigation" "webRequest" "webRequestBlocking" "declarativeNetRequest"
+                "<all_urls>" "*://*.downloadhelper.net/*" "*://*.downloadhelper.net/changelog/*" "*://*.downloadhelper.net/debugger" "*://*.youtube.com/*" "*://*.vimeo.com/*" "*://*.facebook.com/*" "*://*.instagram.com/*" "*://*.ok.ru/*" "*://*.m.ok.ru/*" "*://vk.com/*" "*://vk.ru/*" "*://vkvideo.ru/*" "*://*.canva.com/*" "*://*.iq.com/*" "https://v10.downloadhelper.net/activate*" "https://app.v10.downloadhelper.net/activate*" "https://v10.downloadhelper.net/changelog*" "https://app.v10.downloadhelper.net/changelog*"
               ];
             };
             "keepassxc-browser@keepassxc.org" = { # KeePassXC-Browser
