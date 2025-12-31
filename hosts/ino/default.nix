@@ -23,6 +23,10 @@
       sopsFile = ../../secrets/wireguard/ino/private.key;
       format = "binary";
     };
+    secrets."wg1.key" = {
+      sopsFile = ../../secrets/wireguard/ino/wg1.private.key;
+      format = "binary";
+    };
   };
 
   #
@@ -59,10 +63,37 @@
         }
         ];
       };
+
+      # Hub and Spoke Point-to-site VPN
+      "wg1" = {
+        privateKeyFile = config.sops.secrets."wg1.key".path;
+        listenPort = 51821;
+        ips = [
+          "10.1.0.3/32"
+        ];
+
+        peers = [
+        {
+          name = "ramlethal";
+          publicKey = "TTqZr5e60YtgBFYrzS2+K5KgFZyZQ0arWukzv9AlyTo=";
+          allowedIPs = [
+            "10.1.0.1/32"
+          ];
+        }
+        {
+          name = "axl";
+          publicKey = "iWbimRyfBsRgze8Dp2U50FkDbrU8lERz41Gdgr8sa1o=";
+          allowedIPs = [
+            "10.1.0.2/32"
+            "192.168.178.0/24"
+          ];
+        }
+        ];
+      };
     };
   };
 
-  networking.firewall.allowedUDPPorts = [ 51820 ];
+  networking.firewall.allowedUDPPorts = [ 51820 51821 ];
 
   system.stateVersion = "23.11";
 }

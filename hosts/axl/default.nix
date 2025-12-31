@@ -42,32 +42,18 @@
         privateKeyFile = config.sops.secrets."wg0.key".path;
         listenPort = 51820;
         ips = [
-          "10.0.0.1/24"
+          "10.1.0.2/32"
         ];
-
-        postSetup = ''
-        ${pkgs.iptables}/bin/iptables -A FORWARD -i wg0 -j ACCEPT
-        ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -o end0 -j MASQUERADE
-        '';
-        postShutdown = ''
-        ${pkgs.iptables}/bin/iptables -D FORWARD -i wg0 -j ACCEPT
-        ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -o end0 -j MASQUERADE
-        '';
 
         peers = [
         {
-          name = "beeper";
-          publicKey = "ljNqviSO3SPYkAHKgFDq2nEbsxlii5DQGCjrynMgTXc=";
+          name = "ino";
+          endpoint = "45.81.233.66:51821";
+          publicKey = "vVZn+0CrS9dMBljXPEfRFUghplyopQDMUevsTnfWz38=";
           allowedIPs = [
-            "10.0.0.10/32"
+            "10.1.0.0/24"
           ];
-        }
-        {
-          name = "ramlethal";
-          publicKey = "TTqZr5e60YtgBFYrzS2+K5KgFZyZQ0arWukzv9AlyTo=";
-          allowedIPs = [
-            "10.0.0.11/32"
-          ];
+          persistentKeepalive = 25;
         }
         ];
       };

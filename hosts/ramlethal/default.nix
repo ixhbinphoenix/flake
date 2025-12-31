@@ -63,18 +63,19 @@
       "wg0" = {
         privateKeyFile = config.sops.secrets.wg-private.path;
         ips = [
-          "10.0.0.11/24"
+          "10.1.0.1/32"
         ];
 
         peers = [
         {
-          name = "axl";
-          publicKey = "iWbimRyfBsRgze8Dp2U50FkDbrU8lERz41Gdgr8sa1o=";
-          endpoint = "[2a00:1f:8482:2101:ff49:46db:bb28:ad2b]:51820";
+          name = "ino";
+          endpoint = "45.81.233.66:51821";
+          publicKey = "vVZn+0CrS9dMBljXPEfRFUghplyopQDMUevsTnfWz38=";
           allowedIPs = [
-            "10.0.0.0/24"
-            "192.168.0.0/24"
+            "10.1.0.0/24"
+            "192.168.178.0/24"
           ];
+          persistentKeepalive = 25;
         }
         ];
       };
