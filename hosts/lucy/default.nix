@@ -56,13 +56,18 @@
     persons = {
       ixhby = {
         displayName = "ixhby";
+        legalName = "ixhby";
         mailAddresses = [ "phoenix@ixhby.dev" ];
-        groups = [ "forgejo_users" ];
+        groups = [ "forgejo_users" "grafana_users" ];
       };
     };
 
     groups = {
       forgejo_users = {};
+      grafana_superadmins = {};
+      grafana_admins = {};
+      grafana_editors = {};
+      grafana_users = {};
     };
 
     systems.oauth2 = let
@@ -77,6 +82,24 @@
         };
         allowInsecureClientDisablePkce = true;
         basicSecretFile = oauthSecret "forgejo";
+      };
+      grafana = {
+        displayName = "Grafana";
+        originUrl = "https://m.ixhby.dev";
+        originLanding = "https://m.ixhby.dev/login/generic_oauth";
+        scopeMaps = {
+          "grafana_users" = [ "email" "openid" "profile" "groups" ];
+        };
+        claimMaps = {
+          "grafana_role" = {
+            joinType = "array";
+            valuesByGroup = {
+              "grafana_superadmins" = [ "GrafanaAdmin" ];
+              "grafana_admins" = [ "Admin" ];
+              "grafana_editors" = [ "Editor" ];
+            };
+          };
+        };
       };
     };
   };
