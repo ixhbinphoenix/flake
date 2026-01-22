@@ -6,9 +6,12 @@
   config = lib.mkIf config.stages.server.services.navidrome.enable {
     systemd.tmpfiles.settings.navidromeDirs = {
       "/var/lib/navidrome-music"."d" = {
-        mode = lib.mkForce "777";
+        mode = lib.mkForce "0772";
+        group = lib.mkForce "media";
       };
     };
+
+    users.users."${config.services.navidrome.user}".extraGroups = [ "media" ];
 
     services.navidrome = {
       enable = true;

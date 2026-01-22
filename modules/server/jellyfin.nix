@@ -9,12 +9,18 @@
 
     systemd.tmpfiles.settings.navidromeDirs = {
       "/var/lib/media/movies"."d" = {
-        mode = lib.mkForce "777";
+        mode = lib.mkForce "0774";
+        user = config.services.jellyfin.user;
+        group = "media";
       };
       "/var/lib/media/shows"."d" = {
-        mode = lib.mkForce "777";
+        mode = lib.mkForce "0774";
+        user = config.services.jellyfin.user;
+        group = "media";
       };
     };
+
+    users.users."${config.services.jellyfin.group}".extraGroups = [ "media" ];
 
     services.jellyfin = {
       enable = true;

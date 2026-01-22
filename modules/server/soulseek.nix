@@ -12,6 +12,8 @@
       format = "dotenv";
     };
 
+    users.users."${config.services.slskd.group}".extraGroups = [ "media" ];
+
     services.slskd = {
       enable = true;
       openFirewall = true;

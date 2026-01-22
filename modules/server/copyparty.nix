@@ -17,6 +17,11 @@
       "copyparty/passwords/katie" = copypartySecret;
     };
 
+    users.groups.media = {
+      gid = 1001;
+    };
+    users.users.copyparty.extraGroups = [ "media" ];
+
     services.copyparty = {
       enable = true;
       user = "copyparty";
@@ -51,19 +56,31 @@
         "/shows" = {
           path = "/var/lib/media/shows";
           access = {
-            rw = [ "ixhby" "katie" ];
+            A = [ "@admin" ];
+          };
+          flags = {
+            gid = 1001;
+            chmod_f = 774;
           };
         };
         "/movies" = {
           path = "/var/lib/media/movies";
           access = {
-            rw = [ "ixhby" "katie" ];
+            A = [ "@admin" ];
+          };
+          flags = {
+            gid = 1001;
+            chmod_f = 774;
           };
         };
         "/music" = {
           path = "/var/lib/navidrome-music";
           access = {
-            rw = [ "ixhby" "katie" ];
+            A = [ "@admin" ];
+          };
+          flags = {
+            gid = 1001;
+            chmod_f = 774;
           };
         };
       };

@@ -67,7 +67,7 @@
       );
 
       deploy.nodes.lucy = {
-        hostname = "ixhby.dev";
+        hostname = "lucy.internal.ixhby.dev";
         profiles.system = {
           path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.lucy;
           sshUser = "root";
