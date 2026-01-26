@@ -38,8 +38,11 @@
         origin = "https://${cfg.domain}";
         tls_chain = "${certs.directory}/fullchain.pem";
         tls_key = "${certs.directory}/key.pem";
-        trust_x_forward_for = true;
         bindaddress = "${cfg.bind}:${builtins.toString cfg.port}";
+
+        http_client_address_info = {
+          x-forward-for = ["127.0.0.1"];
+        };
 
         online_backup = {
           path = "/var/lib/kanidm_backups/";

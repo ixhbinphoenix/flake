@@ -52,7 +52,6 @@
   home.packages = with pkgs; [
     osu-lazer-bin
     #inputs.usc.packages.${pkgs.stdenv.hostPlatform.system}.default
-    kdePackages.kdenlive
     scanmem
     orca-slicer
     freecad

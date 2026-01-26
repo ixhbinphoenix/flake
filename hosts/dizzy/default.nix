@@ -61,7 +61,7 @@
 
   programs.noisetorch.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  #boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
   networking.hosts = {
     "bridget.internal.ixhby.dev" = ["bridget"];
@@ -85,8 +85,6 @@
 
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-
-  programs.adb.enable = true;
 
   users.users.${user}.extraGroups = [ "libvirtd" "plugdev" ];
 

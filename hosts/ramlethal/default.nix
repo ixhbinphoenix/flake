@@ -47,7 +47,7 @@
 
   programs.sleepy-launcher.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
 
   networking.firewall.allowedTCPPorts = [ 8080 ];
 

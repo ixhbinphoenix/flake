@@ -110,6 +110,11 @@
         proxy_buffers 32 8k;
         proxy_buffer_size 16k;
         proxy_busy_buffers_size 24k;
+
+        client_max_body_size 1024M;
+        client_header_timeout 610m;
+        client_body_timeout 610m;
+        send_timeout 610m;
         '';
       };
     };
