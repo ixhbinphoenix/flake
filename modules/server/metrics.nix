@@ -24,7 +24,7 @@
             metrics_path = "/metrics";
             static_configs = [
               {
-                targets = ["127.0.0.1:${builtins.toString config.services.prometheus.exporters.node.port}"];
+                targets = ["127.0.0.1:${toString config.services.prometheus.exporters.node.port}"];
                 labels.type = "node";
               }
             ];
@@ -34,7 +34,7 @@
             metrics_path = "/metrics";
             static_configs = [
               {
-                targets = ["127.0.0.1:${builtins.toString config.services.prometheus.exporters.wireguard.port}"];
+                targets = ["127.0.0.1:${toString config.services.prometheus.exporters.wireguard.port}"];
               }
             ];
           }
@@ -43,7 +43,15 @@
             metrics_path = config.services.prometheus.exporters.postgres.telemetryPath;
             static_configs = [
               {
-                targets = ["127.0.0.1:${builtins.toString config.services.prometheus.exporters.postgres.port}"];
+                targets = ["127.0.0.1:${toString config.services.prometheus.exporters.postgres.port}"];
+              }
+            ];
+          }
+          {
+            job_name = "iocaine";
+            static_configs = [
+              {
+                targets = [config.services.iocaine.config.server.metrics.bind];
               }
             ];
           }
@@ -127,6 +135,7 @@
       servers = [ "127.0.0.1:${toString config.services.grafana.settings.server.http_port}" ];
       cert_path = "ixhby.dev";
     };
+    services.nginx.virtualHosts."m.ixhby.dev".locations."/".proxyWebsockets = true;
     stages.server.services.nginx.vhosts."vm.ixhby.dev" = {
       service_name = "victoriametrics";
       protocol = "http";
