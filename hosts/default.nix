@@ -24,6 +24,7 @@ let
       }
       ../modules/server
       inputs.copyparty.nixosModules.default
+      inputs.nixocaine.nixosModules.default
     ] ++ additionalModules;
   };
 
@@ -72,7 +73,6 @@ in
       inputs.catppuccin.nixosModules.default
       inputs.gleachring.nixosModules.${pkgs.stdenv.hostPlatform.system}.default
       inputs.nix-minecraft.nixosModules.minecraft-servers
-      inputs.copyparty.nixosModules.default
     ];
   });
   ino = lib.nixosSystem(mkServerSystem {

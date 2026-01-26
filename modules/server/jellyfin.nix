@@ -26,32 +26,17 @@
       enable = true;
     };
 
-    services.nginx.upstreams.jellyfin = {
-      servers = {
-        "127.0.0.1:8096" = {};
-      };
+    stages.server.services.nginx.vhosts."play.faggirl.gay" = {
+      service_name = "jellyfin";
+      protocol = "http";
+      servers = [ "127.0.0.1:8096" ];
+      cert_path = "ixhby.dev";
       extraConfig = ''
-      zone jellyfin 64K;
+      proxy_buffering off;
       '';
     };
 
-    services.nginx.virtualHosts."play.faggirl.gay" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/faggirl.gay/cert.pem";
-      sslCertificateKey = "/var/lib/acme/faggirl.gay/key.pem";
+    services.nginx.virtualHosts."play.faggirl.gay".locations."/".proxyWebsockets = true;
 
-      locations."/" = {
-        proxyPass = "http://jellyfin";
-
-        extraConfig = ''
-        proxy_buffering off;
-        '';
-      };
-
-      locations."/socket" = {
-        proxyPass = "http://jellyfin";
-        proxyWebsockets = true;
-      };
-    };
   }]);
 }

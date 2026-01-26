@@ -88,35 +88,21 @@
       openFilesLimit = 8192;
     };
 
-    services.nginx.upstreams.copyparty = {
-      servers = {
-        "unix:/dev/shm/copyparty.sock" = {};
-      };
-    };
+    stages.server.services.nginx.vhosts."media.faggirl.gay" = {
+      service_name = "copyparty";
+      protocol = "http";
+      servers = [ "unix:/dev/shm/copyparty.sock" ];
+      cert_path = "faggirl.gay";
+      extraConfig = ''
+      proxy_http_version 1.1;
+      client_max_body_size 0;
+      proxy_buffering off;
+      proxy_request_buffering off;
 
-    services.nginx.virtualHosts."media.faggirl.gay" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/faggirl.gay/cert.pem";
-      sslCertificateKey = "/var/lib/acme/faggirl.gay/key.pem";
-
-      locations."/" = {
-        proxyPass = "http://copyparty";
-        extraConfig = ''
-        proxy_http_version 1.1;
-        client_max_body_size 0;
-        proxy_buffering off;
-        proxy_request_buffering off;
-
-        proxy_buffers 32 8k;
-        proxy_buffer_size 16k;
-        proxy_busy_buffers_size 24k;
-
-        client_max_body_size 1024M;
-        client_header_timeout 610m;
-        client_body_timeout 610m;
-        send_timeout 610m;
-        '';
-      };
+      proxy_buffers 32 8k;
+      proxy_buffer_size 16k;
+      proxy_busy_buffers_size 24k;
+      '';
     };
 
     nixpkgs.overlays = [ inputs.copyparty.overlays.default ];

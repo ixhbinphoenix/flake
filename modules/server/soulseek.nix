@@ -34,24 +34,14 @@
         };
       };
     };
-    services.nginx.upstreams.slskd = {
-      servers = {
-        "127.0.0.1:${builtins.toString config.services.slskd.settings.web.port}" = {};
-      };
-      extraConfig = ''
-      zone slskd 64K;
-      '';
+
+    stages.server.services.nginx.vhosts."slskd.ixhby.dev" = {
+      service_name = "slskd";
+      protocol = "http";
+      servers = [ "127.0.0.1:${toString config.services.slskd.settings.web.port}" ];
+      cert_path = "ixhby.dev";
     };
 
-    services.nginx.virtualHosts."slskd.ixhby.dev" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
-      
-      locations."/" = {
-        proxyPass = "http://slskd";
-        proxyWebsockets = true;
-      };
-    };
+    services.nginx.virtualHosts."slskd.ixhby.dev".locations."/".proxyWebsockets = true;
   }]);
 }

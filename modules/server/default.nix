@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./nginx.nix
+    ./iocaine.nix
     ./soulseek.nix
     ./navidrome.nix
     ./searxng.nix

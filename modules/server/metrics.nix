@@ -121,42 +121,17 @@
     # TODO: grafana-to-ntfy
     # note: needs secrets through systemd
 
-    services.nginx.upstreams = {
-      grafana = {
-        servers = {
-          "127.0.0.1:${builtins.toString config.services.grafana.settings.server.http_port}" = {};
-        };
-        extraConfig = ''
-        zone grafana 64K;
-        '';
-      };
-      victoriametrics = {
-        servers = {
-          "127.0.0.1:8428" = {};
-        };
-        extraConfig = ''
-        zone victoriametrics 64K;
-        '';
-      };
+    stages.server.services.nginx.vhosts."m.ixhby.dev" = {
+      service_name = "grafana";
+      protocol = "http";
+      servers = [ "127.0.0.1:${toString config.services.grafana.settings.server.http_port}" ];
+      cert_path = "ixhby.dev";
     };
-
-    services.nginx.virtualHosts."m.ixhby.dev" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
-
-      locations."/" = {
-        proxyPass = "http://grafana";
-      };
-    };
-    services.nginx.virtualHosts."vm.ixhby.dev" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
-
-      locations."/" = {
-        proxyPass = "http://victoriametrics";
-      };
+    stages.server.services.nginx.vhosts."vm.ixhby.dev" = {
+      service_name = "victoriametrics";
+      protocol = "http";
+      servers = [ "127.0.0.1:8428" ];
+      cert_path = "ixhby.dev";
     };
   };
 }

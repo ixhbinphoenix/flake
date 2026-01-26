@@ -32,23 +32,11 @@
       };
     };
 
-    services.nginx.upstreams.zipline = {
-      servers = {
-        "127.0.0.1:${builtins.toString config.services.zipline.settings.CORE_PORT}" = {};
-      };
-      extraConfig = ''
-      zone zipline 64K;
-      '';
-    };
-
-    services.nginx.virtualHosts."i.ixhby.dev" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
-
-      locations."/" = {
-        proxyPass = "http://zipline";
-      };
+    stages.server.services.nginx.vhosts."i.ixhby.dev" = {
+      service_name = "zipline";
+      protocol = "http";
+      servers = [ "127.0.0.1:${toString config.services.zipline.settings.CORE_PORT}" ];
+      cert_path = "ixhby.dev";
     };
   };
 }

@@ -73,23 +73,14 @@
 
     users.users.kanidm.extraGroups = [ "acme" ];
 
-    services.nginx.upstreams.kanidm = {
-      servers = {
-        "127.0.0.1:${builtins.toString cfg.port}" = {};
-      };
-    };
-
-    services.nginx.virtualHosts."auth.ixhby.dev" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/auth.ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/auth.ixhby.dev/key.pem";
-
-      locations."/" = {
-        proxyPass = "https://kanidm";
-        extraConfig = ''
-        proxy_ssl_name auth.ixhby.dev;
-        '';
-      };
+    stages.server.services.nginx.vhosts."auth.ixhby.dev" = {
+      service_name = "kanidm";
+      protocol = "https";
+      servers = [ "127.0.0.1:${toString cfg.port}" ];
+      cert_path = "auth.ixhby.dev";
+      extraConfig = ''
+      proxy_ssl_name auth.ixhby.dev;
+      '';
     };
   };
 }

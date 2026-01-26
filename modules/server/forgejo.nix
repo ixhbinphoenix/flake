@@ -156,23 +156,12 @@
         # TODOO: ui.CUSTOM_EMOJIS
       };
     };
-    services.nginx.upstreams.forgejo = {
-      servers = {
-        "127.0.0.1:${builtins.toString config.services.forgejo.settings.server.HTTP_PORT}" = {};
-      };
-      extraConfig = ''
-      zone forgejo 64K;
-      '';
-    };
 
-    services.nginx.virtualHosts."git.ixhby.dev" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
-      
-      locations."/" = {
-        proxyPass = "http://forgejo";
-      };
+    stages.server.services.nginx.vhosts."git.ixhby.dev" = {
+      service_name = "forgejo";
+      protocol = "http";
+      servers = [ "127.0.0.1:${toString config.services.forgejo.settings.server.HTTP_PORT}" ];
+      cert_path = "ixhby.dev";
     };
   }]);
 }

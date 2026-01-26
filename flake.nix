@@ -37,9 +37,10 @@
     niri.inputs.nixpkgs.follows = "nixpkgs";
     usc.url = "https://git.ixhby.dev/ixhbinphoenix/usc-flake/archive/root.tar.gz";
     usc.inputs.nixpkgs.follows = "nixpkgs";
-
     copyparty.url = "https://git.ixhby.dev/mirrors/copyparty/archive/hovudstraum.tar.gz";
     copyparty.inputs.nixpkgs.follows = "nixpkgs";
+    nixocaine.url = "https://git.ixhby.dev/mirrors/nixocaine/archive/main.tar.gz";
+    nixocaine.inputs.nixpkgs.follows = "nixpkgs";
 
     # misc modules
     catppuccin.url = "https://git.ixhby.dev/mirrors/catppuccin-nix/archive/main.tar.gz"; # github:catppuccin/nix

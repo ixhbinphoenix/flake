@@ -26,23 +26,12 @@
       };
     };
 
-    services.nginx.upstreams.navidrome = {
-      servers = {
-        "127.0.0.1:${builtins.toString config.services.navidrome.settings.Port}" = {};
-      };
-      extraConfig = ''
-      zone navidrome 64K;
-      '';
+    stages.server.services.nginx.vhosts."navi.ixhby.dev" = {
+      service_name = "navidrome";
+      protocol = "http";
+      servers = [ "127.0.0.1:${toString config.services.navidrome.settings.Port}" ];
+      cert_path = "ixhby.dev";
     };
 
-    services.nginx.virtualHosts."navi.ixhby.dev" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
-
-      locations."/" = {
-        proxyPass = "http://navidrome";
-      };
-    };
   };
 }

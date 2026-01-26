@@ -86,23 +86,11 @@
       };
     };
 
-    services.nginx.upstreams.searxng = {
-      servers = {
-        "127.0.0.1:${builtins.toString config.services.searx.settings.server.port}" = {};
-      };
-      extraConfig = ''
-      zone searxng 64K;
-      '';
-    };
-
-    services.nginx.virtualHosts."search.ixhby.dev" = {
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
-
-      locations."/" = {
-        proxyPass = "http://searxng";
-      };
+    stages.server.services.nginx.vhosts."search.ixhby.dev" = {
+      service_name = "searxng";
+      protocol = "http";
+      servers = [ "127.0.0.1:${toString config.services.searx.settings.server.port}" ];
+      cert_path = "ixhby.dev";
     };
   };
 }

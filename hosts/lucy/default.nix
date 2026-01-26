@@ -32,6 +32,7 @@
       immich.enable = true;
       jellyfin.enable = true;
       copyparty.enable = true;
+      iocaine.enable = true;
 
       kanidm = {
         enable = true;

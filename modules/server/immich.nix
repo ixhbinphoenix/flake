@@ -39,28 +39,17 @@
         enable = true;
       };
     };
-    services.nginx.upstreams.immich = {
-      servers = {
-        "127.0.0.1:${builtins.toString config.services.immich.port}" = {};
-      };
+
+    stages.server.services.nginx.vhosts."im.ixhby.dev" = {
+      service_name = "immich";
+      protocol = "http";
+      servers = [ "127.0.0.1:${toString config.services.immich.port}" ];
+      cert_path = "ixhby.dev";
       extraConfig = ''
-      zone immich 64K;
+      client_max_body_size 0;
       '';
     };
 
-    services.nginx.virtualHosts."im.ixhby.dev" = {
-      serverAliases = (if cfg.internalDomain then [ "immich.internal.ixhby.dev" ] else []);
-      onlySSL = true;
-      sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
-
-      locations."/" = {
-        proxyPass = "http://immich";
-
-        extraConfig = ''
-        client_max_body_size 0;
-        '';
-      };
-    };
+    services.nginx.virtualHosts."im.ixhby.dev".serverAliases = (if cfg.internalDomain then [ "immich.internal.ixhby.dev" ] else []);
   };
 }

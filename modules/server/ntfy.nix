@@ -58,32 +58,19 @@
       };
     };
 
-    services.nginx.upstreams.ntfy = {
-      servers = {
-        "127.0.0.1:42069" = {};
-      };
+    stages.server.services.nginx.vhosts."ntfy.ixhby.dev" = {
+      service_name = "ntfy";
+      protocol = "http";
+      servers = [ "127.0.0.1:42069" ];
+      cert_path = "ixhby.dev";
+
       extraConfig = ''
-      zone ntfy 64K;
-      '';
-    };
-
-    services.nginx.virtualHosts."ntfy.ixhby.dev" = {
-      onlySSL = true; 
-      sslCertificate = "/var/lib/acme/ixhby.dev/cert.pem";
-      sslCertificateKey = "/var/lib/acme/ixhby.dev/key.pem";
-
-      locations."/" = {
-        proxyPass = "http://ntfy";
-        proxyWebsockets = true;
-
-        extraConfig = ''
         proxy_connect_timeout 3m;
         proxy_send_timeout 3m;
         proxy_read_timeout 3m;
 
         client_max_body_size 0;
-        '';
-      };
+      '';
     };
   };
 }
