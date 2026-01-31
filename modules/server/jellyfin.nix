@@ -30,7 +30,7 @@
       service_name = "jellyfin";
       protocol = "http";
       servers = [ "127.0.0.1:8096" ];
-      cert_path = "ixhby.dev";
+      cert_path = "faggirl.gay";
       extraConfig = ''
       proxy_buffering off;
       '';
