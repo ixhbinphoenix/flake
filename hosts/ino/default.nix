@@ -39,6 +39,7 @@
       "wg0" = {
         privateKeyFile = config.sops.secrets."wg0.key".path;
         listenPort = 51820;
+        mtu = 1350;
         ips = [
           "10.0.1.1/24"
         ];

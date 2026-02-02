@@ -48,6 +48,15 @@
             ];
           }
           {
+            job_name = "beeper";
+            metrics_path = "/api/metrics";
+            static_configs = [
+              {
+                targets = [ "https://beeping.pet" ];
+              }
+            ];
+          }
+          {
             job_name = "iocaine";
             static_configs = [
               {
