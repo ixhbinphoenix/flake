@@ -4,15 +4,13 @@
       "locked": {
         "lastModified": 1769416693,
         "narHash": "sha256-pPNc9y+Vhgf5qw9Qvb+8L7iWedX7dQ/7oRH0QWzwJkg=",
-        "owner": "vic",
-        "repo": "flake-file",
         "rev": "c09729628983ed1e35c8dd43aa3df91a06f80e65",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/api/v1/repos/mirrors/flake-file/archive/c09729628983ed1e35c8dd43aa3df91a06f80e65.tar.gz?rev=c09729628983ed1e35c8dd43aa3df91a06f80e65"
       },
       "original": {
-        "owner": "vic",
-        "repo": "flake-file",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/mirrors/flake-file/archive/main.tar.gz"
       }
     },
     "flake-parts": {
@@ -24,15 +22,31 @@
       "locked": {
         "lastModified": 1768135262,
         "narHash": "sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
         "rev": "80daad04eddbbf5a4d883996a73f3f542fa437ac",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/api/v1/repos/mirrors/flake-parts/archive/80daad04eddbbf5a4d883996a73f3f542fa437ac.tar.gz?rev=80daad04eddbbf5a4d883996a73f3f542fa437ac"
       },
       "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/mirrors/flake-parts/archive/main.tar.gz"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769872935,
+        "narHash": "sha256-07HMIGQ/WJeAQJooA7Kkg1SDKxhAiV6eodvOwTX6WKI=",
+        "rev": "f4ad5068ee8e89e4a7c2e963e10dd35cd77b37b7",
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/api/v1/repos/mirrors/home-manager/archive/f4ad5068ee8e89e4a7c2e963e10dd35cd77b37b7.tar.gz?rev=f4ad5068ee8e89e4a7c2e963e10dd35cd77b37b7"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/mirrors/home-manager/archive/master.tar.gz"
       }
     },
     "import-tree": {
@@ -67,6 +81,7 @@
       "inputs": {
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
+        "home-manager": "home-manager",
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs",
         "nixpkgs-lib": [
@@ -79,15 +94,13 @@
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
         "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/api/v1/repos/mirrors/nix-systems/archive/da67096a3b9bf56a91d16901293e51ba5b49a27e.tar.gz?rev=da67096a3b9bf56a91d16901293e51ba5b49a27e"
       },
       "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://git.ixhby.dev/mirrors/nix-systems/archive/main.tar.gz"
       }
     }
   },
