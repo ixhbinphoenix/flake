@@ -65,7 +65,7 @@ with lib;
       #trackma-qt
       vesktop
       tauon
-      signal-desktop-bin
+      signal-desktop
       gajim
       gimp
       mpvpaper

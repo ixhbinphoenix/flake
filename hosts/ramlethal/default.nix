@@ -15,7 +15,6 @@
     dotnet-runtime
     signify
     inputs.deploy-rs.packages.${pkgs.stdenv.hostPlatform.system}.default
-    wineWowPackages.stagingFull
     winetricks
     protontricks
     nur.repos.ixhbinphoenix.localbooru-bin
