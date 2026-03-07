@@ -41,6 +41,8 @@
     copyparty.inputs.nixpkgs.follows = "nixpkgs";
     nixocaine.url = "https://git.ixhby.dev/mirrors/nixocaine/archive/main.tar.gz";
     nixocaine.inputs.nixpkgs.follows = "nixpkgs";
+    affinity.url = "github:mrshmllow/affinity-nix";
+    affinity.inputs.nixpkgs.follows = "nixpkgs";
 
     # misc modules
     catppuccin.url = "https://git.ixhby.dev/mirrors/catppuccin-nix/archive/main.tar.gz"; # github:catppuccin/nix

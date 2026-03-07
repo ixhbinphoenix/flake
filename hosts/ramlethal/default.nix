@@ -19,6 +19,7 @@
     protontricks
     nur.repos.ixhbinphoenix.localbooru-bin
     #jetbrains.idea-community-bin
+    inputs.affinity.packages.x86_64-linux.v3
   ];
 
   stages.pc-base = {
