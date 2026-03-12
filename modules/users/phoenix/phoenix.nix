@@ -24,6 +24,7 @@
         imports = with self.modules.homeManager; [
           catppuccin
           librewolf
+          shell
         ];
       };
     }

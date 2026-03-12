@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManger.librewolf = {
+  flake.modules.homeManager.librewolf = {
     programs.librewolf = {
       enable = true;
       languagePacks = [
