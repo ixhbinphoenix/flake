@@ -3,6 +3,21 @@
     (self.factory.user "phoenix" true)
     {
       nixos.phoenix = {
+        users.users."phoenix".extraGroups = [
+          "networkmanager"
+          "input"
+        ];
+      };
+
+      nixos.doas = {
+        security.doas.extraRules = [{
+          users = [ "phoenix" ];
+          persist = true;
+        }];
+      };
+
+      nixos.nix-config = {
+        nix.settings.trusted-users = [ "phoenix" ];
       };
 
       homeManager.phoenix = {

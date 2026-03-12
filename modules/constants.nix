@@ -6,7 +6,6 @@
     };
 
     config.systemContants = {
-      user = "phoenix";
     };
   };
 }

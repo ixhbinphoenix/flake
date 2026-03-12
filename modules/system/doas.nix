@@ -4,10 +4,6 @@
       enable = true;
       extraRules = [
         {
-          users = [ config.systemConstants.user ];
-          persist = true;
-        }
-        {
           groups = [ "wheel" ];
           persist = true;
         }
