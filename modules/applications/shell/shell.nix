@@ -8,4 +8,18 @@
       starship
     ];
   };
+
+  flake.modules.nixos.shell = { pkgs, ... }: {
+    imports = with inputs.self.modules.nixos; [
+      zsh
+    ];
+    environment.systemPackages = with pkgs; [
+      killall
+      usbutils
+      pciutils
+      wget
+      file
+      jq
+    ];
+  };
 }

@@ -4,6 +4,7 @@
       nix-config
       localization
       doas
+      shell
     ] ++ (with inputs.self.modules.generic; [
       systemConstants
     ]);

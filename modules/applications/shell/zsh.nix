@@ -1,4 +1,9 @@
 {
+  flake.modules.nixos.zsh = { pkgs, ... }: {
+    environment.shells = with pkgs; [ zsh ];
+    programs.zsh.enable = true;
+  };
+
   flake.modules.homeManager.zsh = {
     programs.zsh = {
       enable = true;
