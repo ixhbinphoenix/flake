@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ self, inputs, ... }: {
   flake-file.inputs = {
     home-manager.url = "https://git.ixhby.dev/mirrors/home-manager/archive/master.tar.gz";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -9,6 +9,7 @@
   flake.modules.nixos.home-manager = {
     imports = [
       inputs.home-manager.nixosModules.home-manager
+      self.modules.homeManager.nur
     ];
 
     home-manager = {

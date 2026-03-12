@@ -3,6 +3,7 @@
     imports = with inputs.self.modules.nixos; [
       minimal
       home-manager
+      nur
     ];
   };
 }

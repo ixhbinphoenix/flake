@@ -6,6 +6,7 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
+    catppuccin.url = "https://git.ixhby.dev/mirrors/catppuccin-nix/archive/main.tar.gz";
     flake-file.url = "https://git.ixhby.dev/mirrors/flake-file/archive/main.tar.gz";
     flake-parts = {
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
@@ -18,6 +19,7 @@
     import-tree.url = "github:vic/import-tree";
     nixpkgs.url = "https://git.ixhby.dev/mirrors/nixpkgs/archive/nixpkgs-unstable.tar.gz";
     nixpkgs-lib.follows = "nixpkgs";
+    nur.url = "https://git.ixhby.dev/mirrors/NUR/archive/master.tar.gz";
     systems.url = "https://git.ixhby.dev/mirrors/nix-systems/archive/main.tar.gz";
   };
 
