@@ -4,6 +4,7 @@
       nixos_minimal
       home-manager
       nur
+      fonts
     ];
   };
 }

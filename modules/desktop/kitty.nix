@@ -10,7 +10,7 @@
       enable = true;
 
       font = {
-        name = "Iosevka Term"; # TODO: Iosevka font
+        name = "Iosevka Term";
         size = 10;
       };
 
