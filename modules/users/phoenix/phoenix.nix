@@ -25,6 +25,11 @@
           catppuccin
           librewolf
           shell
+          niri
+          nixvim
+          {
+            home.stateVersion = "25.11";
+          }
         ];
       };
     }

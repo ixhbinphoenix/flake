@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.starship = { pkgs, ... }: {
-    programs.zsh.extraInit = pkgs.lib.mkAfter ''
+    programs.zsh.initContent = pkgs.lib.mkAfter ''
     eval $(starship init zsh)
     '';
     programs.starship = {

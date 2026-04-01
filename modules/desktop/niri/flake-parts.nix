@@ -6,13 +6,13 @@
 
   flake.modules.nixos.niri = {
     imports = [
-      inputs.niri.nixosModules.default
+      inputs.niri.nixosModules.niri
     ];
   };
 
   flake.modules.homeManager.niri = {
     imports = [
-      inputs.niri.homeModules.default
+      inputs.niri.homeModules.niri
     ];
   };
 }

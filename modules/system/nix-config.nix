@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.nix-config = {
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true; # TODO: Home-manager doesnt like this, figure out why
 
     nix.settings = {
       substituters = [

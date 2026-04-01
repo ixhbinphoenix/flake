@@ -6,7 +6,6 @@
       doas
       shell
     ] ++ (with inputs.self.modules.generic; [
-      systemConstants
     ]);
   };
 }

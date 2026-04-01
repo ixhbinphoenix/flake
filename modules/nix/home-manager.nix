@@ -9,8 +9,9 @@
   flake.modules.nixos.home-manager = {
     imports = [
       inputs.home-manager.nixosModules.home-manager
-      self.modules.homeManager.nur
     ];
+
+    environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 
     home-manager = {
       verbose = true;

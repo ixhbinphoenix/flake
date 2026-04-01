@@ -27,7 +27,7 @@
       settings = {
         prefer-no-csd = true; # FUCK CSD
 
-        inputs = {
+        input = {
           warp-mouse-to-focus.enable = true;
           focus-follows-mouse.enable = true;
 

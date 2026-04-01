@@ -1,12 +1,12 @@
-{pkgs, ...}: {
-  flake.modules.homeManager.librewolf = {
+{
+  flake.modules.homeManager.librewolf = { pkgs, ... }: {
     programs.librewolf.profiles.default.extensions = {
       packages = with pkgs.nur.repos.rycee.firefox-addons; [
         adaptive-tab-bar-colour
         blocktube
         buster-captcha-solver
         canvasblocker
-        catppuccin-mocha-mauve
+        # catppuccin-mocha-mauve # TODO: Apparently this is not a thing anymore?
         consent-o-matic
         container-tab-groups
         containerise
@@ -15,7 +15,7 @@
         gnu_terry_pratchett
         keepassxc-browser # maybe but into keepass module?
         libredirect
-        nixpkgs-pr-tracker
+        # nixpkgs-pr-tracker # TODO: Apparently this is not a thing anymore?
         react-devtools
         return-youtube-dislikes
         sponsorblock
@@ -97,7 +97,7 @@
         "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}" = { # Video DownloadHelper
           permissions = [
             "nativeMessaging" "contextMenus" "downloads" "menus" "notifications" "scripting" "storage" "tabs" "webNavigation" "webRequest" "webRequestBlocking" "declarativeNetRequest"
-              "<all_urls>" "*://*.downloadhelper.net/*" "*://*.downloadhelper.net/changelog/*" "*://*.downloadhelper.net/debugger" "*://*.youtube.com/*" "*://*.vimeo.com/*" "*://*.facebook.com/*" "*://*.instagram.com/*" "*://*.ok.ru/*" "*://*.m.ok.ru/*" "*://vk.com/*" "*://vk.ru/*" "*://vkvideo.ru/*" "*://*.canva.com/*" "*://*.iq.com/*" "https://v10.downloadhelper.net/activate*" "https://app.v10.downloadhelper.net/activate*" "https://v10.downloadhelper.net/changelog*" "https://app.v10.downloadhelper.net/changelog*" "*://live.vkvideo.ru/*" "*://*.twitcasting.tv/*"
+              "<all_urls>" "*://*.downloadhelper.net/*" "*://*.downloadhelper.net/changelog/*" "*://*.downloadhelper.net/debugger" "*://*.youtube.com/*" "*://*.vimeo.com/*" "*://*.facebook.com/*" "*://*.instagram.com/*" "*://*.ok.ru/*" "*://*.m.ok.ru/*" "*://vk.com/*" "*://vk.ru/*" "*://vkvideo.ru/*" "*://*.canva.com/*" "*://*.iq.com/*" "https://v10.downloadhelper.net/activate*" "https://app.v10.downloadhelper.net/activate*" "https://v10.downloadhelper.net/changelog*" "https://app.v10.downloadhelper.net/changelog*" "*://live.vkvideo.ru/*" "*://*.twitcasting.tv/*" "*://*.downloadhelper.net/changelog/mozilla/*"
           ];
         };
         "keepassxc-browser@keepassxc.org" = { # KeePassXC-Browser, once again maybe put this into the keepass module

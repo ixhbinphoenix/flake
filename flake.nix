@@ -17,8 +17,13 @@
       url = "https://git.ixhby.dev/mirrors/home-manager/archive/master.tar.gz";
     };
     import-tree.url = "github:vic/import-tree";
+    niri = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "https://git.ixhby.dev/mirrors/niri-flake/archive/main.tar.gz";
+    };
     nixpkgs.url = "https://git.ixhby.dev/mirrors/nixpkgs/archive/nixpkgs-unstable.tar.gz";
     nixpkgs-lib.follows = "nixpkgs";
+    nixvim.url = "https://git.ixhby.dev/mirrors/nixvim/archive/main.tar.gz";
     nur.url = "https://git.ixhby.dev/mirrors/NUR/archive/master.tar.gz";
     systems.url = "https://git.ixhby.dev/mirrors/nix-systems/archive/main.tar.gz";
   };

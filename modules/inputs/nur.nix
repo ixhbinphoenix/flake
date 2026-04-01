@@ -5,13 +5,13 @@
 
   flake.modules.nixos.nur = {
     imports = [
-      inputs.nur.nixosModules.default
+      inputs.nur.modules.nixos.default
     ];
   };
 
-  flake.modules.home-manager.nur = {
+  flake.modules.homeManager.nur = {
     imports = [
-      inputs.nur.homeModules.default
+      inputs.nur.modules.homeManager.default
     ];
   };
 }

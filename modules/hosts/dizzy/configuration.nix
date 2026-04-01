@@ -2,8 +2,8 @@
   flake.modules.nixos.dizzy = {
     imports = with inputs.self.modules.nixos; [
       systemd-boot
+      default-pc
       phoenix
-      minimal
     ];
 
     system.stateVersion = "23.05";

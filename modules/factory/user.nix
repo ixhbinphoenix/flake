@@ -12,6 +12,7 @@
       home-manager.users."${username}" = {
         imports = [
           self.modules.homeManager."${username}"
+          self.modules.homeManager.nur
         ];
       };
     };
