@@ -13,5 +13,18 @@
     imports = [
       inputs.catppuccin.homeModules.catppuccin
     ];
+
+    catppuccin = {
+      enable = true;
+      accent = "mauve";
+      flavor = "mocha";
+
+      cursors = {
+        enable = true;
+        accent = "dark";
+      };
+    };
+
+    programs.niri.settings.cursor.theme = "catppuccin-mocha-dark-cursors";
   };
 }

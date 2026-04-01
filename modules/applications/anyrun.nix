@@ -1,5 +1,6 @@
 {
-  flake.modules.homeManager.anyrun = { pkgs, ... }: {
+  flake.modules.homeManager.anyrun = { config, pkgs, ... }: {
+    programs.niri.settings.binds."Super+Escape".action = config.lib.niri.actions.spawn "anyrun";
     programs.anyrun = {
       enable = true;
 
