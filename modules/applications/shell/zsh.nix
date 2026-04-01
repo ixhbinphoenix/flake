@@ -11,16 +11,16 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      sessionVariables = {
-        GPG_TTY = "$TTY"; # TODO: Check out where this could be better suited
-        SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)"; # TODO: Check out where this could be better suited
+      sessionVariables = { # TODO: GPG
+        GPG_TTY = "$TTY";
+        SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
       };
 
       shellAliases = {
-        icat = "kitten icat"; # TODO: Put in kitty module
+        icat = "kitten icat";
         ":q" = "exit";
         qq = "exit";
-        v = "nvim"; # TODO: Put in nvim module
+        v = "nvim";
         "+x" = "chmod +x";
       };
     };

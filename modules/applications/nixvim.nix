@@ -5,6 +5,8 @@
       inputs.nixvim.homeModules.nixvim
     ];
 
+    programs.zsh.shellAliases."v" = "nvim";
+
     programs.nixvim = {
       enable = true;
 
