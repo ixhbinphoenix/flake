@@ -2,7 +2,7 @@
   flake.modules.nixos.dizzy = {
     imports = with inputs.self.modules.nixos; [
       systemd-boot
-      default-pc
+      gaming-nixos
       phoenix
     ];
 

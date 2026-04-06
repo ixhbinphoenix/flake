@@ -29,13 +29,17 @@
           librewolf
           shell
           git
-          (self.factory.git {
+          (self.factory.git-user-hm {
             name = "ixhbinphoenix";
             email = "phoenix@ixhby.dev";
             key = "3E62370C1D773013";
           })
           niri
           nixvim
+          celeste
+          minecraft
+          obs
+          misc-applications
         ];
       };
     }
