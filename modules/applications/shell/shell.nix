@@ -12,6 +12,7 @@
   flake.modules.nixos.shell = { pkgs, ... }: {
     imports = with inputs.self.modules.nixos; [
       zsh
+      tmux
     ];
     environment.systemPackages = with pkgs; [
       killall
