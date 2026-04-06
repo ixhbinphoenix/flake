@@ -6,6 +6,7 @@
       nur
       fonts
       (greetd "niri-session")
+      kdeconnect
     ];
   };
 }
