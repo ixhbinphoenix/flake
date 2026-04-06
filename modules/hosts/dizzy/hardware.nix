@@ -1,5 +1,9 @@
-{...}: {
+{ self, ... }: {
   flake.modules.nixos.dizzy = {
+    imports = with self.modules.nixos; [
+      wooting
+    ];
+
     boot.kernelModules = [ "kvm-amd" ];
     boot.extraModulePackages = [];
 
