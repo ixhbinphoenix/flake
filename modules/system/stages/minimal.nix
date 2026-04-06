@@ -5,8 +5,6 @@
       localization
       doas
       shell
-      yubikey
-    ] ++ (with inputs.self.modules.generic; [
-    ]);
+    ];
   };
 }

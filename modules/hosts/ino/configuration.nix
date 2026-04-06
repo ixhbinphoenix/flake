@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.modules.nixos.lucy = {
+  flake.modules.nixos.ino = {
     imports = with inputs.self.modules.nixos; [
       default-server
     ];
