@@ -7,6 +7,7 @@
       fonts
       (greetd "niri-session")
       kdeconnect
+      yubikey-desktop
     ];
   };
 }
