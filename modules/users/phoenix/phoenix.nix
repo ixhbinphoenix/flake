@@ -22,14 +22,20 @@
 
       homeManager.phoenix = {
         imports = with self.modules.homeManager; [
-          catppuccin
-          librewolf
-          shell
-          niri
-          nixvim
           {
             home.stateVersion = "25.11";
           }
+          catppuccin
+          librewolf
+          shell
+          git
+          (self.factory.git {
+            name = "ixhbinphoenix";
+            email = "phoenix@ixhby.dev";
+            key = "3E62370C1D773013";
+          })
+          niri
+          nixvim
         ];
       };
     }
