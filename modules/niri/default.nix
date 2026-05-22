@@ -27,7 +27,7 @@
 
         spawn-at-startup = [
           { command = ["wl-paste" "-t" "text" "--watch" "clipman" "store"]; }
-          { command = ["swww-daemon"]; }
+          { command = ["awww-daemon"]; }
           { command = ["waybar"]; }
           { command = ["dunst"]; }
           { command = ["xwayland-satellite"]; }

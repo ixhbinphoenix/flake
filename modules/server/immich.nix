@@ -30,9 +30,6 @@
       database = {
         enable = true;
         createDB = true;
-
-        enableVectors = false;
-        enableVectorChord = true;
       };
 
       machine-learning = {

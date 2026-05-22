@@ -20,7 +20,6 @@
     signify
     wootility
     inputs.deploy-rs.packages.${pkgs.stdenv.hostPlatform.system}.default
-    wineWowPackages.stagingFull
     winetricks
     protontricks
     localsend

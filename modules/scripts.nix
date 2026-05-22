@@ -88,7 +88,7 @@
 
         text = ''
           set_wallpaper() {
-            swww img --transition-type top --transition-step 20 --transition-fps 60 "$1"
+            awww img --transition-type top --transition-step 20 --transition-fps 60 "$1"
           }
 
           if [ -f "$1" ]; then
@@ -105,7 +105,7 @@
 
         text = ''
           set_wallpaper() {
-            swww img --transition-type top --transition-step 20 --transition-fps 60 "$1"
+            awww img --transition-type top --transition-step 20 --transition-fps 60 "$1"
           }
 
           PICTURE=$(find "$HOME/Pictures/wallpapers/" -type f | shuf -n 1)
@@ -130,7 +130,7 @@
           }
 
           set_animated_wallpaper() {
-            swww kill 2>/dev/null
+            awww kill 2>/dev/null
             pkill mpvpaper
             set_animated_wallpaper_on_output "$1" DP-1
             set_animated_wallpaper_on_output "$1" DP-2

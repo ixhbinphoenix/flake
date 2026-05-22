@@ -17,9 +17,7 @@
 
     services.searx = {
       enable = true;
-      package = pkgs.searxng.overridePythonAttrs (oldAttrs: {
-        pythonRelaxDeps = oldAttrs.pythonRelaxDeps ++ [ "markdown-it-py" ];
-      });
+      package = pkgs.searxng;
 
       redisCreateLocally = true;
 

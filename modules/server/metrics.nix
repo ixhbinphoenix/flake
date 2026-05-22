@@ -123,6 +123,7 @@
       enable = true;
 
       settings = {
+        security.secret_key = "SW2YcwTIb9zpOOhoPsMm"; # old default value, apparently it is safe to hardcode this?
         server = {
           protocol = "http";
           http_port = 1789;

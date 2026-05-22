@@ -73,7 +73,7 @@ with lib;
       picard
       lrcget
       obsidian
-      swww
+      awww
       waypaper
       thunderbird
       cava
@@ -198,7 +198,7 @@ with lib;
             "deArrow@ajay.app" = { # DeArrow
               permissions = [
                 "storage" "unlimitedStorage" "alarms" "scripting"
-                "https://sponsor.ajay.app/*" "https://dearrow-thumb.ajay.app/*" "https://*.googlevideo.com/*" "https://*.youtube.com/*" "https://www.youtube-nocookie.com/embed/*"
+                "https://dearrow.ajay.app/*" "https://sponsor.ajay.app/*" "https://dearrow-thumb.ajay.app/*" "https://*.googlevideo.com/*" "https://*.youtube.com/*" "https://www.youtube-nocookie.com/embed/*"
               ];
             };
             "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}" = { # Video DownloadHelper
