@@ -16,7 +16,7 @@
     ];
 
     home.packages = with pkgs; [
-      swww
+      awww
       waypaper
       hyprpicker
     ];
@@ -39,7 +39,7 @@
 
         spawn-at-startup = [
           { command = ["wl-paste" "-t" "text" "--watch" "clipman" "store"]; }
-          { command = ["swwww-daemon"]; }
+          { command = ["awww-daemon"]; }
         ];
 
         hotkey-overlay.skip-at-startup = true;
@@ -62,13 +62,13 @@
         binds = with config.lib.niri.actions; let
           sh = spawn "sh" "-c";
         in {
-          "Super+Shift+w".action = spawn "random_wallpaper"; # TODO: better spot for these binds, and make this script real
+          "Super+Shift+w".action = spawn "random_wallpaper";
           "Super+w".action = spawn "waypaper";
           "Super+P".action = sh "hyprpicker | wl-copy";
 
           "Super+o".action = show-hotkey-overlay;
 
-          "Super+Shift+s".action = sh "screenshot --area --upload"; # TODO: better spot for this bind and make this script real
+          "Super+Shift+s".action = sh "screenshot";
 
           "Super+f".action = fullscreen-window;
           "Super+m".action = maximize-column;

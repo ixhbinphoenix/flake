@@ -3,6 +3,7 @@
     imports = with inputs.self.modules.homeManager; [
       lsd
       bat
+      scripts
 
       zsh
       starship
