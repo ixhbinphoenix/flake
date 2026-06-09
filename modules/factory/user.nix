@@ -13,6 +13,7 @@
         imports = [
           self.modules.homeManager."${username}"
           self.modules.homeManager.nur
+          self.modules.homeManager.sops
         ];
       };
     };

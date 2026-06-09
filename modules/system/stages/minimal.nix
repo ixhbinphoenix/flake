@@ -5,6 +5,7 @@
       localization
       doas
       shell
+      sops
     ];
   };
 }
