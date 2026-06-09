@@ -8,7 +8,7 @@
   };
 
   virtualisation.libvirtd = {
-    enable = true;
+    #enable = true;
     onBoot = "ignore";
     onShutdown = "shutdown";
     qemu = {
@@ -17,7 +17,7 @@
     };
   };
 
-  systemd.services.libvirtd = {
+  /* systemd.services.libvirtd = {
     path = let
       env = pkgs.buildEnv {
         name = "qemu-hook-env";
@@ -57,5 +57,5 @@
   environment.systemPackages = with pkgs; [
     virt-manager
     libguestfs
-  ];
+  ]; */
 }
