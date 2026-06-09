@@ -62,7 +62,7 @@
           flavour = "mocha";
           integrations = {
             cmp = true;
-            gitsigns = true;
+            #gitsigns = true;
             nvimtree = true;
             treesitter = true;
           };
@@ -91,7 +91,7 @@
           };
         };
 
-        gitsigns.enable = true;
+        #gitsigns.enable = true;
 
         treesitter = {
           enable = true;
