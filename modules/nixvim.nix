@@ -99,6 +99,11 @@
           nixvimInjections = true;
         };
 
+        neo-tree = {
+          enable = true;
+          autoLoad = true;
+        };
+
         fugitive.enable = true;
 
         lsp = {
