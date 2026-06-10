@@ -176,7 +176,8 @@
               "<Up>" = "cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select})";
               "<Down>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
               "<Tab>" = "cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select})";
-              "<CR>" = ''cmp.mapping({
+              "<CR>" = ''
+              cmp.mapping({
                 i = function(fallback)
                 if cmp.visible and cmp.get_active_entry() then
                     cmp.confirm({behavior = cmp.SelectBehavior.Replace, select = false})

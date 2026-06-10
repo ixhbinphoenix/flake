@@ -1,6 +1,6 @@
 {
-  flake.modules.homeManager.cattpuccin = {
-    cattpuccin.dunst.enable = true;
+  flake.modules.homeManager.catppuccin = {
+    catppuccin.dunst.enable = true;
   };
 
   flake.modules.homeManager.dunst = { pkgs, ... }: {
