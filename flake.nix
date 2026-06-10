@@ -21,6 +21,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:vic/import-tree";
+    lix = {
+      url = "https://git.ixhby.dev/mirrors/lix/archive/main.tar.gz";
+      flake = false;
+    };
+    lix-module = {
+      url = "https://git.ixhby.dev/mirrors/lixos-module/archive/main.tar.gz";
+      inputs = {
+        lix.follows = "lix";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     niri = {
       url = "https://git.ixhby.dev/mirrors/niri-flake/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -18,8 +18,6 @@
         "flakes"
       ];
 
-      download-buffer-size = 1024 * 1024 * 1024;
-
       trusted-users = [
         "root"
       ];
