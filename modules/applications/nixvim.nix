@@ -100,7 +100,7 @@
           nixvimInjections = true;
         };
 
-        neotree = {
+        neo-tree = {
           enable = true;
           autoLoad = true;
         };
