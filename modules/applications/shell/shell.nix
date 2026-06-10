@@ -22,6 +22,7 @@
       wget
       file
       jq
+      ripgrep
     ];
   };
 }

@@ -37,6 +37,39 @@
           };
         };
 
+        outputs = {
+          "DP-2" = {
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 60.0;
+            };
+            position.x = -1920;
+            position.y = 0;
+            scale = 1;
+          };
+          "DP-1" = {
+            mode = {
+              width = 2560;
+              height = 1440;
+              refresh = 143.912;
+            };
+            position.x = 0;
+            position.y = 0;
+            scale = 1;
+          };
+          "HDMI-A-1" = {
+            mode = {
+              width = 1920;
+              height = 1080;
+              refresh = 60.0;
+            };
+            position.x = 2560;
+            position.y = 0;
+            scale = 1;
+          };
+        };
+
         spawn-at-startup = [
           { command = ["wl-paste" "-t" "text" "--watch" "clipman" "store"]; }
           { command = ["awww-daemon"]; }

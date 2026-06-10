@@ -10,6 +10,7 @@
       kdeconnect
       yubikey-desktop
       syncthing
+      gpg
     ];
   };
 }

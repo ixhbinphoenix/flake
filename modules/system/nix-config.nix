@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.nix-config = {
+  flake.modules.nixos.nix-config = { pkgs, ... }: {
     nixpkgs.config.allowUnfree = true; # TODO: Home-manager doesnt like this, figure out why
 
     nix.settings = {
@@ -30,5 +30,9 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
+
+    environment.systemPackages = with pkgs; [
+      nix-output-monitor
+    ];
   };
 }

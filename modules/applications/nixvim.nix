@@ -100,6 +100,11 @@
           nixvimInjections = true;
         };
 
+        neotree = {
+          enable = true;
+          autoLoad = true;
+        };
+
         fugitive.enable = true;
 
         lsp = {

@@ -36,6 +36,7 @@
             key = "3E62370C1D773013";
           })
           niri
+          anyrun
           nixvim
           celeste
           minecraft

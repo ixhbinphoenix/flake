@@ -15,3 +15,15 @@ creation_rules:
           - *server_axl
           - *snowflake_host
           - *ramlethal_host
+  - path_regex: secrets/wireguard/ino/[^/]+\.key$
+    key_groups:
+      - age:
+          - *server_ino
+          - *snowflake_host
+          - *ramlethal_host
+  - path_regex: secrets/wireguard/lucy/[^/]+\.key$
+    key_groups:
+      - age:
+          - *server_lucy
+          - *snowflake_host
+          - *ramlethal_host

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.iocaine = {pkgs, lib, ...}: {
+  flake.modules.nixos.iocaine = {pkgs, ...}: {
     services.iocaine = {
       enable = true;
 
@@ -44,7 +44,7 @@
                 owner = "ai-robots-txt";
                 repo = "ai.robots.txt";
                 rev = "f420408eee6c6a8c4eaf3536d6f9c926c9b01fa4";
-                hash = lib.fakeHash;
+                hash = "sha256-CuROvakcn/6Ddc965Hibou8c/6lqlgFdEv7ONXzYOi0=";
               } + "/robots.json";
             };
             cookie-monster = {

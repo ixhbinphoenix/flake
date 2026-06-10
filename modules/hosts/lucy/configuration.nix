@@ -11,6 +11,7 @@
       ntfy
       searxng
       unbound
+      zipline
 
       media
       copyparty

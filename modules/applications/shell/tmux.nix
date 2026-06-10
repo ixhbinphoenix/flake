@@ -5,19 +5,16 @@
       plugins = with pkgs; [
         tmuxPlugins.sensible
         tmuxPlugins.vim-tmux-navigator
-        {
-          plugin = tmuxPlugins.catppuccin;
-          extraConfig = ''
-            set -g @catppuccin_powerline_icons_theme_enabled on
-            set -g @catppuccin_l_left_separator "<U+E0B0>"
-            set -g @catppuccin_l_right_separator "<U+E0B0>"
-            set -g @catppuccin_r_left_separator "<U+E0B2>"
-            set -g @catppuccin_r_right_separator "<U+E0B2>"
-          '';
-        }
+        tmuxPlugins.catppuccin
         tmuxPlugins.yank
       ];
       extraConfig = ''
+        set -g @catppuccin_powerline_icons_theme_enabled on
+        set -g @catppuccin_l_left_separator "<U+E0B0>"
+        set -g @catppuccin_l_right_separator "<U+E0B0>"
+        set -g @catppuccin_r_left_separator "<U+E0B2>"
+        set -g @catppuccin_r_right_separator "<U+E0B2>"
+
         set-option -sa terminal-overrides ",xterm*:Tc"
 
         # Set prefix
