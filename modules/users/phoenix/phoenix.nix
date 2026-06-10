@@ -20,7 +20,7 @@
         nix.settings.trusted-users = [ "phoenix" ];
       };
 
-      homeManager.phoenix = {
+      homeManager.phoenix = { pkgs, ... }: {
         imports = with self.modules.homeManager; [
           {
             home.stateVersion = "25.11";
@@ -42,6 +42,13 @@
           minecraft
           obs
           misc-applications
+        ];
+
+        home.packages = with pkgs; [
+          runelite
+          reaper
+          reaper-sws-extension
+          reaper-reapack-extension
         ];
       };
     }
