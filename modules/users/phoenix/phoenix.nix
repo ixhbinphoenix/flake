@@ -6,6 +6,9 @@
         users.users."phoenix".extraGroups = [
           "networkmanager"
           "input"
+          "video"
+          "render"
+          "audio"
         ];
       };
 

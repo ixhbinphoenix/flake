@@ -8,6 +8,7 @@
         };
         default_session = {
           command = "${pkgs.greetd}/bin/agreety --cmd ${cmd}";
+          user = "greeter";
         };
       };
     };

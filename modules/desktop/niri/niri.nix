@@ -21,6 +21,9 @@
       hyprpicker
     ];
 
+    services.network-manager-applet.enable = true;
+
+
     programs.niri = {
       enable = true;
 
