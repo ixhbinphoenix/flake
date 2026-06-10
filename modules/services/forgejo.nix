@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.forgejo = { config, pkgs, lib, ... }: {
     users.users.git = {
       home = config.services.forgejo.stateDir;
@@ -62,7 +62,7 @@
 
       settings = {
         DEFAULT = {
-          APP_NAME = "ixhby.dev\ git";
+          APP_NAME = "ixhby.dev git";
           RUN_MODE = "prod";
         };
         server = {

@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.immich = { config, ... }: {
     services.immich = {
       enable = true;

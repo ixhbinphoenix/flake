@@ -1,6 +1,7 @@
-{}: {
-
+{
   flake.modules.nixos.metrics = { config, lib, ... }: {
+    sops.secrets."vm/auth" = {};
+
     services.victoriametrics = {
       enable = true;
       listenAddress = "0.0.0.0:8428";
@@ -30,7 +31,7 @@
           }
           {
             job_name = "postgres-exporter";
-            metrics_path = config.services.prometheus.exports.postgres.telemetryPath;
+            metrics_path = config.services.prometheus.exporters.postgres.telemetryPath;
             static_configs = [
               {
                 targets = ["127.0.0.1:${toString config.services.prometheus.exporters.postgres.port}"];
@@ -41,7 +42,7 @@
             job_name = "iocaine";
             static_configs = [
               {
-                targets = [config.services.iocaine.config.server.metriocs.bind];
+                targets = [config.services.iocaine.config.server.metrics.bind];
               }
             ];
           })

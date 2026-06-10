@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.iocaine = {pkgs, lib, ...}: {
     services.iocaine = {
       enable = true;

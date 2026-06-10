@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.media = { lib, ... }: {
     systemd.tmpfiles.settings.navidromeDirs = {
       "/var/lib/media/movies"."d" = {

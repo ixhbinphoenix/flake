@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.ntfy = { config, ... }: {
     users.users.ntfy-sh = {
       isSystemUser = true;

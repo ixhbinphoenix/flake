@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cattpuccin = {}: {
+  flake.modules.homeManager.cattpuccin = {
     cattpuccin.dunst.enable = true;
   };
 

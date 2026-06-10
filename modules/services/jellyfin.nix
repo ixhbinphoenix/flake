@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.jellyfin = {
     users.users."jellyfin".extraGroups = [ "media" ];
 

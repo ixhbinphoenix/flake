@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.searxng = { config, pkgs, ... }: {
     sops.secrets.searx = {
       sopsFile = ../../secrets/searx.env;

@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.unbound = { config, ... }: {
     services.unbound = {
       enable = true;

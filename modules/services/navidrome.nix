@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.navidrome = { config, ... }: {
     users.users."navidrome".extraGroups = [ "media" ];
 

@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.nixos.slskd = { config, ... }: {
     users.users."${config.services.slskd.group}".extraGroups = [ "media" ];
 
@@ -21,7 +21,7 @@
           ];
           filters = [
             "rsync.sh$"
-            "TheMissile\.wav(.asd)?$"
+            "TheMissile.wav(.asd)?$"
             "BCSRingtone.mp3"
           ];
         };

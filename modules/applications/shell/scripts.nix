@@ -1,4 +1,4 @@
-{}: {
+{
   flake.modules.homeManager.scripts = { pkgs, ... }: {
     home.packages = let
       ils = pkgs.writeShellApplication {

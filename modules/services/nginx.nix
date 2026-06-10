@@ -1,4 +1,4 @@
-{}: {
+{
 
   flake.modules.nixos.nginx = { config, lib, ... }: {
     options.server.services.nginx = let
@@ -42,7 +42,7 @@
                 example = [ "127.0.0.1:42069" "unix:/dev/shm/upstream.sock" ];
               };
               cert_path = lib.mkOption {
-                type = types.nonEmptyStyr;
+                type = types.nonEmptyStr;
                 example = "faggirl.gay";
               };
               extraConfig = lib.mkOption {
