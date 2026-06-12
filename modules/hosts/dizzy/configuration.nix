@@ -4,6 +4,7 @@
       systemd-boot
       gaming-nixos
       phoenix
+      VST
     ];
 
     system.stateVersion = "23.05";

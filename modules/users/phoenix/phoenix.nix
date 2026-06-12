@@ -45,13 +45,11 @@
           minecraft
           obs
           misc-applications
+          reaper
         ];
 
         home.packages = with pkgs; [
           runelite
-          reaper
-          reaper-sws-extension
-          reaper-reapack-extension
         ];
       };
     }

@@ -329,6 +329,26 @@
         "url": "https://git.ixhby.dev/mirrors/lixos-module/archive/main.tar.gz"
       }
     },
+    "musnix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777848538,
+        "narHash": "sha256-Dj51C0NWsglqRrCpdmMr2nFiYacFOid1Tor4H9yG2HY=",
+        "owner": "musnix",
+        "repo": "musnix",
+        "rev": "8548782f0d1d0928daa3fffde8a008f72219a3f3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "musnix",
+        "repo": "musnix",
+        "type": "github"
+      }
+    },
     "nam-shub-of-enki": {
       "inputs": {
         "avalanche": "avalanche",
@@ -602,6 +622,7 @@
         "import-tree": "import-tree",
         "lix": "lix",
         "lix-module": "lix-module",
+        "musnix": "musnix",
         "niri": "niri",
         "nixocaine": "nixocaine",
         "nixpkgs": "nixpkgs_2",

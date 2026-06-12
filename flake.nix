@@ -32,6 +32,10 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+    musnix = {
+      url = "github:musnix/musnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri = {
       url = "https://git.ixhby.dev/mirrors/niri-flake/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";

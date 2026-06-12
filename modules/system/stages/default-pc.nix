@@ -15,6 +15,7 @@
       yubikey-desktop
       syncthing
       gpg
+      music
     ];
   };
 }
