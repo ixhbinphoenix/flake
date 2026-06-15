@@ -14,7 +14,7 @@
       screenshot = pkgs.writeShellApplication {
         name = "screenshot";
 
-        runtimeInputs = with pkgs; [ grim slurp libnotify ];
+        runtimeInputs = with pkgs; [ grim slurp libnotify wl-clipboard ];
 
         text = ''
           dir="$HOME/Pictures/screenshots"

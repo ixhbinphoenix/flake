@@ -19,6 +19,7 @@
       awww
       waypaper
       hyprpicker
+      wl-clipboard
     ];
 
     services.network-manager-applet.enable = true;
