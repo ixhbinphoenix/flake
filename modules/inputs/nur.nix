@@ -1,6 +1,7 @@
 { inputs, ...}: {
   flake-file.inputs = {
     nur.url = "https://git.ixhby.dev/mirrors/NUR/archive/master.tar.gz";
+    #nur.url = "github:nix-community/NUR";
   };
 
   flake.modules.nixos.nur = {

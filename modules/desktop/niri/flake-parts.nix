@@ -1,6 +1,7 @@
 { inputs, ... }: {
   flake-file.inputs = {
     niri.url = "https://git.ixhby.dev/mirrors/niri-flake/archive/main.tar.gz";
+    #niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
   };
 

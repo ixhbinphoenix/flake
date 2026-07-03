@@ -7,7 +7,9 @@
 
   flake-file.inputs = {
     flake-file.url = "https://git.ixhby.dev/mirrors/flake-file/archive/main.tar.gz";
+    #flake-file.url = "github:denful/flake-file";
     flake-parts.url = "https://git.ixhby.dev/mirrors/flake-parts/archive/main.tar.gz";
+    #flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs-lib";
   };
 

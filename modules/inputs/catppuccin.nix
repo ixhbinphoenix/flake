@@ -1,6 +1,7 @@
 { inputs, ... }: {
   flake-file.inputs = {
     catppuccin.url = "https://git.ixhby.dev/mirrors/catppuccin-nix/archive/main.tar.gz";
+    #catppuccin.url = "github:catppuccin/nix";
   };
 
   flake.modules.nixos.catppuccin = {

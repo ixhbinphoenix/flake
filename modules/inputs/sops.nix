@@ -1,6 +1,7 @@
 { inputs, ... }: {
   flake-file.inputs = {
     sops-nix.url = "https://git.ixhby.dev/mirrors/sops-nix/archive/master.tar.gz";
+    #sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
