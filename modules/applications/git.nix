@@ -11,8 +11,10 @@
       settings = {
         alias = {
           staash = "stash --all";
+          s = "status";
           ds = "diff --staged";
           dsl = "diff --staged ':!*.lock'";
+          rs = "restore --staged";
         };
         # user settings set per-user
         init = {
