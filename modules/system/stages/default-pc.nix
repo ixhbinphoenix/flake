@@ -13,7 +13,6 @@
       (greetd-nixos "niri-session")
       kdeconnect
       yubikey-desktop
-      syncthing
       gpg
       music
     ];

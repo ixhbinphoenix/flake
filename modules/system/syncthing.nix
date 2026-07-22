@@ -1,9 +1,13 @@
 {
-  flake.modules.nixos.syncthing = {
+  flake.modules.homeManager.syncthing = {
     services.syncthing = {
       enable = true;
 
-      openDefaultPorts = true;
+      settings = {
+        options = {
+          urAccepted = -1;
+        };
+      };
     };
   };
 }

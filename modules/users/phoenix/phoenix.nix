@@ -46,6 +46,7 @@
           obs
           misc-applications
           reaper
+          syncthing
         ];
 
         home.packages = with pkgs; [
