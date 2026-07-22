@@ -4,7 +4,6 @@
       packages = with pkgs.nur.repos.rycee.firefox-addons; [
         adaptive-tab-bar-colour
         blocktube
-        buster-captcha-solver
         canvasblocker
         # catppuccin-mocha-mauve # TODO: Apparently this is not a thing anymore?
         consent-o-matic
@@ -32,12 +31,6 @@
           permissions = [
             "webRequest" "tabs" "alarms"
               "<all_urls>"
-          ];
-        };
-        "{e58d3966-3d76-4cd9-8552-1582fbc800c1}" = { # Buster: Captcha Solver
-          permissions = [
-            "storage" "notifications" "webRequest" "webRequestBlocking" "webNavigation" "nativeMessaging"
-              "<all_urls>" "https://google.com/recaptcha/api2/bframe*" "https://www.google.com/recaptcha/api2/bframe*" "https://google.com/recaptcha/enterprise/bframe*" "https://www.google.com/recaptcha/enterprise/bframe*" "https://recaptcha.net/recaptcha/api2/bframe*" "https://www.recaptcha.net/recaptcha/api2/bframe*" "https://recaptcha.net/recaptcha/enterprise/bframe*" "https://www.recaptcha.net/recaptcha/enterprise/bframe*" "http://127.0.0.1/buster/setup?session=*"
           ];
         };
         "{799c0914-748b-41df-a25c-22d008f9e83f}" = { # Web Scrobbler
