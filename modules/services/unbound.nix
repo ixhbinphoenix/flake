@@ -29,6 +29,10 @@
           #response-ip = [ "45.81.235.222/32 redirect" ];
           #response-ip-data = [ "45.81.235.222/32 'A 192.168.178.22'" ];
 
+          do-ip4 = true;
+          do-ip6 = true;
+          prefer-ip4 = true;
+
           local-zone = [ "internal.ixhby.dev. static" "lucy.ixhby.dev static" "ixhby.dev transparent" ];
           local-data = [
             "'bridget.internal.ixhby.dev. A 192.168.178.2'"
