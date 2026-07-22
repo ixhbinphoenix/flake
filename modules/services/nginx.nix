@@ -103,16 +103,24 @@
         recommendedProxySettings = true;
         recommendedTlsSettings = true;
 
-        appendHttpConfig = if cfg.iocaine.enable then
-          builtins.concatStringsSep "\n" (lib.mapAttrsToList (_: x: "
+        appendHttpConfig = let
+          additionalHttpConfig = ''
+          log_format bandwith '$remote_addr - $upstream_addr [$time_local] '
+                              '"$request" $status $body_bytes_sent '
+                              'upstream_time=$upstream_response_time '
+                              'upstream_bytes=$upstream_bytes_received';
+          access_log /var/log/nginx/bandwith.log bandwith;
+          '';
+        in if cfg.iocaine.enable then
+          (builtins.concatStringsSep "\n" (lib.mapAttrsToList (_: x: "
           map $request_method $upstream_location_${x.service_name} {
             GET http://${cfg.iocaine.upstream};
             HEAD http://${cfg.iocaine.upstream};
             default ${protocol_to_prefix x.protocol}${x.service_name};
           }
-          ") cfg.vhosts)
+          ") cfg.vhosts)) + additionalHttpConfig
         else
-          "";
+          "${additionalHttpConfig}";
 
         upstreams = builtins.listToAttrs (lib.mapAttrsToList (_: x: {
           name = x.service_name;
@@ -141,6 +149,8 @@
             proxyPass = "$upstream_location_${x.service_name}";
             extraConfig = ''
             proxy_intercept_errors on;
+            limit_rate_after 10k;
+            limit_rate 5k;
             error_page 421 = @fallback;
             '' + x.extraConfig;
           } else {
